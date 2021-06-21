@@ -7,7 +7,7 @@ description: Topological，Directed graph，HashMap，BFS
 原题地址：[https://leetcode.com/problems/course-schedule/](https://leetcode.com/problems/course-schedule/) 关键词：Topological, Directed graph，BFS
 
 题意：某学期必须选修 n 门课程，记为 0 到 n - 1 ;（比如必须选5门课，那么课程号就为0,1,2,3,4）  
-在选修某些课程之前需要一些先修课程。 先修课程按数组`prerequisites[]`给出，其中`prerequisites[i] = [ai, bi]` ，表示如果要学习课程 ai 则必须先学习课程 bi 。  
+在选修某些课程之前需要一些先修课程。 先修课程按数组`prerequisites[][]`给出，其中`prerequisites[i] = [ai, bi]` ，表示如果要学习课程 ai 则必须先学习课程 bi 。  
 例如，先修课程对 \[0, 1\] 表示：想要学习课程 0 ，你需要先完成课程 1 。   
 请你判断是否可能完成所有课程的学习？如果可以，返回 true ；否则返回 false 。
 
@@ -27,7 +27,10 @@ Input: `numCourses = 2`, `prerequisites = [[1,0],[0,1]]`;
 
 ![](.gitbook/assets/207_graph.png)
 
-那么这道题就演变成了[Detect whether a directed graph has a loop or cycle. ](https://app.gitbook.com/@bhnigw/s/leetcode/~/drafts/-McNcLDMFP7Hl_JYsmTd/ji-chu-bi-hui/detect-cycle-in-a-directed-graph)（点击查看详细图解）
+因为0 -&gt; 1-&gt; 2出现了死循环，所以不可能修完所有课程。  
+**因此我们只需要查这个graph有没有死循环即可**，只要出现loop/cycle，那么就不可能修完所有课程；
+
+所以这道题就演变成了[Detect whether a directed graph has a loop or cycle. ](https://app.gitbook.com/@bhnigw/s/leetcode/~/drafts/-McNcLDMFP7Hl_JYsmTd/ji-chu-bi-hui/detect-cycle-in-a-directed-graph)（点击查看详细图解）
 
 #### 算法：
 
@@ -76,11 +79,11 @@ class Solution {
 
     // build the graph
     for (int i = 0; i < prerequisites.length; i++) {
-        if (map.get(prerequisites[i][1]) == null) {
-            map.put(prerequisites[i][1], new ArrayList<Integer>());
-            map.get(prerequisites[i][1]).add(prerequisites[i][0]);
+        if (map.get(prerequisites[i][0]) == null) {
+            map.put(prerequisites[i][0], new ArrayList<Integer>());
+            map.get(prerequisites[i][0]).add(prerequisites[i][1]);
         } else {
-            map.get(prerequisites[i][1]).add(prerequisites[i][0]);
+            map.get(prerequisites[i][0]).add(prerequisites[i][1]);
         }
     }
 
@@ -124,8 +127,22 @@ Space:?
 ### 方法二（重要）：拓扑排序 Topological Sort
 
 有向图中的一些概念：  
-入度\(`In-Degree`\)： test；  
+入度\(`In-Degree`\)：；  
 出度\(`Out-Degree`\)：；
+
+例如：  
+需要修的课程数是`numCourses = 6；`  
+先修课的条件是`prerequisite[][] = [[4,0],[4,1],[3,1],[3,2],[5,4],[5,3]]`；
+
+
+
+
+
+
+
+
+
+
 
 
 
