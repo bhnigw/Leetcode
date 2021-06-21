@@ -124,7 +124,7 @@ Space:?
 ### 方法二（重要）：拓扑排序 Topological Sort
 
 有向图中的一些概念：  
-入度\(`In-Degree`\)： ；  
+入度\(`In-Degree`\)： test；  
 出度\(`Out-Degree`\)：；
 
 
