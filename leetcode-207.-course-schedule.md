@@ -76,11 +76,11 @@ class Solution {
 
     // build the graph
     for (int i = 0; i < prerequisites.length; i++) {
-        if (map.get(prerequisites[i][0]) == null) {
-            map.put(prerequisites[i][0], new ArrayList<Integer>());
-            map.get(prerequisites[i][0]).add(prerequisites[i][1]);
+        if (map.get(prerequisites[i][1]) == null) {
+            map.put(prerequisites[i][1], new ArrayList<Integer>());
+            map.get(prerequisites[i][1]).add(prerequisites[i][0]);
         } else {
-            map.get(prerequisites[i][0]).add(prerequisites[i][1]);
+            map.get(prerequisites[i][1]).add(prerequisites[i][0]);
         }
     }
 
@@ -129,7 +129,56 @@ Space:?
 
 
 
-
+```text
+class Solution {
+    public boolean canFinish(int numCourses, int[][] prerequisites) {
+        HashMap<Integer, List<Integer>> map = new HashMap<>();
+        int[] inDegree = new int[numCourses];
+        
+        // build the graph
+        for (int i = 0; i < prerequisites.length; i++) {
+            inDegree[prerequisites[i][0]]++;
+            if (map.get(prerequisites[i][1]) == null) {
+                List<Integer> list = new ArrayList<>();
+                list.add(prerequisites[i][0]);
+                map.put(prerequisites[i][1], list);
+            } else {
+                map.get(prerequisites[i][1]).add(prerequisites[i][0]);
+            }
+        }
+        
+        
+        // initialize the queue
+        Queue<Integer> queue = new LinkedList<>();
+        
+        for (int i = 0; i < inDegree.length; i++) {
+            if (inDegree[i] == 0) {
+                queue.offer(i);
+            }
+        }
+        
+        
+        // BFS
+        while (!queue.isEmpty()) {
+            int course = queue.poll();
+            List<Integer> toTake = map.get(course);
+            for (int i = 0; toTake != null && i < toTake.size(); i++) {
+                inDegree[toTake.get(i)]--;
+                if (inDegree[toTake.get(i)] == 0) {
+                    queue.offer(toTake.get(i));
+                }
+            }
+        } 
+        
+        
+        for (int i = 0; i < inDegree.length; i++) {
+            if(inDegree[i] != 0) return false;
+        }
+        
+        return true;
+    }
+}
+```
 
 
 
