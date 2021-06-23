@@ -9,7 +9,7 @@ description: Topological，Directed graph，HashMap，BFS
 题意：某学期必须选修 n 门课程，记为 0 到 n - 1 ;（比如必须选5门课，那么课程号就为0,1,2,3,4）  
 在选修某些课程之前需要一些先修课程。 先修课程按数组`prerequisites[][]`给出，其中`prerequisites[i] = [ai, bi]` ，表示如果要学习课程 ai 则必须先学习课程 bi 。  
 例如，先修课程对 \[0, 1\] 表示：想要学习课程 0 ，你需要先完成课程 1 。   
-请你判断是否可能完成所有课程的学习？如果可以，返回 true ；否则返回 false 。
+判断是否可能完成所有课程的学习？如果可以，返回 true ；否则返回 false 。
 
 Example 1:  
 Input: `numCourses = 2`, `prerequisites = [[1,0]]`;   
@@ -53,8 +53,6 @@ Input: `numCourses = 2`, `prerequisites = [[1,0],[0,1]]`;
 我们初始化一个boolean的数组，长度为课程总数numCourses：`boolean[] visited = new boolean[numCourses];`（boolean的初始值默认都是false）
 
 这个`visited[]`boolean数组用来记录我们遍历已经访问过的node；
-
-
 
 第三步：  
 使用backtracking
@@ -119,8 +117,16 @@ class Solution {
 }
 ```
 
-Time:??  
-Space:?
+Time：`O(M + N^2)`  
+M是build graph所需时间，也就是`prerequisites[][]`的size；  
+N是number of courses，在worst case下，BFS的时间为N^2，所以时间复杂度为`O(M + N^2)`
+
+Space：`O(M + N)`  
+M是build graph所需要使用的HashMap的空间，也就是`prerequisites[][]`的size；  
+N是number of courses，我们需要用一个`visited[]`的数组来记录已经访问过的node，这个数组的长度是N，所以空间复杂度为`O(M + N)`
+
+时间复杂度相关知识：[https://app.gitbook.com/@bhnigw/s/-1/shi-jian-fu-za-du-time-complexity](https://app.gitbook.com/@bhnigw/s/-1/shi-jian-fu-za-du-time-complexity)  
+空间复杂度相关知识：[https://app.gitbook.com/@bhnigw/s/-1/kong-jian-fu-za-du-space-complexity](https://app.gitbook.com/@bhnigw/s/-1/kong-jian-fu-za-du-space-complexity)
 
 
 
