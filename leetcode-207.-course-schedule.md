@@ -119,7 +119,7 @@ class Solution {
 
 Time：`O(M + N^2)`  
 M是build graph所需时间，也就是`prerequisites[][]`的size；  
-N是number of courses，在worst case下，BFS的时间为N^2，所以时间复杂度为`O(M + N^2)`
+N是number of courses，在worst case下，Backtrack的时间为N^2，所以时间复杂度为`O(M + N^2)`
 
 Space：`O(M + N)`  
 M是build graph所需要使用的HashMap的空间，也就是`prerequisites[][]`的size；  
@@ -143,28 +143,91 @@ N是number of courses，我们需要用一个`visited[]`的数组来记录已经
 
 ![](.gitbook/assets/img_6343.jpg)
 
-**注意**这里和方法一不同，这里用prerequisite指向必修课，表示先修课修完了才能修下一门课，所以用`prerequisite[i][1]`当作HashMap的key，用`prerequisite[i][0]`当作value；
+**注意**这里和方法一相反，这里用先修课指向必修课，表示先修课修完了才能修下一门课，所以用`prerequisite[i][1]`当作HashMap的key，用`prerequisite[i][0]`当作value；
 
 
 
-#### 接下来进行拓扑排序 Topological Sort：
+#### 接下来进行拓扑排序 Topological Sort：★用BFS
 
-首先，初始化一个`inDegree[]`数组记录每个顶点的入度。这里入度可以理解为：每个顶点有多少入度，就必须上多少门先修课；\(用蓝色表示入度inDegree\)  
-初始化一个`queue`，用来装入度为0的顶点；
+在画图前，初始化一个`inDegree[]`数组，在build graph的时候，把每个顶点的入度记录进数组。这里入度可以理解为：每个顶点有多少入度，就必须上多少门先修课；\(图中用蓝色表示\)  
+初始化一个`queue`，用来装入度为0的顶点（用于BFS）；
 
 ![](.gitbook/assets/img_6344.jpg)
 
 
 
-首先，遍历一遍起始的`inDegree[]`数组，把所有入度为0的顶点加进queue：
+首先，遍历一遍起始的`inDegree[]`数组，把所有入度为0的顶点加进queue：\(加入0、1、2\)
 
 ![](.gitbook/assets/img_6345.jpg)
 
-接下来，
+
+
+**接下来，进行BFS：**  
+`while (!queue.isEmpty()) {   
+    int course = queue.poll();  
+    ...  
+}`
+
+poll出的点是课程0，在map中get提取出课程0所对应的所有后续课程，然后所有后续课程的入度减1；  
+如果后续课程减完1后入度为0，那就加入到queue；  
+可以理解为，poll一门课，就上完了一门课，那么后续的课就少一门先修课；
+
+![](.gitbook/assets/img_6346.jpg)
+
+BFS部分的代码为：
+
+```text
+// BFS
+        while (!queue.isEmpty()) {
+            int course = queue.poll();
+            List<Integer> toTake = map.get(course);
+            for (int i = 0; toTake != null && i < toTake.size(); i++) {
+                inDegree[toTake.get(i)]--;
+                if (inDegree[toTake.get(i)] == 0) {
+                    queue.offer(toTake.get(i));
+                }
+            }
+        } 
+//注意要确保toTake不为null否则报错nullPointerException
+```
 
 
 
+BFS下一步，poll出的点是课程1，课程1所对应的所有后续课程是3、4，所以课程3、4的入度减1；  
+课程4减完1后入度为0，加入到queue；
 
+![](.gitbook/assets/img_6347.jpg)
+
+
+
+BFS下一步，poll出的点是课程2，课程2所对应的所有后续课程是3，所以课程3的入度减1；  
+课程3减完1后入度为0，加入到queue；
+
+![](.gitbook/assets/img_6348.jpg)
+
+
+
+BFS下一步，poll出的点是课程4，课程4所对应的所有后续课程是5，所以课程5的入度减1；
+
+![](.gitbook/assets/img_6349.jpg)
+
+
+
+BFS下一步，poll出的点是课程3，课程3所对应的所有后续课程是5，所以课程5的入度减1；  
+课程5减完1后入度为0，加入到queue；
+
+![](.gitbook/assets/img_6350.jpg)
+
+
+
+若queue为空，表示BFS结束：
+
+![](.gitbook/assets/img_6351.jpg)
+
+最后一步，只需检查`inDegree[]`数组，若全部为0，表示可以修完所有课程，返回true；  
+若出现不为0的数，表示不可能修完所有课程，返回false；
+
+详细代码：
 
 ```text
 class Solution {
@@ -216,6 +279,17 @@ class Solution {
     }
 }
 ```
+
+Time：`O(M + N)`  
+M是build graph所需时间，也就是`prerequisites[][]`的size；  
+N是number of courses，BFS在worst case下需要访问所有的vertex和edge；所以时间就是`O(M + N)`；
+
+Space：`O(M + N)`  
+M是build graph所需要使用的HashMap的空间，也就是`prerequisites[][]`的size；  
+N是number of courses，我们需要用一个`inDegree[]`的数组来记录入度，这个数组的长度是N，所以空间复杂度为`O(M + N)`
+
+时间复杂度相关知识：[https://app.gitbook.com/@bhnigw/s/-1/shi-jian-fu-za-du-time-complexity](https://app.gitbook.com/@bhnigw/s/-1/shi-jian-fu-za-du-time-complexity)  
+空间复杂度相关知识：[https://app.gitbook.com/@bhnigw/s/-1/kong-jian-fu-za-du-space-complexity](https://app.gitbook.com/@bhnigw/s/-1/kong-jian-fu-za-du-space-complexity)
 
 
 
