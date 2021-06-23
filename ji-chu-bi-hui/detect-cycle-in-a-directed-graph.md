@@ -112,8 +112,16 @@ public boolean detectLoop(int[][] graph) {
 	}
 ```
 
-Time:??  
-Space:?
+Time：`O(M + N^2)`  
+M是build graph所需时间，也就是图的size；  
+N是顶点总数，在worst case下，Backtrack的时间为N^2，所以时间复杂度为`O(M + N^2)`
+
+Space：`O(M + N)`  
+M是build graph所需要使用的HashMap的空间；  
+N是顶点总数，我们需要用一个`visited[]`的数组来记录已经访问过的node，这个数组的长度是N，所以空间复杂度为`O(M + N)`
+
+时间复杂度相关知识：[https://app.gitbook.com/@bhnigw/s/-1/shi-jian-fu-za-du-time-complexity](https://app.gitbook.com/@bhnigw/s/-1/shi-jian-fu-za-du-time-complexity)  
+空间复杂度相关知识：[https://app.gitbook.com/@bhnigw/s/-1/kong-jian-fu-za-du-space-complexity](https://app.gitbook.com/@bhnigw/s/-1/kong-jian-fu-za-du-space-complexity)
 
 
 
