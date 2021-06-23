@@ -97,7 +97,7 @@ public boolean detectLoop(int[][] graph) {
 		if (visited[cur] == true) return true; //若已访问过，说明有loop
 		if (map.get(cur) == null) return false; //这为null说明该点为终点
 
-		List<Integer> temp = new ArrayList<>(map.get(cur)); //获取该点所有指向的点
+		List<Integer> temp = map.get(cur); //获取该点所有指向的点
 		visited[cur] = true;
 
 		for (int j = 0; j < temp.size(); j++) {
