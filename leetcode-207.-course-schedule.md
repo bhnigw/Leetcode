@@ -125,8 +125,8 @@ Space：`O(M + N)`
 M是build graph所需要使用的HashMap的空间，也就是`prerequisites[][]`的size；  
 N是number of courses，我们需要用一个`visited[]`的数组来记录已经访问过的node，这个数组的长度是N，所以空间复杂度为`O(M + N)`
 
-时间复杂度相关知识：[https://app.gitbook.com/@bhnigw/s/-1/shi-jian-fu-za-du-time-complexity](https://app.gitbook.com/@bhnigw/s/-1/shi-jian-fu-za-du-time-complexity)  
-空间复杂度相关知识：[https://app.gitbook.com/@bhnigw/s/-1/kong-jian-fu-za-du-space-complexity](https://app.gitbook.com/@bhnigw/s/-1/kong-jian-fu-za-du-space-complexity)
+时间复杂度相关知识：[https://bhnigw.gitbook.io/-1/shi-jian-fu-za-du-time-complexity](https://bhnigw.gitbook.io/-1/shi-jian-fu-za-du-time-complexity)  
+空间复杂度相关知识：[https://bhnigw.gitbook.io/-1/kong-jian-fu-za-du-space-complexity](https://bhnigw.gitbook.io/-1/kong-jian-fu-za-du-space-complexity)
 
 
 
@@ -288,8 +288,8 @@ Space：`O(M + N)`
 M是build graph所需要使用的HashMap的空间，也就是`prerequisites[][]`的size；  
 N是number of courses，我们需要用一个`inDegree[]`的数组来记录入度，这个数组的长度是N，所以空间复杂度为`O(M + N)`
 
-时间复杂度相关知识：[https://app.gitbook.com/@bhnigw/s/-1/shi-jian-fu-za-du-time-complexity](https://app.gitbook.com/@bhnigw/s/-1/shi-jian-fu-za-du-time-complexity)  
-空间复杂度相关知识：[https://app.gitbook.com/@bhnigw/s/-1/kong-jian-fu-za-du-space-complexity](https://app.gitbook.com/@bhnigw/s/-1/kong-jian-fu-za-du-space-complexity)
+时间复杂度相关知识：[https://bhnigw.gitbook.io/-1/shi-jian-fu-za-du-time-complexity](https://bhnigw.gitbook.io/-1/shi-jian-fu-za-du-time-complexity)  
+空间复杂度相关知识：[https://bhnigw.gitbook.io/-1/kong-jian-fu-za-du-space-complexity](https://bhnigw.gitbook.io/-1/kong-jian-fu-za-du-space-complexity)
 
 
 
