@@ -24,7 +24,7 @@ Output: `["eat", "oath"]`
 
 这时就要想到，单词数量越多，就越容易出现common prefix；如果能够预先处理这些单词，那么搜索将会大幅提速。
 
-★这时就要引入[Trie tree](https://app.gitbook.com/@bhnigw/s/-1/trie-prefix-tree)：**1.我们可以把words全部转换到Trie tree上，2.然后再结合Trie tree对这个二位矩阵进行DFS**，就要方便很多：
+★这时就要引入[Trie tree](https://bhnigw.gitbook.io/-1/trie-prefix-tree)：**1.我们可以把words全部转换到Trie tree上，2.然后再结合Trie tree对这个二位矩阵进行DFS**，就要方便很多：
 
 **1.把words全部转换到Trie tree上：**
 
@@ -162,8 +162,12 @@ public List<String> findWords(char[][] board, String[] words) {
 
 #### 复杂度：
 
-Time: `O(M(4*3^(L-1))`；M是board里cell的个数；L是words里最长的单词的长度，也就是Trie tree最高的高度；  
-Space: `O(N)`；N是words中所有字母的数量，也就是Trie tree中所有node的总数
+Time: `O(M * N * 3^L)`；  
+M和N分别是是board的长和宽，M\*N也就是board里格子的总数；  
+3的意思是在DFS的时候每个node可以展开的方向，为什么不是4，因为parent node已经访问过了所以只有三个方向；  
+L是words里最长的单词的长度，也就是Trie tree最高的高度；
+
+Space: `O(W)`；W是words中所有字母的数量，也就是Trie tree中所有node的总数
 
 
 
@@ -178,9 +182,7 @@ Space: `O(N)`；N是words中所有字母的数量，也就是Trie tree中所有n
 
 #### 相关知识：
 
-[Trie](https://app.gitbook.com/@bhnigw/s/-1/trie-prefix-tree)，[DFS](https://app.gitbook.com/@bhnigw/s/-1/dfs-mo-ban)
-
-
+[Trie](https://bhnigw.gitbook.io/-1/trie-prefix-tree)，[DFS](https://bhnigw.gitbook.io/-1/dfs-mo-ban)
 
 
 
