@@ -133,20 +133,34 @@ N是number of courses，我们需要用一个`visited[]`的数组来记录已经
 ### 方法二（重要）：拓扑排序 Topological Sort
 
 有向图中的一些概念：  
-入度\(`In-Degree`\)：；  
-出度\(`Out-Degree`\)：；
+入度\(`In-Degree`\)：对于图中某个node，指向它的所有箭头的总数，为入度in-degree；  
+出度\(`Out-Degree`\)：对于图中某个node，从它出发，指向别的点的所有箭头的总数，为出度out-degree；
 
 例如：  
 需要修的课程数是`numCourses = 6；`  
-先修课的条件是`prerequisite[][] = [[4,0],[4,1],[3,1],[3,2],[5,4],[5,3]]`；
+先修课的条件是`prerequisite[][] = [[4,0],[4,1],[3,1],[3,2],[5,4],[5,3]]`；  
+根据以上条件，作出下图：
+
+![](.gitbook/assets/img_6343.jpg)
+
+**注意**这里和方法一不同，这里用prerequisite指向必修课，表示先修课修完了才能修下一门课，所以用`prerequisite[i][1]`当作HashMap的key，用`prerequisite[i][0]`当作value；
 
 
 
+#### 接下来进行拓扑排序 Topological Sort：
+
+首先，初始化一个`inDegree[]`数组记录每个顶点的入度。这里入度可以理解为：每个顶点有多少入度，就必须上多少门先修课；\(用蓝色表示入度inDegree\)  
+初始化一个`queue`，用来装入度为0的顶点；
+
+![](.gitbook/assets/img_6344.jpg)
 
 
 
+首先，遍历一遍起始的`inDegree[]`数组，把所有入度为0的顶点加进queue：
 
+![](.gitbook/assets/img_6345.jpg)
 
+接下来，
 
 
 
