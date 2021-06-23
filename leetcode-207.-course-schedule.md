@@ -271,6 +271,7 @@ class Solution {
         } 
         
         
+        //check inDegree
         for (int i = 0; i < inDegree.length; i++) {
             if(inDegree[i] != 0) return false;
         }

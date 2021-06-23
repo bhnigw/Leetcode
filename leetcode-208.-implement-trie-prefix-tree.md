@@ -20,7 +20,7 @@ trie.startsWith("app"); // return True
 trie.insert("app");   
 trie.search("app"); // return True`
 
-关于Trie的基础知识：[https://app.gitbook.com/@bhnigw/s/-1/trie-prefix-tree](https://app.gitbook.com/@bhnigw/s/-1/trie-prefix-tree)
+关于Trie的基础知识：[https://bhnigw.gitbook.io/-1/trie-prefix-tree](https://bhnigw.gitbook.io/-1/trie-prefix-tree)
 
 
 
