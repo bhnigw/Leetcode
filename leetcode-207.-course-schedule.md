@@ -261,7 +261,7 @@ class Solution {
         // BFS
         while (!queue.isEmpty()) {
             int course = queue.poll();
-            List<Integer> toTake = map.get(course);
+            List<Integer> toTake = map.get(course); //这里不用new Arraylist否则报错
             for (int i = 0; toTake != null && i < toTake.size(); i++) {
                 inDegree[toTake.get(i)]--;
                 if (inDegree[toTake.get(i)] == 0) {
