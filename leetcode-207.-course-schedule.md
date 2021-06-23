@@ -30,7 +30,7 @@ Input: `numCourses = 2`, `prerequisites = [[1,0],[0,1]]`;
 因为0 -&gt; 1-&gt; 2出现了死循环，所以不可能修完所有课程。  
 **因此我们只需要查这个graph有没有死循环即可**，只要出现loop/cycle，那么就不可能修完所有课程；
 
-所以这道题就演变成了[Detect whether a directed graph has a loop or cycle. ](https://app.gitbook.com/@bhnigw/s/leetcode/~/drafts/-McNcLDMFP7Hl_JYsmTd/ji-chu-bi-hui/detect-cycle-in-a-directed-graph)（点击查看详细图解）
+所以这道题就演变成了[Detect whether a directed graph has a loop or cycle](https://bhnigw.gitbook.io/leetcode/ji-chu-bi-hui/detect-cycle-in-a-directed-graph). （点击查看详细图解）
 
 #### 算法：
 
