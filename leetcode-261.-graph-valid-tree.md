@@ -1,12 +1,12 @@
 ---
-description: 'Union find, Undirected graph'
+description: Union find，Undirected graph，DFS
 ---
 
 # \[Leetcode\]261. Graph Valid Tree
 
-原题地址：[https://leetcode.com/problems/graph-valid-tree/](https://leetcode.com/problems/graph-valid-tree/)关键词：Union find, Undirected graph
+原题地址：[https://leetcode.com/problems/graph-valid-tree/](https://leetcode.com/problems/graph-valid-tree/)关键词：Union find, Undirected graph, DFS
 
-题意：判断树。给一个数字n，表示有0到n-1个节点；给一个`edges[][]`，根据它做出一个无向图；**判断作出的图是不是一个tree**，是就true；
+题意：判断树。给一个数字n，表示有0到n-1个节点；给一个`edges[][]`，根据它做出一个无向图undirected graph；**判断作出的图是不是一个tree**，是就true；
 
 Example 1：
 
@@ -22,9 +22,32 @@ Example 2：
 `Input: n = 5, edges = [[1,2],[2,3],[1,3],[1,4]]   
 Output: false`
 
+
+
+### 注意：
+
+**如果一个图是tree，那么它必须满足以下条件/具有以下特点：**  
+1. 任何两个节点之间都有一条连接的路径；也就是说，所有点都必须fully connected，不能有落单的；  
+2. 图中不能有环cycle/loop；  
+★3. **如果一个tree有n个节点，那么它必然有n - 1条edges**；若少于n - 1则必然有点没有连接上，若多于n - 1则必然有环cycle/loop
+
+
+
 ### 方法一：Graph DFS with adjacency list
 
+基本算法步骤：  
+1. 检查图中是否有环；  
+2. 检查所有节点是否都连接上；
 
+对于第1点，检查有环，参考检测无向图中是否存在环；  
+**算法步骤：**
+
+1. 根据tree特点，如果edges总数不等于n - 1，直接false；
+2. 构建adjacency list；
+3. 新建boolean数组`visited[]`记录已经访问过的节点；
+4. DFS
+
+★最后记得第2点，检查所有节点是否都连接上；
 
 ```text
 class Solution {
@@ -76,6 +99,8 @@ class Solution {
     }
 }
 ```
+
+
 
 方法二：
 
