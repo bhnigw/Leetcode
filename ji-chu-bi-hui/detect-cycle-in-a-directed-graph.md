@@ -64,8 +64,9 @@ description: HashMap，ArrayList，backtrack
 if (map.get(cur) == null) return false; //为null说明当前点没有子节点，为终点`
 
 backtrack完成时，要把visited变回false：  
-`visited[cur] = false;`  
+`visited[cur] = false;`
 
+★注意这里，是与[无向图undirected graph检查环](https://bhnigw.gitbook.io/leetcode/ji-chu-bi-hui/wu-xiang-tu-zhong-jian-cha-huan-detect-cycle-inaundirected-graph)最大的区别，undirected graph里不需要重新把`visited[cur]`变回去，因为用的是DFS不需要backtrack；另外，undirected graph的子节点中包含parent node，所以必须剔除掉parent node才能DFS；而directed graph子节点中不包含parent node，所以不用。
 
 ```text
 public boolean detectLoop(int[][] graph) {
