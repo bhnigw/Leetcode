@@ -96,8 +96,10 @@ class Solution {
 }
 ```
 
-Time complexity: O\(n^2\)；前面有sort，所以计算是O\(nlogn + n^2\)，结果就是O\(n^2\)  
-Space complexity: from O\(logn\) to O\(n\)，取决于用哪种sorting algorithm.
+Time：O\(n^2\)；  
+前面有sort，所以计算是O\(nlogn + n^2\)，结果就是O\(n^2\)
+
+Space：介于O\(logn\)到O\(n\)之间，取决于用哪种sorting algorithm.
 
 
 

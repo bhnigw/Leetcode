@@ -51,7 +51,7 @@ Space: O\(n\)； 取决于set的size，而set的size取决于string的长度，�
 
 
 
-类似题目：187. Repeated DNA Sequences
+类似题目：[187. Repeated DNA Sequences](https://bhnigw.gitbook.io/leetcode/leetcode-187.-repeated-dna-sequences)
 
 
 
