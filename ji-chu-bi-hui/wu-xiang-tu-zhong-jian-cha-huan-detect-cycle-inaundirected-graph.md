@@ -119,3 +119,15 @@ class Solution {
 }
 ```
 
+Time：`O(N + E)`；  
+DFS的时间就是node总数加上edges的总数  
+N是顶点总数，也是构造Adjacency List所花时间；  
+E是edges的总数；
+
+Space：`O(N + E)`  
+N是Adjacency List的长度；  
+E是Adjacency List的子List的总长度；
+
+时间复杂度相关知识：[https://bhnigw.gitbook.io/-1/shi-jian-fu-za-du-time-complexity](https://bhnigw.gitbook.io/-1/shi-jian-fu-za-du-time-complexity)  
+空间复杂度相关知识：[https://bhnigw.gitbook.io/-1/kong-jian-fu-za-du-space-complexity](https://bhnigw.gitbook.io/-1/kong-jian-fu-za-du-space-complexity)
+
