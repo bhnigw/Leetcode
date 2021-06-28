@@ -67,6 +67,55 @@ description: undirected graph，bidirectional
 1. 首先构建Adjacency List；
 2. 从Adjacency List里第一个点开始DFS，把走过的节点都在`visited[]`里标记true；
 3. 在DFS时如果遇到true，说明已经访问过，说明有loop/cycle；
+4. 在DFS的同时，我们要用一个int来记录parent node，比如在DFS进入到节点1的时候，0是1的parent node，但1的Adjacency List是`[0, 2, 3, 4]`包含了0，所以我们在对1的Adjacency List遍历DFS的时候，要加入一个判断条件，只有当current node不等于parent node的时候我们才进行DFS，如果current node等于parent node那就跳过它；起始点0的parent node我们设置为-1，然后DFS下一个节点的时候把当前current node设置为下一个节点的parent node；（参见代码40行）
 
-详细图解
+```text
+class Solution {
+    public boolean detectCycle(int n, int[][] edges) {
+        
+        // initialize adjacency list
+        List<List<Integer>> adjList = new ArrayList<>();
+        for (int i = 0; i < n; i++) { //注意这里是n
+            adjList.add(i, new ArrayList<Integer>());
+        }
+
+        // Add edges
+        for (int i = 0; i < edges.length; i++) {
+            adjList.get(edges[i][0]).add(edges[i][1]);
+            adjList.get(edges[i][1]).add(edges[i][0]);
+        }
+        
+        
+        // dfs
+        boolean[] visited = new boolean[n];
+        if (hasCycle(adjList, visited, 0, -1)) { //起始点0没有parentNode，所以是-1
+            return false;
+        }
+        
+        // make sure all vertices are connected
+        for (boolean i : visited) {
+            if (i == false) {
+                return false; //居然还有一个节点没有被访问过，说明不是图
+            }
+        }
+        
+        return true;
+    }
+    
+    private boolean hasCycle(List<List<Integer>> adjList, boolean[] visited, int curNode, int parentNode) {
+        if (visited[curNode] == true) return true; //如果true说明已访问过，说明出现环
+        
+        visited[curNode] = true;
+        List<Integer> childNode = adjList.get(curNode);
+        
+        for (int i : childNode) {
+            if (parentNode != i && hasCycle(adjList, visited, i, curNode)) {
+                return true;
+            }
+        }
+        
+        return false;
+    }
+}
+```
 
