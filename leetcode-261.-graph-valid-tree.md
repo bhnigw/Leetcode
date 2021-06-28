@@ -100,7 +100,18 @@ class Solution {
 }
 ```
 
+Time：  
+Space：
 
 
-方法二：
+
+### 方法二：Union find
+
+
+
+
+
+
+
+
 
