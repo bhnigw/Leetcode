@@ -69,6 +69,8 @@ description: undirected graph，bidirectional
 3. 在DFS时如果遇到true，说明已经访问过，说明有loop/cycle；
 4. 在DFS的同时，我们要用一个int来记录parent node，比如在DFS进入到节点1的时候，0是1的parent node，但1的Adjacency List是`[0, 2, 3, 4]`包含了0，所以我们在对1的Adjacency List遍历DFS的时候，要加入一个判断条件，只有当current node不等于parent node的时候我们才进行DFS，如果current node等于parent node那就跳过它；起始点0的parent node我们设置为-1，然后DFS下一个节点的时候把当前current node设置为下一个节点的parent node；（参见代码40行）
 
+注意上面第四点，是与有向图directed graph检查环不同的地方，
+
 ```text
 class Solution {
     public boolean detectCycle(int n, int[][] edges) {

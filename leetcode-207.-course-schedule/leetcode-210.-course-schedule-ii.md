@@ -65,9 +65,9 @@ class Solution {
 }
 ```
 
-总结代码结构：  
+**总结代码结构：  
 1. Build graph;  
 2. Build the queue;  
 3. BFS  
-4. Check inDegree
+4. Check inDegree**
 

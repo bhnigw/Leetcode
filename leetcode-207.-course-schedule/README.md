@@ -281,11 +281,11 @@ class Solution {
 }
 ```
 
-总结代码结构：  
+**总结代码结构：  
 1. Build graph;  
 2. Build the queue;  
 3. BFS  
-4. Check inDegree
+4. Check inDegree**
 
 Time：`O(M + N)`  
 M是build graph所需时间，也就是`prerequisites[][]`的size；  
