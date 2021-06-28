@@ -6,7 +6,7 @@ description: DFS
 
 原题地址：[https://leetcode.com/problems/minesweeper/](https://leetcode.com/problems/minesweeper/) 关键词：DFS
 
-题意：扫雷。给一个matrix和一个初始点击的点click\[ \]；点击之前雷是M，空白是E；  
+题意：扫雷。给一个matrix和一个初始点击的点`click[]`；点击之前雷是M，空白是E；  
 点击之后：如果点到雷M，游戏结束，把M变为X然后直接return；  
 如果点到空白E，那么：  
 如果E周围的8个点都没有雷M，则把E变为B；  
@@ -20,8 +20,8 @@ description: DFS
 
 
 
-算法：DFS；算法简单直接，就是从click\[ \]的点开始dfs；  
-1.点击click\[ \]之后，如果点到雷M，把M变为X然后直接return board；  
+算法：DFS；算法简单直接，就是从`click[]`的点开始dfs；  
+1.点击`click[]`之后，如果点到雷M，把M变为X然后直接return board；  
 2.如果点到空白E，那么就开始检测这个空白点周围有没有雷，方法：统计这个空白点周围的8个点雷的个数，把数放进count，如果count为0则说明周围没有雷；  
 3.如果count==0，说明周围都没有雷，则把E变为B，然后对该点周围的8个点进行dfs \(recursive\)；  
 4.如果count !=0，说明周围有雷，那么就把E变为数字count，然后return board；
