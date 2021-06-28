@@ -10,6 +10,8 @@ description: undirected graph，bidirectional
 
 ![](../.gitbook/assets/tree2-graph.jpg)
 
+#### 
+
 #### 第一个问题：怎样记录和表示一个无向图？
 
 要注意的是，无向图中所有的边都是双向的\(**All edges are bidirectional！**\)，所以我们需要一个数据结构能记录每个点，以及和每个点所有相连接的点。
@@ -27,11 +29,30 @@ description: undirected graph，bidirectional
 3 : [1, 2],   
 4 : [1]`
 
+![](../.gitbook/assets/img_6362.jpg)
+
+```text
+       // 1. initialize adjacency list
+       
+        List<List<Integer>> adjList = new ArrayList<>();
+        
+        for (int i = 0; i < n; i++) { //注意这里是n
+            adjList.add(i, new ArrayList<Integer>());
+        }
 
 
+        // 2. Add edges
+        
+        for (int i = 0; i < edges.length; i++) {
+            adjList.get(edges[i][0]).add(edges[i][1]);
+            adjList.get(edges[i][1]).add(edges[i][0]);
+        }
+```
 
+**要记住的东西：**
 
-
+1. 构建Adjacency List的时候，要事先给每个节点new一个ArrayList，不然会报错；
+2. 在Add edges的时候，因为是无向图是**bidirectional**的，所以两头都要加；比如`edge[1,2]`，1与2相连的同时意味着2也与1相连，所以把2加入1的Adjacency List的同时也要把1加入2的Adjacency List；
 
 
 
