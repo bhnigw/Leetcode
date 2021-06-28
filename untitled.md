@@ -8,9 +8,13 @@ description: 'Array, Two pointer'
 
 题意：给定一个包含n + 1个整数的数组nums，其数字都在1到n之间（包括1和n），已知nums里有一个重复的数 ，找出这个**重复的数**。（注意这个数可能会重复多次）
 
-方法一：Brute force，两层for loop。Time complexity: O\(n^2\)；Space complexity: O\(1\)
+### 方法一：Brute force
 
-方法二：Sorting，Time complexity: O\(nlogn\)；Space complexity: O\(1\)
+两层for loop。Time complexity: O\(n^2\)；Space complexity: O\(1\)
+
+### 方法二：Sorting
+
+Time complexity: O\(nlogn\)；Space complexity: O\(1\)
 
 ```text
 class Solution {
@@ -29,7 +33,9 @@ class Solution {
 
 
 
-方法三：HashSet，Time complexity: O\(n\)；Space complexity: O\(n\)
+### 方法三：HashSet
+
+Time complexity: O\(n\)；Space complexity: O\(n\)
 
 ```text
 class Solution {
@@ -49,15 +55,15 @@ class Solution {
 
 
 
-方法四\(**重要**\)：**Two pointer**。
+### 方法四\(**重要**\)：**Two pointer**。
 
-对于一个长度为n，包含n个整数，数字都在1到n之间，且无duplicate的乱序数组nums，它具有一个特点，就是如果用当前的nums\[i\]指向nums\[nums\[i\]\]，那最后所有的数都会被指到。
+对于一个长度为n，包含n个整数，数字都在1到n之间，且无duplicate的乱序数组nums，它具有一个特点，就是如果用当前的`nums[i]`指向`nums[nums[i]]`，那最后所有的数都会被指到。
 
 根据这一特性，根据题目的描述，对于一个包含n + 1个整数且数字都在1到n之间的数组nums，一定至少有一个数字a出现了一次重复，那么重复的这个位置，一定会有两个数字同时指向a，这样就形成了一个带环的图，而环的入口/起始点，就是那个重复的数字。
 
 所以这道题就**演变成了一个找环的题**，算法和题目142. Linked List Cycle几乎一样。
 
-定义一个slow pointer，一个fast pointer，slow每次移动到nums\[i\]，fast每次移动到nums\[nums\[i\]\]。那么如果有cycle的话，slow和fast一定会在circle里某处相遇，且相遇时fast pointer所走过的路程一定是slow pointer的两倍。此时把slow放回起点nums\[0\]，然后和fast再同时向前走\(此时fast一次移动一步\)，再次相遇时就是cycle开始的地方，返回这个数即可。
+定义一个slow pointer，一个fast pointer，slow每次移动到`nums[i]`，fast每次移动到`nums[nums[i]]`。那么如果有cycle的话，slow和fast一定会在circle里某处相遇，且相遇时fast pointer所走过的路程一定是slow pointer的两倍。此时把slow放回起点`nums[0]`，然后和fast再同时向前走\(此时fast一次移动一步\)，再次相遇时就是cycle开始的地方，返回这个数即可。
 
 ![](.gitbook/assets/img_6044%20%281%29.jpg)
 
@@ -66,7 +72,7 @@ class Solution {
 ```text
 class Solution {
     public int findDuplicate(int[] nums) {
-        //1.build图
+        // 1.build图
         int slow = nums[0];
         int fast = nums[nums[0]];
         
@@ -75,7 +81,7 @@ class Solution {
             fast = nums[nums[fast]];
         }
         
-        //2.找circle的起始点
+        // 2.找circle的起始点
         slow = 0;
         while (slow != fast) {
             slow = nums[slow];
