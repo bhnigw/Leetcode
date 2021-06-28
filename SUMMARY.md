@@ -30,5 +30,6 @@
 * [Valid Anagram](ji-chu-bi-hui/valid-anagram.md)
 * [怎样reverse一个String](ji-chu-bi-hui/zen-yang-reverse-yi-ge-string.md)
 * [有向图中检查环 Detect cycle in a directed graph](ji-chu-bi-hui/detect-cycle-in-a-directed-graph.md)
+* [无向图中检查环 Detect cycle in a undirected graph](ji-chu-bi-hui/wu-xiang-tu-zhong-jian-cha-huan-detect-cycle-inaundirected-graph.md)
 * [Slide Window](ji-chu-bi-hui/slide-window.md)
 
