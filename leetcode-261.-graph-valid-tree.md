@@ -26,28 +26,33 @@ Output: false`
 
 ### 注意：
 
-**如果一个图是tree，那么它必须满足以下条件/具有以下特点：**  
-1. 任何两个节点之间都有一条连接的路径；也就是说，所有点都必须fully connected，不能有落单的；  
-2. 图中不能有环cycle/loop；  
-★3. **如果一个tree有n个节点，那么它必然有n - 1条edges**；若少于n - 1则必然有点没有连接上，若多于n - 1则必然有环cycle/loop
+**要使得一个graph能称作是一个tree，那么它必须满足以下条件/具有以下特点：**
+
+1.  任何两个节点之间都有一条连接的路径；也就是说，所有点都必须fully connected，不能有落单的；
+2. 图中不能有环cycle/loop；
+3. ★**如果一个tree有n个节点，那么它必然有n - 1条edges**；若少于`n - 1`则必然有点没有连接上，若多于`n - 1`则必然有环cycle/loop
+
+所以，如果一个graph不满足以上三个条件中任意一个，就不能称作是一个tree，就要return false；
+
+有了思路，接下来看具体的方法：
 
 
 
 ### 方法一：Graph DFS with adjacency list
 
 基本算法步骤：  
-1. 检查图中是否有环；  
-2. 检查所有节点是否都连接上；
+1. 检查图中是否有环；详细步骤参考[检测无向图中是否存在环](https://bhnigw.gitbook.io/leetcode/ji-chu-bi-hui/wu-xiang-tu-zhong-jian-cha-huan-detect-cycle-inaundirected-graph)；  
+2. ★检查所有节点是否都连接上；
 
-对于第1点，检查有环，参考[检测无向图中是否存在环](https://bhnigw.gitbook.io/leetcode/ji-chu-bi-hui/wu-xiang-tu-zhong-jian-cha-huan-detect-cycle-inaundirected-graph)；  
-**算法步骤：**
+**根据tree特点，如果edges总数不等于n - 1，直接false；（在代码开头判断）**
 
-1. 根据tree特点，如果edges总数不等于n - 1，直接false；
-2. 构建adjacency list；
-3. 新建boolean数组`visited[]`记录已经访问过的节点；
-4. DFS
+**DFS步骤：**
 
-★最后记得第2点，检查所有节点是否都连接上；
+1. 首先构建Adjacency List；
+2. 新建boolean数组`visited[n]`记录已经访问过的节点；
+3. 从Adjacency List里第一个点开始DFS，把走过的节点都在`visited[]`里标记true；
+4. 在DFS时如果遇到true，说明已经访问过，说明有loop/cycle；
+5. 在DFS的同时，我们要用一个int来记录parent node，比如在DFS进入到节点1的时候，0是1的parent node，但1的Adjacency List是`[0, 2, 3, 4]`包含了0，所以我们在对1的Adjacency List遍历DFS的时候，要加入一个判断条件，只有当current node不等于parent node的时候我们才进行DFS，如果current node等于parent node那就跳过它；起始点0的parent node我们设置为-1，然后DFS下一个节点的时候把当前current node设置为下一个节点的parent node；（参见代码41行）
 
 ```text
 class Solution {
@@ -100,8 +105,25 @@ class Solution {
 }
 ```
 
-Time：  
-Space：
+代码结构总结：  
+1. 构建Adjacency List；  
+2. Add edges；  
+3. DFS；  
+4. 检查所有点是否相连（是否构成图）
+
+Time：`O(N + E)`；  
+DFS的时间就是node总数加上edges的总数  
+N是顶点总数，也是构造Adjacency List所花时间；  
+E是edges的总数；
+
+Space：`O(N + E)`  
+N是Adjacency List的长度；  
+E是Adjacency List的子List的总长度；
+
+**要记住的东西：**
+
+1. 构建Adjacency List的时候，要事先给每个节点new一个ArrayList，不然会报错；
+2. 子节点中包含parent node，所以必须剔除掉parent node才能DFS；
 
 
 
