@@ -28,7 +28,7 @@ Output: false`
 
 **要使得一个graph能称作是一个tree，那么它必须满足以下条件/具有以下特点：**
 
-1.  任何两个节点之间都有一条连接的路径；也就是说，所有点都必须fully connected，不能有落单的；
+1. 任何两个节点之间都有一条连接的路径；也就是说，所有点都必须fully connected，不能有落单的；
 2. 图中不能有环cycle/loop；
 3. ★**如果一个tree有n个节点，那么它必然有n - 1条edges**；若少于`n - 1`则必然有点没有连接上，若多于`n - 1`则必然有环cycle/loop
 
@@ -38,7 +38,7 @@ Output: false`
 
 
 
-### 方法一：Graph DFS with adjacency list
+## 方法一：构建Adjacency list，用DFS检查环cycle/loop
 
 基本算法步骤：  
 1. 检查图中是否有环；\(详细步骤参考[检测无向图中是否存在环](https://bhnigw.gitbook.io/leetcode/ji-chu-bi-hui/wu-xiang-tu-zhong-jian-cha-huan-detect-cycle-inaundirected-graph)\)  
@@ -109,7 +109,7 @@ class Solution {
 1. 构建Adjacency List；  
 2. Add edges；  
 3. DFS；  
-4. 检查所有点是否相连（是否构成图）
+4. 检查所有点是否都被访问过了（是否全部connected）
 
 Time：`O(N + E)`；  
 DFS的时间就是node总数加上edges的总数  
@@ -127,23 +127,80 @@ E是Adjacency List的子List的总长度；
 
 
 
-### 方法二（重要）：Union find
+## 方法二：构建Adjacency list，用BFS检查graph是否fully connected
 
-方法一复杂度还是略高，根据tree的特点我们可以思考一下更简便的方法；
+方法一复杂度还是略高，我们可以结合tree的特点来思考一下更简便的方法；
 
-要使graph成为有效树valid tree，它必须正好有`n - 1`条边edge。  
-如果edge比`n - 1`少，图就不可能完全连通；  
-如果edge比`n - 1`多，则必然有cylcle/loop；  
-⇒ 所以，**如果图是完全连通的，且正好包含`n - 1`条边，那么它必然是一棵树**！
-
-
-
-按照这个逻辑，我们算法的思路就出来了:
-
-1. 检查graph是否有 `n - 1` 条边edge，如果没有则返回`false`；
-2. 检查graph是否fully connected，如果是，返回true，如果不是返回false；
+要使图成为有效树valid tree，则它必须正好有`n - 1`条边edge；  
+如果edge比`n - 1`少，那么图就不可能完全连通；  
+如果edge比`n - 1`多，那么图就必然有cylcle/loop；  
+⇒ 所以，**如果图是完全连通的，且正好包含`n - 1`条边，** **那么它必然是一棵树**！  
+⇒ 所以，**如果图是完全连通的，且正好包含`n - 1`条边，** 那么它不可能拥有环，所以完全不用检查环cycle/loop！！  
+⇒ 那么我们只需要检查在edges总数为`n - 1`的情况下，所有节点是否全部相连即可；
 
 
+
+按照这个逻辑，我们算法的思路就出来了：
+
+1. **检查graph是否有 `n - 1` 条边edge，如果没有则返回`false`；**
+2. **检查graph是否fully connected，如果是，返回true，否则false；**
+
+对于第一点检查edge在代码开头一句话就可以解决；  
+对于第二点，我们可以用BFS，新建一个queue检查graph所有的点是否fully connected即可；
+
+方法：  
+用一个`HashSet<> seen`来记录已经访问过的节点，也就是queue里poll一个，seen里加一个；最后检查seen的size是否等于n，等于n表明所有的node访问过了，表明graph是fully connected，返回true；
+
+```text
+public boolean validTree(int n, int[][] edges) {
+    
+    if (edges.length != n - 1) return false;
+    
+    // initialize adjacency list
+    List<List<Integer>> adjList = new ArrayList<>();
+    for (int i = 0; i < n; i++) { //注意这里是n
+        adjList.add(i, new ArrayList<Integer>());
+    }
+
+    // Add edges
+    for (int i = 0; i < edges.length; i++) {
+        adjList.get(edges[i][0]).add(edges[i][1]);
+        adjList.get(edges[i][1]).add(edges[i][0]);
+    }
+    
+    Queue<Integer> queue = new LinkedList<>();
+    Set<Integer> seen = new HashSet<>();
+    queue.offer(0);
+    seen.add(0);
+    
+    while (!queue.isEmpty()) {
+        int node = queue.poll();
+        for (int childNode : adjList.get(node)) {
+            if (seen.contains(childNode)) continue;
+            seen.add(childNode);
+            queue.offer(childNode);
+        }
+    }
+    
+    return seen.size() == n;   
+}
+```
+
+代码结构总结：  
+1. 构建Adjacency List；  
+2. Add edges；  
+3. 构建queue，构建HashSet；  
+4. BFS检查所有点是否相连
+
+Time：`O(N)`  
+我们只是遍历了一遍所有node加进seen里，所以是`O(N)`；
+
+Space：`O(N)`  
+我们只是遍历了一遍所有node加进seen里，所以是`O(N)`；
+
+
+
+### 方法三（重要）：Union find
 
 
 
