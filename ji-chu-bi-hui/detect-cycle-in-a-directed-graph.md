@@ -12,7 +12,8 @@ description: HashMap，ArrayList，backtrack
 
 #### 第一个问题：怎样记录和表示一个有向图？
 
-我们可以用一个HashMap和ArrayList来记录：`HashMap<Integer, List<Integer>()> map = new HashMap<>();`
+我们可以用一个HashMap和ArrayList来记录：  
+★`HashMap<Integer, List<Integer>()> map = new HashMap<>();`
 
 其中，map的key记录当前节点；  
             map的value记录**由当前点出发，指向的别的点的值；**
@@ -24,9 +25,7 @@ description: HashMap，ArrayList，backtrack
 3 = [4],   
 4 = [0, 2]}`
 
-![](../.gitbook/assets/img_6336.jpg)
-
-
+![](../.gitbook/assets/img_6361-copy.jpg)
 
 #### 第二个问题，怎样Detect loop/cycle？
 

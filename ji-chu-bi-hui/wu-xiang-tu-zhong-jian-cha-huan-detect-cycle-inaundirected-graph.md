@@ -15,10 +15,10 @@ description: undirected graph，bidirectional
 要注意的是，无向图中所有的边都是双向的\(**All edges are bidirectional！**\)，所以我们需要一个数据结构能记录每个点，以及和每个点所有相连接的点。
 
 我们可以用一个**Adjacency List**来记录（也就是一个二维的ArrayList）：  
-`List<List<Integer>> adjList = new ArrayList<>();`
+★`List<List<Integer>> adjList = new ArrayList<>();`
 
-其中，adjList的index为图的n个节点；  
-            adjList.get\(index\)的记录**与当前节点所有；**
+其中，Adjacency List的指数index为图的n个节点；  
+            Adjacency List的子List记录**与当前节点所有所有相连接的点；**
 
 那么上面的无向图就可以表示为：  
 `0 : [1],   
@@ -26,4 +26,12 @@ description: undirected graph，bidirectional
 2 : [1, 3],   
 3 : [1, 2],   
 4 : [1]`
+
+
+
+
+
+
+
+
 
