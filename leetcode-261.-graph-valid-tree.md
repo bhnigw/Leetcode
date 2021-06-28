@@ -39,7 +39,7 @@ Output: false`
 1. 检查图中是否有环；  
 2. 检查所有节点是否都连接上；
 
-对于第1点，检查有环，参考检测无向图中是否存在环；  
+对于第1点，检查有环，参考[检测无向图中是否存在环](https://bhnigw.gitbook.io/leetcode/ji-chu-bi-hui/wu-xiang-tu-zhong-jian-cha-huan-detect-cycle-inaundirected-graph)；  
 **算法步骤：**
 
 1. 根据tree特点，如果edges总数不等于n - 1，直接false；
