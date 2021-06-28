@@ -32,7 +32,7 @@ Output: false`
 2. 图中不能有环cycle/loop；
 3. ★**如果一个tree有n个节点，那么它必然有n - 1条edges**；若少于`n - 1`则必然有点没有连接上，若多于`n - 1`则必然有环cycle/loop
 
-⇒所以，只要一个graph不满足以上三个条件中任意一个，就不能称作是一个tree，就要return false；
+⇒ 所以，只要一个graph不满足以上三个条件中任意一个，就不能称作是一个tree，就要return false；
 
 有了思路，接下来看具体的方法：
 
@@ -127,11 +127,21 @@ E是Adjacency List的子List的总长度；
 
 
 
-### 方法二：Union find
+### 方法二（重要）：Union find
+
+方法一复杂度还是略高，根据tree的特点我们可以思考一下更简便的方法；
+
+要使graph成为有效树valid tree，它必须正好有`n - 1`条边edge。  
+如果edge比`n - 1`少，图就不可能完全连通；  
+如果edge比`n - 1`多，则必然有cylcle/loop；  
+⇒ 所以，**如果图是完全连通的，且正好包含`n - 1`条边，那么它必然是一棵树**！
 
 
 
+按照这个逻辑，我们算法的思路就出来了:
 
+1. 检查graph是否有 `n - 1` 条边edge，如果没有则返回`false`；
+2. 检查graph是否fully connected，如果是，返回true，如果不是返回false；
 
 
 
