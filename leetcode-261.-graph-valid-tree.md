@@ -1,10 +1,10 @@
 ---
-description: Union find，Undirected graph，DFS
+description: Union find，Undirected graph，DFS，BFS
 ---
 
 # \[Leetcode\]★261. Graph Valid Tree
 
-原题地址：[https://leetcode.com/problems/graph-valid-tree/](https://leetcode.com/problems/graph-valid-tree/)关键词：Union find, Undirected graph, DFS
+原题地址：[https://leetcode.com/problems/graph-valid-tree/](https://leetcode.com/problems/graph-valid-tree/)关键词：Union find，Undirected graph，DFS，BFS
 
 题意：判断树。给一个数字n，表示有0到n-1个节点；给一个`edges[][]`，根据它做出一个无向图undirected graph；**判断作出的图是不是一个tree**，是就true；
 
@@ -30,7 +30,7 @@ Output: false`
 
 1. 任何两个节点之间都有一条连接的路径；也就是说，所有点都必须fully connected，不能有落单的；
 2. 图中不能有环cycle/loop；
-3. ★**如果一个tree有n个节点，那么它必然有n - 1条edges**；若少于`n - 1`则必然有点没有连接上，若多于`n - 1`则必然有环cycle/loop
+3. ★**如果一个tree有n个节点，那么它必然有n - 1条edges**； 若少于`n - 1`则必然有点没有连接上， 若多于`n - 1`则必然有环cycle/loop；
 
 ⇒ 所以，只要一个graph不满足以上三个条件中任意一个，就不能称作是一个tree，就要return false；
 
@@ -203,7 +203,7 @@ Space：`O(N)`
 
 
 
-### 方法三（重要）：Union find
+## 方法三（重要）：Union find
 
 与方法二的思路基本一样，区别在于后面判断节点是否fully connected的方法；
 
@@ -221,7 +221,7 @@ Space：`O(N)`
 2. 检查graph是否是否含有cycle/loop，如果有环，返回false；没有环，返回true；
 
 对于第一点检查edge在代码开头一句话就可以解决；  
-对于第二点，我们使用Union find；
+对于第二点，我们使用Union find；\([点击查看Union find详细讲解](https://bhnigw.gitbook.io/-1/shu-ju-jie-gou-union-find)\)
 
 方法：  
 如果在union的途中find到两个node有相同的root，则说明有cycle/loop；
@@ -230,9 +230,9 @@ Space：`O(N)`
 class UnionFind {
     int[] parent;
     
-    public UnionFind(int n) {
+    public UnionFind(int n) { // Make set
         parent = new int[n];
-        for (int i = 0; i < n; i++) { // Make set
+        for (int i = 0; i < n; i++) { 
             parent[i]  = i;
         }
     }
@@ -275,7 +275,7 @@ class Solution {
 ```
 
 Time：`O(N)`  
-；
+`union()`和`find()`的过程都是O\(n\)；
 
 Space：`O(N)`  
 Union Find需要`O(N)`的空间来存储array；
