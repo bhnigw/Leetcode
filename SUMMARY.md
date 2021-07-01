@@ -15,7 +15,7 @@
 * [\[Leetcode\]207. Course Schedule](leetcode-207.-course-schedule/README.md)
   * [\[Leetcode\]210. Course Schedule II](leetcode-207.-course-schedule/leetcode-210.-course-schedule-ii.md)
 * [\[Leetcode\]208. Implement Trie \(Prefix Tree\)](leetcode-208.-implement-trie-prefix-tree.md)
-* [\[Leetcode\]261. Graph Valid Tree](leetcode-261.-graph-valid-tree.md)
+* [\[Leetcode\]★261. Graph Valid Tree](leetcode-261.-graph-valid-tree.md)
 * [\[Leetcode\]268. Missing Number](leetcode-268.-missing-number.md)
 * [\[Leetcode\]283. Move Zeroes](leetcode-283.-move-zeroes.md)
 * [\[Leetcode\]287. Find the Duplicate Number](leetcode-287.-find-the-duplicate-number.md)

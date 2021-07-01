@@ -2,7 +2,7 @@
 description: Union find，Undirected graph，DFS
 ---
 
-# \[Leetcode\]261. Graph Valid Tree
+# \[Leetcode\]★261. Graph Valid Tree
 
 原题地址：[https://leetcode.com/problems/graph-valid-tree/](https://leetcode.com/problems/graph-valid-tree/)关键词：Union find, Undirected graph, DFS
 
@@ -127,29 +127,32 @@ E是Adjacency List的子List的总长度；
 
 
 
-## 方法二：构建Adjacency list，用BFS检查graph是否fully connected
+## 方法二：构建Adjacency list，用BFS检查graph是否fully connected（**完全不用检查环cycle/loop**）
 
 方法一复杂度还是略高，我们可以结合tree的特点来思考一下更简便的方法；
 
-要使图成为有效树valid tree，则它必须正好有`n - 1`条边edge；  
-如果edge比`n - 1`少，那么图就不可能完全连通；  
-如果edge比`n - 1`多，那么图就必然有cylcle/loop；  
-⇒ 所以，**如果图是完全连通的，且正好包含`n - 1`条边，** **那么它必然是一棵树**！  
-⇒ 所以，**如果图是完全连通的，且正好包含`n - 1`条边，** 那么它不可能拥有环，所以完全不用检查环cycle/loop！！  
-⇒ 那么我们只需要检查在edges总数为`n - 1`的情况下，所有节点是否全部相连即可；
+要使图成为有效树valid tree，则它必须正好有`n - 1`条边edge；（这句话当定律来记住）  
+如果edge比`n - 1`少，那么图里节点不可能全部相连；  
+如果edge比`n - 1`多，那么图就必然有cylcle/loop；
+
+⇒ 所以：
+
+★**如果图正好有`n - 1`条边，且所有节点全部相连  ⇒  那么不可能拥有环，一定是tree！**
 
 
 
-按照这个逻辑，我们算法的思路就出来了：
+算法：
 
-1. **检查graph是否有 `n - 1` 条边edge，如果没有则返回`false`；**
-2. **检查graph是否fully connected，如果是，返回true，否则false；**
+**我们只需在edges总数为`n - 1`的情况下，检查所有节点是否全部相连即可；（不用查环）**
+
+1. 检查graph是否有 `n - 1` 条边edge，如果没有则返回`false`；
+2. 检查graph是否fully connected，如果是，返回true，否则false；
 
 对于第一点检查edge在代码开头一句话就可以解决；  
 对于第二点，我们可以用BFS，新建一个queue检查graph所有的点是否fully connected即可；
 
 方法：  
-用一个`HashSet<> seen`来记录已经访问过的节点，也就是queue里poll一个，seen里加一个；最后检查seen的size是否等于n，等于n表明所有的node访问过了，表明graph是fully connected，返回true；
+用一个`HashSet<> seen`来记录已经访问过的节点，也就是queue里poll一个，seen里加一个；最后检查seen的size是否等于n，等于n表明所有的node都访问过了，表明graph是fully connected，返回true；
 
 ```text
 public boolean validTree(int n, int[][] edges) {
@@ -201,6 +204,81 @@ Space：`O(N)`
 
 
 ### 方法三（重要）：Union find
+
+与方法二的思路基本一样，区别在于后面判断节点是否fully connected的方法；
+
+方法二的思路是：  
+**如果图正好有`n - 1`条边，且所有节点全部相连  ⇒  那么不可能拥有环，一定是tree！**
+
+方法三的思路是：  
+**★如果图正好有`n - 1`条边，且没有环  ⇒  那么所有节点必然全部相连，一定是tree！**
+
+
+
+算法：
+
+1. 检查graph是否有 `n - 1` 条边edge，如果没有则返回`false`；
+2. 检查graph是否是否含有cycle/loop，如果有环，返回false；没有环，返回true；
+
+对于第一点检查edge在代码开头一句话就可以解决；  
+对于第二点，我们使用Union find；
+
+方法：  
+如果在union的途中find到两个node有相同的root，则说明有cycle/loop；
+
+```text
+class UnionFind {
+    int[] parent;
+    
+    public UnionFind(int n) {
+        parent = new int[n];
+        for (int i = 0; i < n; i++) { // Make set
+            parent[i]  = i;
+        }
+    }
+    
+    public int find(int node) {
+        while (node != parent[node]) { // Find root of each node
+            node = parent[node];
+        }
+        
+        return node;
+    }
+    
+    public boolean union(int nodeA, int nodeB) {
+        int rootA = find(nodeA);
+        int rootB = find(nodeB);
+        
+        if (rootA == rootB) return false; // Cycle / loop detected
+        
+        parent[rootA] = rootB; //Union two node into one set
+        
+        return true;
+    }
+}
+
+class Solution {
+    public boolean validTree(int n, int[][] edges) {
+        if (edges.length != n - 1) return false; // 排除node没有完全相连接的情况
+        
+        UnionFind uf = new UnionFind(n);
+        
+        for (int i = 0; i < edges.length; i++) {
+            if (!uf.union(edges[i][0], edges[i][1])) { // Detect cycle / loop 
+                return false; 
+            }
+        }
+        
+        return true;
+    }
+}
+```
+
+Time：`O(N)`  
+；
+
+Space：`O(N)`  
+Union Find需要`O(N)`的空间来存储array；
 
 
 
