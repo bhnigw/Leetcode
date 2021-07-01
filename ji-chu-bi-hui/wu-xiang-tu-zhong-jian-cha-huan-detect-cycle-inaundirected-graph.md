@@ -10,7 +10,11 @@ description: undirected graph，bidirectional
 
 ![](../.gitbook/assets/tree2-graph.jpg)
 
-#### 
+
+
+有两种方法，第一种方法是DFS，第二种方法是Union find；我们先研究第一种方法。
+
+## 方法一：构建Adjacency list，用DFS检查环cycle/loop
 
 ### 第一个问题：怎样记录和表示一个无向图？
 
@@ -135,6 +139,71 @@ E是edges的总数；
 Space：`O(N + E)`  
 N是Adjacency List的长度；  
 E是Adjacency List的子List的总长度；
+
+
+
+## 方法二：Union find
+
+\([点击查看Union find详细讲解](https://bhnigw.gitbook.io/-1/shu-ju-jie-gou-union-find)\)
+
+算法：
+
+如果在union的途中find到两个node有相同的root，则说明有cycle/loop；
+
+```text
+class UnionFind {
+    int[] parent;
+    
+    public UnionFind(int n) { // Make set
+        parent = new int[n];
+        for (int i = 0; i < n; i++) { 
+            parent[i]  = i;
+        }
+    }
+    
+    public int find(int node) {
+        while (node != parent[node]) { // Find root of each node
+            node = parent[node];
+        }
+        
+        return node;
+    }
+    
+    public boolean union(int nodeA, int nodeB) {
+        int rootA = find(nodeA);
+        int rootB = find(nodeB);
+        
+        if (rootA == rootB) return false; // 检测到Cycle
+        
+        parent[rootA] = rootB; //Union two node into one set
+        
+        return true;
+    }
+}
+
+class Solution {
+    public boolean validTree(int n, int[][] edges) {
+        
+        UnionFind uf = new UnionFind(n);
+        
+        for (int i = 0; i < edges.length; i++) {
+            if (!uf.union(edges[i][0], edges[i][1])) { // 检测Cycle 
+                return false; 
+            }
+        }
+        
+        return true;
+    }
+}
+```
+
+Time：`O(N)`  
+`union()`和`find()`的过程都是O\(n\)；
+
+Space：`O(N)`  
+Union Find需要`O(N)`的空间来存储array；
+
+
 
 时间复杂度相关知识：[https://bhnigw.gitbook.io/-1/shi-jian-fu-za-du-time-complexity](https://bhnigw.gitbook.io/-1/shi-jian-fu-za-du-time-complexity)  
 空间复杂度相关知识：[https://bhnigw.gitbook.io/-1/kong-jian-fu-za-du-space-complexity](https://bhnigw.gitbook.io/-1/kong-jian-fu-za-du-space-complexity)
