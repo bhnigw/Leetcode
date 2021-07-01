@@ -249,9 +249,9 @@ class UnionFind {
         int rootA = find(nodeA);
         int rootB = find(nodeB);
         
-        if (rootA == rootB) return false; // Cycle / loop detected
+        if (rootA == rootB) return false; // 检测到Cycle
         
-        parent[rootA] = rootB; //Union two node into one set
+        parent[rootA] = rootB; //融合变为一个set
         
         return true;
     }
@@ -264,7 +264,7 @@ class Solution {
         UnionFind uf = new UnionFind(n);
         
         for (int i = 0; i < edges.length; i++) {
-            if (!uf.union(edges[i][0], edges[i][1])) { // Detect cycle / loop 
+            if (!uf.union(edges[i][0], edges[i][1])) { // 检测Cycle 
                 return false; 
             }
         }

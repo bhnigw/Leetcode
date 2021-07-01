@@ -175,7 +175,7 @@ class UnionFind {
         
         if (rootA == rootB) return false; // 检测到Cycle
         
-        parent[rootA] = rootB; //Union two node into one set
+        parent[rootA] = rootB; //融合变为一个set
         
         return true;
     }
