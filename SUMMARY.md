@@ -6,6 +6,7 @@
 * [\[Leetcode\]12. Integer to Roman](leetcode-12.-integer-to-roman.md)
 * [\[Leetcode\]13. Roman to Integer](leetcode-13.-roman-to-integer.md)
 * [\[Leetcode\]27. Remove Element\(同类题总结\)](leetcode27.-remove-element-tong-lei-ti-zong-jie/README.md)
+  * [\[Leetcode\]26. Remove Duplicates from Sorted Array](leetcode27.-remove-element-tong-lei-ti-zong-jie/leetcode-26.-remove-duplicates-from-sorted-array.md)
   * [\[Leetcode\]283. Move Zeroes](leetcode27.-remove-element-tong-lei-ti-zong-jie/leetcode-283.-move-zeroes.md)
 * [\[Leetcode\]78. Subsets](leetcode-78.-subsets.md)
 * [\[Leetcode\]79. Word Search](leetcode-79.-word-search.md)
