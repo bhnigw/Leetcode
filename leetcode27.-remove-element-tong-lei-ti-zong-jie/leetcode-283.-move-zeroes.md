@@ -1,6 +1,10 @@
+---
+description: Two pointer
+---
+
 # \[Leetcode\]283. Move Zeroes
 
-原题地址：[https://leetcode.com/problems/move-zeroes/](https://leetcode.com/problems/move-zeroes/)
+原题地址：[https://leetcode.com/problems/move-zeroes/](https://leetcode.com/problems/move-zeroes/) 关键词：Two pointer
 
 题意：一个整数array，把所有的0移到右边，其余数左移且顺序不变  
 `Input: nums = [0,1,0,3,12]   
