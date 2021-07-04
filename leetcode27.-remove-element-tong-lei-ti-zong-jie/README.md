@@ -6,7 +6,8 @@ description: Two pointer
 
 原题地址：[https://leetcode.com/problems/remove-element/](https://leetcode.com/problems/remove-element/) 关键词：Two pointer
 
-题意：在一个unsorted数组`nums[]`中，给一个整数val，去除`nums[]`中所有等于val的数字，并把其他所有不等于val的数字依次放到数组最左边，右边不用管；  
+题意：去除数组中等于val的数；  
+在一个unsorted数组`nums[]`中，给一个整数val，去除`nums[]`中所有等于val的数字，并把其他所有不等于val的数字依次放到数组最左边，右边不用管；  
 返回：去除val后数组左边的长度length；  
 （要求做到Space Optimal，不能另外创建新数组，只能在原数组上操作）
 

@@ -6,8 +6,9 @@ description: Two pointer
 
 原题地址：[https://leetcode.com/problems/remove-duplicates-from-sorted-array/](https://leetcode.com/problems/remove-duplicates-from-sorted-array/) 关键词：Two pointer
 
-题意：已经sorted数组`nums[]`中，去除`nums[]`中所有重复的数字（让重复的数字只出现一次）；并把其他所有不等于val的数字依次放到数组最左边，右边不用管；  
-返回：去除val后数组左边的长度length；  
+题意：去除数组中重复数；  
+已经sorted数组`nums[]`中，去除`nums[]`中所有重复的数字（让重复的数字只出现一次）；  
+返回：去除重复后数组左边的长度length；  
 （要求做到Space Optimal，不能另外创建新数组，只能在原数组上操作）
 
 例：  

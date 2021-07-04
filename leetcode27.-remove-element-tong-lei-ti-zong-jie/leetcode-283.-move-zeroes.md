@@ -8,11 +8,12 @@ description: Two pointer
 
 题意：一个整数array，把所有的0移到右边，其余数左移且顺序不变  
 `Input: nums = [0,1,0,3,12]   
-Output: [1,3,12,0,0]`
+Output: [1,3,12,0,0]`  
+（要求做到Space Optimal，不能另外创建新数组，只能在原数组上操作）
 
 
 
-算法：要做到Space Optimal，就不能另外创建数组，就在原数组上操作；
+算法：
 
 1. 先设置一个reserve 为0作为起始index；
 2. 第一次遍历数组，遇到不是0的，就依次放在数组最左边 `nums[reserve] = 非零数;`然后reserve++；

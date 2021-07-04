@@ -6,7 +6,13 @@ description: Two pointer
 
 原题地址：[https://leetcode.com/problems/remove-duplicates-from-sorted-array-ii/](https://leetcode.com/problems/remove-duplicates-from-sorted-array-ii/) 关键词：Two pointer
 
+题意：去除数组中重复超过两次的数；  
+已经sorted数组`nums[]`中，如果一个数重复出现超过两次，就剔除掉多余的，只让它出现两次；  
+返回：去除重复后数组左边的长度length；  
+（要求做到Space Optimal，不能另外创建新数组，只能在原数组上操作）
 
+Input: `nums = [0, 0, 1, 1, 1, 1, 2, 3, 3]`   
+Output: 7, `nums = [0, 0, 1, 1, 2, 3, 3, _, _]`
 
 
 
