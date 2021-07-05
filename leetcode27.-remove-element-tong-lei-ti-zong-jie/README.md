@@ -18,7 +18,7 @@ Output: `5, nums = [0, 1, 3, 0, 4, _, _, _]`
 
 
 
-### 此类题统一思路：
+### 此类题统一思路模板：
 
 1. 用指针reserve去reserve第一个位置，同时要确定：满足什么样的条件才能占据这个位置；
 2. 用第二个指针`i`去遍历给定数组nums的每一个元素；
@@ -26,9 +26,16 @@ Output: `5, nums = [0, 1, 3, 0, 4, _, _, _]`
 
 
 
-本题算法：
+### 将模板代入本题算法：
+
+reserve的第一个位置是index 0；  
+需要满足的条件：值不等于2；
+
+![](../.gitbook/assets/img_6373.jpg)
 
 
+
+![](../.gitbook/assets/img_6374.jpg)
 
 ```text
 class Solution {
@@ -48,6 +55,11 @@ class Solution {
     }
 }
 ```
+
+代码结构：  
+1. 初始化reserve的值；  
+2. for循环  
+3. 判断if，如果满足就`nums[reserve] = nums[i]`然后reserve++；
 
 Time: O\(n\);  
 Space: O\(1\);
