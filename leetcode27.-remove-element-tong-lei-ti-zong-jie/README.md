@@ -18,6 +18,18 @@ Output: `5, nums = [0, 1, 3, 0, 4, _, _, _]`
 
 
 
+### 此类题统一思路：
+
+1. 用指针reserve去reserve第一个位置，同时要确定：满足什么样的条件才能占据这个位置；
+2. 用第二个指针`i`去遍历给定数组nums的每一个元素；
+3. 一旦当前指针`i`扫到的元素`nums[i]`满足reserve位置的要求，那么就赋值`nums[reserve] = nums[i]`；
+
+
+
+本题算法：
+
+
+
 ```text
 class Solution {
     public int removeElement(int[] nums, int val) {
