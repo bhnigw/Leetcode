@@ -30,6 +30,14 @@ Output: [1, 3, 12, 0, 0]`
 
 最后，再一次遍历数组，从reserve开始到末尾，全部赋值0即可；
 
+详细图解：
+
+![](../.gitbook/assets/img_6384.jpg)
+
+
+
+![](../.gitbook/assets/img_6386.jpg)
+
 ```text
 class Solution {
     public void moveZeroes(int[] nums) {

@@ -35,11 +35,11 @@ Output: `5, nums = [0, 1, 3, 0, 4, _, _, _]`
 
 详细图解：
 
-![](../.gitbook/assets/img_6373.jpg)
+![](../.gitbook/assets/img_6382.jpg)
 
 
 
-![](../.gitbook/assets/img_6374.jpg)
+![](../.gitbook/assets/img_6383.jpg)
 
 
 
