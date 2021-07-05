@@ -18,13 +18,27 @@ Output: 7, `nums = [0, 0, 1, 1, 2, 3, 3, _, _]`
 
 ### 此类题统一思路模板：
 
-1. 用指针reserve去reserve第一个位置，同时要确定：满足什么样的条件才能占据这个位置；
+1. 用指针reserve去reserve有效起始位置，同时要确定：满足什么样的条件才能占据这个位置；
 2. 用第二个指针`i`去遍历给定数组nums的每一个元素；
 3. 一旦当前指针`i`扫到的元素`nums[i]`满足reserve位置的要求，那么就赋值`nums[reserve] = nums[i]`；
 
 
 
-本题算法：
+### 将模板代入本题算法：
+
+●**reserve起始位置：**第三个数\(index 2\)；
+
+●**需要满足的条件：**出现不超过2次；
+
+若满足条件，则赋值`nums[reserve] = nums[i]`，然后`reserve++`；
+
+详细图解：
+
+![](../.gitbook/assets/img_6380.jpg)
+
+
+
+![](../.gitbook/assets/img_6381.jpg)
 
 ```text
 class Solution {
@@ -52,4 +66,12 @@ class Solution {
 
 Time: O\(n\);  
 Space: O\(1\);
+
+
+
+注意一定要理清：
+
+1. 指针reserve的责任，和初始值；
+2. 指针i的责任，和初始值；
+3. 什么条件下，`nums[reserve] = nums[i]`
 

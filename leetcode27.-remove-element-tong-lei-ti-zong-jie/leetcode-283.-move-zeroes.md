@@ -7,26 +7,28 @@ description: Two pointer
 原题地址：[https://leetcode.com/problems/move-zeroes/](https://leetcode.com/problems/move-zeroes/) 关键词：Two pointer
 
 题意：一个整数array，把所有的0移到右边，其余数左移且顺序不变  
-`Input: nums = [0,1,0,3,12]   
-Output: [1,3,12,0,0]`  
+`Input: nums = [0, 1, 0, 3, 12]   
+Output: [1, 3, 12, 0, 0]`  
 （要求做到Space Optimal，不能另外创建新数组，只能在原数组上操作）
 
 
 
 ### 此类题统一思路模板：
 
-1. 用指针reserve去reserve第一个位置，同时要确定：满足什么样的条件才能占据这个位置；
+1. 用指针reserve去reserve有效起始位置，同时要确定：满足什么样的条件才能占据这个位置；
 2. 用第二个指针`i`去遍历给定数组nums的每一个元素；
 3. 一旦当前指针`i`扫到的元素`nums[i]`满足reserve位置的要求，那么就赋值`nums[reserve] = nums[i]`；
 
 
 
-本题算法：
+### 将模板代入本题算法：
 
-1. 先设置一个reserve 为0作为起始index；
-2. 第一次遍历数组，遇到不是0的，就依次放在数组最左边 `nums[reserve] = 非零数;`然后reserve++；
-3. 第一次遍历完后，此时reserve为数组改动后所有非零数的右边一位的index，从这reserve开始往后就应该全部为0；
-4. 第二次遍历数组，从reserve开始到末尾，全部赋值0即可；
+●**reserve起始位置：**第一个数\(index 0\)；  
+●**需要满足的条件：**值不等于0；
+
+若满足条件，则赋值`nums[reserve] = nums[i]`，然后`reserve++`；
+
+最后，再一次遍历数组，从reserve开始到末尾，全部赋值0即可；
 
 ```text
 class Solution {

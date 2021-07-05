@@ -20,13 +20,29 @@ Output: `5, nums = [0, 1, 2, 3, 4, _, _, _, _, _]`
 
 ### 此类题统一思路模板：
 
-1. 用指针reserve去reserve第一个位置，同时要确定：满足什么样的条件才能占据这个位置；
+1. 用指针reserve去reserve有效起始位置，同时要确定：满足什么样的条件才能占据这个位置；
 2. 用第二个指针`i`去遍历给定数组nums的每一个元素；
 3. 一旦当前指针`i`扫到的元素`nums[i]`满足reserve位置的要求，那么就赋值`nums[reserve] = nums[i]`；
 
 
 
-本题算法：
+### 将模板代入本题算法：
+
+●**reserve起始位置：**第二个数\(index 1\)；  
+为什么从第二个数字开始？因为检查duplicate，第一个数字\(index 0\)是第一次出现，绝对不可能重复，所以我们从第二个数字开始扫描；
+
+●**需要满足的条件：**出现不超过一次；  
+如何检查？只要指数`i`对应的数，与`reserve - 1`对应的数相等，则表明有duplicate；
+
+若没有duplicate，则赋值`nums[reserve] = nums[i]`，然后`reserve++`；
+
+详细图解：
+
+![](../.gitbook/assets/img_6377.jpg)
+
+
+
+![](../.gitbook/assets/img_6379.jpg)
 
 ```text
 class Solution {
@@ -36,7 +52,7 @@ class Solution {
         int reserve = 1;
         
         for (int i = 1; i < nums.length; i++) {
-            if (nums[i] != nums[reserve - 1]) {
+            if (nums[i] != nums[reserve - 1]) { //注意
                 nums[reserve] = nums[i];
                 reserve++;
             }
