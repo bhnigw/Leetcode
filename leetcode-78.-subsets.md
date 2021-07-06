@@ -39,13 +39,14 @@ class Solution {
 }
 ```
 
-Time: O\(n2^n\)   
-Space: O\(2^n\) ，取决于有多少个ArrayList？？？
+Time：O\(n × 2 ^ n\) 
+
+Space：O\(n\)
 
 
 
 **注意事先确认**：  
-1. 给的input数组是否有duplicates，如果有，那么需要sort，然后在for循环里skip掉相同元素 `if(i > startIndex && input[i] == input[i-1]) continue`;  
+1. 给的input数组是否有duplicates，如果有，那么需要**先sort**，然后在for循环里skip掉相同元素 `if(i > startIndex && input[i] == input[i-1]) continue`;  
 2. 给的input数组里装的是char还是String还是integer
 
 
