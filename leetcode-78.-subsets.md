@@ -22,7 +22,7 @@ class Solution {
         
         int startIndex = 0;
         
-        helper(nums, startIndex, currentSubset, res);
+        helper(nums, startIndex, currentSubset, res); //这里不用for循环
         
         return res;
     }
