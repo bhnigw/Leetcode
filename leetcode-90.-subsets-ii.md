@@ -28,7 +28,7 @@ Output: `[[],[1],[1,2],[1,2,2],[1,2,2,3],[1,2,3],[1,3],[2],[2,2],[2,2,3],[2,3],[
 4. 在helper方法内：
    1. 首先把当前此刻最新的currentSubset加入结果集（第一轮加入的是空集）
    2. 从当前输入的index开始for循环，每一轮的for 循环都有四个操作：
-      1. 去重复，因为前面sort了数组所以用？？
+      1. 去重复，因为前面sort了数组所以用？？？？？？？？
       2. 把当前数字`nums[i]`加入curren subset；
       3. 继续下一轮
       4. ★每一轮for循环结束前，都要去掉curren subset里最后一个元素（因为要backtrack到上一轮给末尾加入新的元素，详细看上图和[backtrack讲解](https://bhnigw.gitbook.io/-1/backtrack-mo-ban)）
