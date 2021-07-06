@@ -18,22 +18,22 @@ description: 'Backtracking, ArrayList, DFS'
 class Solution {
     public List<List<Integer>> subsets(int[] nums) {
         List<List<Integer>> res = new ArrayList<>();
-        List<Integer> tempSubset = new ArrayList<>();
+        List<Integer> currentSubset = new ArrayList<>();
         
         int startIndex = 0;
         
-        helper(nums, startIndex, tempSubset, res);
+        helper(nums, startIndex, currentSubset, res);
         
         return res;
     }
     
-    private void helper(int[] nums, int startIndex, List<Integer> tempSubset, List<List<Integer>> res) {
-        res.add(new ArrayList<>(tempSubset)); //注意一定要new ArrayList
+    private void helper(int[] nums, int startIndex, List<Integer> currentSubset, List<List<Integer>> res) {
+        res.add(new ArrayList<>(currentSubset)); //注意一定要new ArrayList
         
         for (int i = startIndex; i < nums.length; i++) {
-            tempSubset.add(nums[i]);
-            helper(nums, i + 1, tempSubset, res); //注意是i + 1，而不是startIndex + 1
-            tempSubset.remove(tempSubset.size() - 1); //注意每backtrack一次就要remove掉list最末端那个
+            currentSubset.add(nums[i]);
+            helper(nums, i + 1, currentSubset, res); //注意是i + 1，而不是startIndex + 1
+            currentSubset.remove(currentSubset.size() - 1); //注意每backtrack一次就要remove掉list最末端那个
         }
     }
 }
