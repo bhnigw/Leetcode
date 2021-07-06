@@ -1,5 +1,5 @@
 ---
-description: 'Backtracking, ArrayList, DFS'
+description: 'Backtracking, ArrayList'
 ---
 
 # \[Leetcode\]78. Subsets
@@ -8,7 +8,7 @@ description: 'Backtracking, ArrayList, DFS'
 
 题意：给一个没有duplicate的数组，输出所有的子集（包括空集和它本身）
 
-算法：使用**DFS/backtrack/recursive**；如下图所示：
+算法：使用**backtrack**；如下图所示：
 
 ![](.gitbook/assets/picture1.jpg)
 
