@@ -25,6 +25,7 @@
 * [\[Leetcode\]268. Missing Number](leetcode-268.-missing-number.md)
 * [\[Leetcode\]287. Find the Duplicate Number](leetcode-287.-find-the-duplicate-number.md)
 * [\[Leetcode\]529. Minesweeper](leetcode-529.-minesweeper.md)
+* [\[Leetcode\]566. Reshape the Matrix](leetcode-566.-reshape-the-matrix.md)
 * [\[Leetcode\]1822. Sign of the Product of an Array](leetcode-1822.-sign-of-the-product-of-an-array.md)
 
 ## 基础必会
