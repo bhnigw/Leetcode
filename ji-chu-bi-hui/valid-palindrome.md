@@ -2,15 +2,20 @@
 description: Two pointer
 ---
 
-# Valid Palindrome
+# \[Leetcode\]125. Valid Palindrome
 
 原题地址：[https://leetcode.com/problems/valid-palindrome/](https://leetcode.com/problems/valid-palindrome/)
 
-Palindrome定义：回文，即一个string正着看和倒着看，它的字母顺序都是一样的；A word or phrase that **reads the same backward as forward**.
+题意：给个string，判断是不是Palindrome，是就true；
+
+**Palindrome定义：**回文，即一个string正着看和倒着看，它的字母顺序都是一样的。  
+                                 A word or phrase that reads the same backward as forward.
 
 
 
-方法一：Compare with Reverse；把字母append到StringBuilder里面形成str1，然后反转顺序形成str2，如果str1和str2相等那就是palindrome
+### 方法一：Compare with Reverse；
+
+把字母append到StringBuilder里面形成str1，然后反转顺序形成str2，如果str1和str2相等那就是palindrome
 
 ```text
 class Solution {
@@ -36,7 +41,9 @@ Space: O\(n\)；str的长度是n，需要n空间来build它
 
 
 
-方法二：Two pointer\(最优\)；跳过所有的空格和标点，然后首尾比较。
+### 方法二：Two pointer\(最优\)；
+
+跳过所有的空格和标点，然后首尾比较。
 
 ```text
 class Solution {
@@ -79,15 +86,7 @@ Space: O\(1\)
 
 
 
-关于Character的复习：[https://app.gitbook.com/@bhnigw/s/-1/shu-ju-jie-gou-string](https://app.gitbook.com/@bhnigw/s/-1/shu-ju-jie-gou-string)
-
-
-
-
-
-
-
-
+关于Character的复习：[https://bhnigw.gitbook.io/-1/shu-ju-jie-gou-string](https://bhnigw.gitbook.io/-1/shu-ju-jie-gou-string)
 
 
 

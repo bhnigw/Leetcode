@@ -33,7 +33,7 @@
 
 * [\[Leetcode\]704. Binary Search](ji-chu-bi-hui/leetcode-704.-binary-search.md)
 * [\[Leetcode\]206. Reverse Linked List](ji-chu-bi-hui/leetcode-206.-reverse-linked-list.md)
-* [Valid Palindrome](ji-chu-bi-hui/valid-palindrome.md)
+* [\[Leetcode\]125. Valid Palindrome](ji-chu-bi-hui/valid-palindrome.md)
 * [Valid Anagram](ji-chu-bi-hui/valid-anagram.md)
 * [怎样reverse一个String](ji-chu-bi-hui/zen-yang-reverse-yi-ge-string.md)
 * [有向图中检查环 Detect cycle in a directed graph](ji-chu-bi-hui/detect-cycle-in-a-directed-graph.md)
