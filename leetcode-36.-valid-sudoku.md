@@ -35,7 +35,7 @@ description: ASCII，HashSet
 #### 方法1：使用HashSet：
 
 需要注意的是：\(1\) 初始化HashSet一定要在外层for循环，不能写在第二个for里面。若写在第二个for里面意思就是每添加一个数就全部清零，那就无法记录任何重复；若写在第一个for里，意思就是有九个row，遍历一个新row的时候才清零set，因此可以记录每个row里面数字的情况；  
-\(2\) HashSet里的`add()`方法本身就可以判断set里是否已经含有该元素且会返回一个boolean值，如果`add()`返回false说明有重复；
+\(2\) HashSet里的`add()`方法本身就可以判断set里是否已经含有该元素，且会返回一个boolean值，如果`add()`返回false，说明有重复；
 
 ```text
         // Check row
