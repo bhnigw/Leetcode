@@ -49,6 +49,8 @@ description: ASCII，HashSet
         }
 ```
 
+
+
 #### 方法2：使用长度为9的`nums[]`数组，数字出现一次就在对应的index加一，若任何`nums[i]`数值大于1立即返回false
 
 需要注意的是：\(1\) 和上面一样，注意初始化`nums[]`的位置是在第一层for；  
@@ -75,11 +77,13 @@ description: ASCII，HashSet
         }
 ```
 
-#### 方法3：与方法2类似，只是使用的是长度128的`ascii[]`数组来记录
+
+
+#### 方法3：与方法2类似，只是使用的是长度128的`ascii[]`数组来记录（⭐️  推荐使用此方法）
 
 需要注意的是：\(1\) 和上面一样，注意初始化`ascii[]`的位置是在第一层for；  
 \(2\) 标准ascii长为128；  
-\(3\) 对于Character来说，可以作为index直接放进数组（[点击查看详情](https://bhnigw.gitbook.io/-1/shu-ju-jie-gou-string/ascii-ma)）；
+\(3\) **char字符作为index直接放进数组**，不用担心任何指数问题，不用减去任何东西，很方便（[点击查看详情](https://bhnigw.gitbook.io/-1/shu-ju-jie-gou-string/ascii-ma)）；
 
 ```text
         // Check row
@@ -101,7 +105,7 @@ description: ASCII，HashSet
 
 ![](.gitbook/assets/screen-shot-2021-07-10-at-2.55.46-am.png)
 
-如法炮制，只需注意调换两层for循环row和col的位置即可：
+如法炮制，只需注意**调换两层for循环row和col的位置**即可：
 
 ```text
         // Check column
