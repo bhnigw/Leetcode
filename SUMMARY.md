@@ -39,6 +39,6 @@
 * [怎样reverse一个String](ji-chu-bi-hui/zen-yang-reverse-yi-ge-string.md)
 * [有向图中检查环 Detect cycle in a directed graph](ji-chu-bi-hui/detect-cycle-in-a-directed-graph.md)
 * [无向图中检查环 Detect cycle in a undirected graph](ji-chu-bi-hui/wu-xiang-tu-zhong-jian-cha-huan-detect-cycle-inaundirected-graph.md)
-* [检查重复、记录字符或数字出现次数](ji-chu-bi-hui/ji-lu-zi-fu-shu-zi-chu-xian-ci-shu.md)
+* [检查重复、统计字符或数字出现次数](ji-chu-bi-hui/ji-lu-zi-fu-shu-zi-chu-xian-ci-shu.md)
 * [Slide Window](ji-chu-bi-hui/slide-window.md)
 
