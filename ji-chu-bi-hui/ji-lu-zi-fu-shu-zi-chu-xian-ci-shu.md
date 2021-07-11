@@ -10,7 +10,19 @@
 
 
 
+例：
 
+```text
+    Set<Character> set = new HashSet<>();
+
+		for (int i : nums) {
+			if (!set.add(i)) {
+				return false;
+			}
+		}
+```
+
+解释：HashSet里的`add()`方法本身就可以判断set里是否已经含有该元素且会返回一个boolean值，如果`add()`返回false说明有重复；
 
 
 
