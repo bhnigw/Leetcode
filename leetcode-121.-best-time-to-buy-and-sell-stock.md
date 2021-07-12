@@ -28,9 +28,9 @@ class Solution {
         int profit = 0;
         
         for (int i = 1; i < prices.length; i++) { // i从1开始
-            minPrice = Math.min(prices[i], minPrice);
+            minPrice = Math.min(prices[i], minPrice); //时刻更新最小值
             if (prices[i] > minPrice) {
-                profit = Math.max(prices[i] - minPrice, profit);
+                profit = Math.max(prices[i] - minPrice, profit); //在最小值的右边更新最大值
             }
         }
         
