@@ -2,7 +2,7 @@
 description: DFS，Trie
 ---
 
-# \[Leetcode\]212. Word Search II
+# \[Leetcode\]★212. Word Search II
 
 原题地址：[https://leetcode.com/problems/word-search-ii/](https://leetcode.com/problems/word-search-ii/) 关键词：DFS，Trie
 
