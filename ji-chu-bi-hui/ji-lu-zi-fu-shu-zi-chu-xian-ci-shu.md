@@ -76,7 +76,25 @@
 
 ### 方法二：使用HashMap，其中key作为被统计的元素，value为出现次数；
 
+```text
+public static void main(String[] args) {
 
+		int[] nums = { 3, 5, 3, 3, 7, 8, 9, 9, 2 };
+		Map<Integer, Integer> map = new HashMap<>();
+
+		for (int i : nums) {
+			if (!map.containsKey(i)) {
+				map.put(i, 1);
+			} else {
+				int count = map.get(i);
+				map.put(i, ++count);   //注意这里如果++写在了后面就有错
+			}
+		}
+
+		System.out.println(map);
+
+}
+```
 
 
 
