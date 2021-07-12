@@ -11,6 +11,7 @@
   * [\[Leetcode\]283. Move Zeroes](leetcode27.-remove-element-tong-lei-ti-zong-jie/leetcode-283.-move-zeroes.md)
 * [\[Leetcode\]36. Valid Sudoku](leetcode-36.-valid-sudoku.md)
 * [\[Leetcode\]42. Trapping Rain Water](leetcode-42.-trapping-rain-water.md)
+* [\[Leetcode\]53. Maximum Subarray](leetcode-53.-maximum-subarray.md)
 * [\[Leetcode\]78. Subsets](leetcode-78.-subsets/README.md)
   * [\[Leetcode\]90. Subsets II](leetcode-78.-subsets/leetcode-90.-subsets-ii.md)
 * [\[Leetcode\]79. Word Search](leetcode-79.-word-search.md)
