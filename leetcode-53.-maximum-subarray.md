@@ -15,6 +15,8 @@ Example 2:
 `Input: nums = [-1]   
 Output: -1`
 
+
+
 ### 方法1：Dynamic Programing
 
 此方法，把“到每一个index为止的最大的subArray和“的具体数值算出来，放到`DP[]`里；
