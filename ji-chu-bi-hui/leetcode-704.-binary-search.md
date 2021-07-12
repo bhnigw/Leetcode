@@ -2,7 +2,7 @@
 description: Binary Search
 ---
 
-# \[Leetcode\]704. Binary Search
+# Binary Search
 
 原题地址：[https://leetcode.com/problems/binary-search/](https://leetcode.com/problems/binary-search/) 关键词：Binary Search
 

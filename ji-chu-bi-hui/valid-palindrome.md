@@ -2,7 +2,7 @@
 description: Two pointer
 ---
 
-# \[Leetcode\]125. Valid Palindrome
+# Valid Palindrome
 
 原题地址：[https://leetcode.com/problems/valid-palindrome/](https://leetcode.com/problems/valid-palindrome/)
 
