@@ -9,7 +9,7 @@
 Output: 5`  
 解释：在股价为1的时候买进，股价为6的时候卖出；
 
-![](.gitbook/assets/121_profit_graph.png)
+![](../.gitbook/assets/121_profit_graph.png)
 
 ### 算法：
 
