@@ -121,15 +121,170 @@ description: ASCII，HashSet
 
 
 
-### 问题3：检查九个3×3的小正方形内数字是否重复
+### ★ 问题3：检查九个3×3的小正方形内数字是否重复
 
 ![](.gitbook/assets/screen-shot-2021-07-10-at-2.54.57-am.png)
+
+首先第一层for 循环，遍历九个小正方形\(9个box\)；  
+第二层和第三层for循环，便利3×3的小正方里的每一个元素：
+
+`for (int box = 0; box < 9; box++) {  
+    for (int row = 0; row < 3; row++) {   
+        for (int col = 0; col < 3; col++) {  
+        ...  
+        }  
+    }  
+}`
+
+#### 这里遇到一个关键的问题，怎样确定每个小正方形box里面元素的index？？
+
+board原本的index为`[row][col]`，为了移动box就要变动为`board[row + x][col + y]`；  
+怎样确定x和y的值呢？？先思考x和y的需求：  
+对于box 0～box 2，要做到x为0不变，y每个box加3；  
+对于box 3～box 5，要做到x为3不变，y每个box加3；  
+对于box 3～box 5，要做到x为6不变，y每个box加3；
+
+我们可以用**取整和求余**的方法来做：`x = 3 * (box / 3)，y = 3 * (box % 3)`  
+解释：
+
+对于box 0～box 2：  
+\(box / 3\)在这一行取整永远为0，乘以3为0；  
+\(box % 3\)在这一行值为0、1、2，乘以3就是0、3、6，就是每个col要加的index；
+
+对于box 3～box 5：  
+\(box / 3\)在这一行取整永远为1，乘以3为3；  
+\(box % 3\)在这一行值为0、1、2，乘以3就是0、3、6，就是每个col要加的index；
+
+对于box 3～box 5：  
+\(box / 3\)在这一行取整永远为2，乘以3为6；  
+\(box % 3\)在这一行值为0、1、2，乘以3就是0、3、6，就是每个col要加的index；
+
+### 所以，for循环里board的指数就要写为：`board[row + 3  (box / 3)][col + 3  (box % 3)];`
+
+（可以当公式背下来）
+
+![](.gitbook/assets/img_6396.jpg)
+
+```text
+// Check small square
+for (int box = 0; box < 9; box++) {  
+    Set<Character> set = new HashSet<>();
+    for (int row = 0; row < 3; row++) {
+        for (int col = 0; col < 3; col++) {      
+            if (board[row + 3 * (box / 3)][col + 3 * (box % 3)] != '.') {
+                if (!set.add(board[row + 3 * (box / 3)][col + 3 * (box % 3)])) {
+                    return false;
+                }
+            } 
+        }
+    }
+}
+```
+
+
+
+完整代码：  
+1.使用HashSet
+
+```text
+class Solution {
+    public boolean isValidSudoku(char[][] board) {
+        // Check row
+        for (int row = 0; row < 9; row++) {
+            Set<Character> set = new HashSet<>();
+            for (int col = 0; col < 9; col++) {
+                if (board[row][col] != '.') {
+                    if (!set.add(board[row][col])) return false;
+                } 
+            }
+        }
+        
+        // Check column
+        for (int col = 0; col < 9; col++) {
+            Set<Character> set = new HashSet<>();
+            for (int row = 0; row < 9; row++) {
+               if (board[row][col] != '.') {
+                    if (!set.add(board[row][col])) return false;
+                }
+            }
+        }
+        
+        // Check small square
+        for (int box = 0; box < 9; box++) {  
+            Set<Character> set = new HashSet<>();
+            for (int row = 0; row < 3; row++) {
+                for (int col = 0; col < 3; col++) {      
+                    if (board[row + 3 * (box / 3)][col + 3 * (box % 3)] != '.') {
+                        if (!set.add(board[row + 3 * (box / 3)][col + 3 * (box % 3)])) return false;
+                    } 
+                }
+            }
+        }
+        
+        return true;
+    }
+}
+```
+
+2. 使用数组
+
+```text
+class Solution {
+    public boolean isValidSudoku(char[][] board) {
+        // Check row
+        for (int row = 0; row < 9; row++) {
+            int[] ascii = new int[128];
+            for (int col = 0; col < 9; col++) {
+                if (board[row][col] != '.') {
+                    ascii[board[row][col]]++;
+                }
+                
+                if (ascii[board[row][col]] > 1) return false;
+            }
+        }
+        
+        // Check column
+        for (int col = 0; col < 9; col++) {
+            int[] ascii = new int[128];
+            for (int row = 0; row < 9; row++) {
+               if (board[row][col] != '.') {
+                    ascii[board[row][col]]++;
+                }
+                
+                if (ascii[board[row][col]] > 1) return false;
+            }
+        }
+        
+        // Check small square
+        for (int box = 0; box < 9; box++) {  
+            int[] ascii = new int[128];
+            for (int row = 0; row < 3; row++) {
+                for (int col = 0; col < 3; col++) {      
+                    if (board[row + 3 * (box / 3)][col + 3 * (box % 3)] != '.') {
+                        ascii[board[row + 3 * (box / 3)][col + 3 * (box % 3)]]++;
+                    }
+                
+                    if (ascii[board[row + 3 * (box / 3)][col + 3 * (box % 3)]] > 1) return false;
+                }
+            }
+        }
+        
+        return true;
+    }
+}
+```
+
+Time：O\(1\)；所耗时间O\(9²\)，也就是O\(1\)；
+
+Space：O\(1\)；hash set 需要9个空间，asdcii\[\]数组需要128个空间，所以都是O\(1\)； 
 
 
 
 ### 要记住的重点：
 
-1. 新建`set`或者`ascii[]`的时候一定是在最外层的for循环
+1. 新建`set`或者`ascii[]`的时候一定是在最外层的for循环；
+2. 怎样确定9个小正方形的index；
+3. 第2点的延伸拓展，就是正方形内切分成n个小正方形时，怎样确定内部index： `board[row + n * (box / n)][col + n * (box % n)];`
 
 
 
