@@ -17,6 +17,8 @@ Output: -1`
 
 ### 方法1：Dynamic Programing
 
+此方法，把“到每一个index为止的最大的subArray和“的具体数值算出来，放到`DP[]`里；
+
 `nums = [-2, 1, -3, 4, -1, 2, 1, -5, 4];`
 
   `DP = [-2, 1, -2, 4,  3, 5, 6,  1, 5];`
@@ -64,6 +66,30 @@ class Solution {
         int currMax = 0;
         
         for (int i = 0; i < nums.length; i++) {
+            if (currMax < 0) {
+                currMax = nums[i];
+            } else {
+                currMax += nums[i];
+            }
+            
+            res = Math.max(res, currMax);
+        }
+        
+        
+        return res;
+    }
+}
+```
+
+```text
+class Solution {
+    public int maxSubArray(int[] nums) {
+        if (nums == null || nums.length == 0) return 0;
+        
+        int res = nums[0];
+        int currMax = res;
+        
+        for (int i = 1; i < nums.length; i++) {
             if (currMax < 0) {
                 currMax = nums[i];
             } else {
