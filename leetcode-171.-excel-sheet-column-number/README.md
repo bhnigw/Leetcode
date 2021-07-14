@@ -43,7 +43,7 @@ class Solution {
         if (columnTitle == null || columnTitle.isEmpty()) return 0;
         
         int res = 0;
-        int pow = 0;
+        int pow = 0; //记录次幂
         
         for (int i = columnTitle.length() - 1; i >= 0; i--) { // 注意是i>=0
             char ch = columnTitle.charAt(i);
