@@ -6,7 +6,7 @@ description: '数学, StringBuilder, char, String'
 
 原题地址：[https://leetcode.com/problems/excel-sheet-column-number/](https://leetcode.com/problems/excel-sheet-column-number/) 关键词：StringBuilder, char 
 
-题意：letter to number；英文字母有26个，可以理解为把一个26进制的数转化为十进制的数；  
+题意：字母转化为数字；规则如下：  
 A -&gt; 1   
 B -&gt; 2   
 C -&gt; 3   
@@ -16,7 +16,16 @@ AA -&gt; 27
 AB -&gt; 28   
 ...
 
+例1：  
+`Input: columnTitle = "AB"； Output: 28`  
+例2：  
+`Input: columnTitle = "ZY"； Output: 701`
+
+
+
 ### 算法：
+
+可以理解为把一个二十六进制（base of 26）的数转化为十进制（decimal）的数；
 
 把input string转化为char的array，然后**从右往左**\(相当于从26进制的个位数开始\)，char\[末尾\]算是个位数，然后加上char\[倒数第二\]乘以26\(相当于十位数\)，然后加上char\[倒数第三\]乘以26×26，然后加上char\[倒数第四\]乘以26×26×26，以此类推....
 
