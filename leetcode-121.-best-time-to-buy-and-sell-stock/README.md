@@ -22,7 +22,7 @@ Output: 5`
 ```text
 class Solution {
     public int maxProfit(int[] prices) {
-        if (prices == null || prices.length == 0) return 0;
+        if (prices == null || prices.length < 2) return 0;
         
         int minPrice = prices[0]; // 注意初始值
         int profit = 0;
