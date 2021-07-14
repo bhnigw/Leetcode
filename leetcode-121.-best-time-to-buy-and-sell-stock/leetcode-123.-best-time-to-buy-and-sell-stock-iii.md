@@ -61,7 +61,7 @@ class Solution {
         
         // 从指数i开始，到最后一位数为止，指数i位置能赚到的最大收益
         int maxPrice = prices[prices.length - 1];
-        for (int i = prices.length - 2; i > 0; i--) { //注意要倒着来
+        for (int i = prices.length - 2; i >= 0; i--) { //注意要倒着来
             if (prices[i] > maxPrice) {
                 maxPrice = prices[i];
             }
