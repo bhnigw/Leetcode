@@ -56,7 +56,7 @@ class Solution {
 }
 ```
 
-Time: O\(n\)  
+Time: O\(N\)；N is the number of characters in the input string.  
 Space: O\(1\)
 
 **注意**：  
