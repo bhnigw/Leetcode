@@ -39,6 +39,7 @@
 
 * [Binary Search](ji-chu-bi-hui/leetcode-704.-binary-search.md)
 * [Reverse Linked List](ji-chu-bi-hui/leetcode-206.-reverse-linked-list.md)
+* [Dynamic Programming](ji-chu-bi-hui/dynamic-programming.md)
 * [Valid Palindrome](ji-chu-bi-hui/valid-palindrome.md)
 * [Valid Anagram](ji-chu-bi-hui/valid-anagram.md)
 * [怎样reverse一个String](ji-chu-bi-hui/zen-yang-reverse-yi-ge-string.md)
