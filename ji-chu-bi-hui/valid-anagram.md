@@ -10,7 +10,7 @@ Anagram定义：两个string，由**相同字母组成，但字母顺序被打�
 
 
 
-方法一：sort两个string，看是否相等；
+### 方法一：sort两个string，看是否相等；
 
 ```text
 class Solution {
@@ -37,7 +37,8 @@ Space: O\(1\)
 
 
 
-方法二：记录字母出现次数\(最优\)；  
+### 方法二：记录字母出现次数\(最优\)；
+
 因为全是英文小写字母，所以new一个长为26的数组：`int[] count = new int[26];`在str1出现一次加一，在str2出现一次减一，最后数组应该都为0，否则是不是anagram。
 
 ```text
