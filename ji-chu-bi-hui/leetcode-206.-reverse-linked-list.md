@@ -35,7 +35,7 @@ Space: O\(1\)
 
 ### 算法：
 
-完成reverse，需要三个关键的节点，current节点\(head\)，prev节点，next节点；  
+完成reverse，需要**三个**关键的节点，current节点\(head\)，prev节点，next节点；  
 while循环里有关键的四步：1.把head右边节点作为next\_node；2.head.next指向前边的prev；3.prev右移到head；4.head右移到next\_node；  
 详细步骤如下：
 
