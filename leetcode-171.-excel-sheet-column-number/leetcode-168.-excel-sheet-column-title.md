@@ -21,11 +21,18 @@ AB -&gt; 28
 
 ### 算法：
 
+对十进制\(decimal\)的数来说，number用%10取余数，得到的余数就是最右边的**个位数**。  
+number用/10除以十，看能被整除几次
+
 ![](../.gitbook/assets/img_6403.jpg)
 
 
 
 ![](../.gitbook/assets/img_6405.jpg)
+
+
+
+number用%26取余数，得到的余数就是最右边
 
 ```text
 class Solution {
@@ -33,7 +40,7 @@ class Solution {
         StringBuilder sb = new StringBuilder();
         
         while (columnNumber > 0) {
-            columnNumber--;
+            columnNumber--;    //注意这里
             sb.append((char)(columnNumber % 26 + 'A'));
             columnNumber /= 26;
         }
@@ -44,6 +51,13 @@ class Solution {
 ```
 
 
+
+
+
+### 需要记住的重点：
+
+1. 数字一定要先减1❗️
+2. 最后转化为string前要reverse
 
 
 
