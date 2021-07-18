@@ -1,6 +1,6 @@
 # 怎样reverse一个String
 
-方法一：使用StringBuilder里的build in function
+### 方法一：使用StringBuilder里的build in function
 
 ```text
 public String ReverseString(String str) {
@@ -11,7 +11,7 @@ public String ReverseString(String str) {
 
 
 
-方法二★：two pointer
+### 方法二★：two pointer
 
 1. 把str变为char array；
 2. 设置left pointer为0，right pointer为str长度减一；
