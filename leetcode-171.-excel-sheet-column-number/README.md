@@ -27,7 +27,7 @@ AB -&gt; 28
 
 可以理解为把一个二十六进制（base of 26）的数转化为十进制（decimal）的数；
 
-![](../.gitbook/assets/img_6402.jpg)
+![](../.gitbook/assets/img_6411.jpg)
 
 所以，从右向左，遍历input string，每一位的基数乘以26的次方，幂数从0开始依次加一，最后加起来即可
 
