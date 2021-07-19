@@ -17,7 +17,13 @@ Output: 4
 5=2+1+1+1   
 5=1+1+1+1+1
 
+### 算法：Dynamic Programming
 
+
+
+初始化`dp[0] = 1`；遍历`coins[]`，对于其中的每个元素coin，进行如下操作：
+
+遍历 ii 从 \textit{coin}coin 到 \textit{amount}amount，将 \textit{dp}\[i - \textit{coin}\]dp\[i−coin\] 的值加到 \textit{dp}\[i\]dp\[i\]。 最终得到 \textit{dp}\[\textit{amount}\]dp\[amount\] 的值即为答案。
 
 
 
