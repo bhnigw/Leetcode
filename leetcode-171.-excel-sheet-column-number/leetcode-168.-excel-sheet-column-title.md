@@ -41,28 +41,39 @@ AB -&gt; 28
 ![](../.gitbook/assets/img_6405.jpg)
 
 同理：  
-对26进制\(base of 26\)的数来说，number用求余符号`"%"`对26求余数，得到的余数就是最右边的"**个"位数**。然后用取整符号`"/"`除以26更新number，再继续用%26求余数就得到了"十"位数，然后不断重复此过程...
+对26进制\(base of 26\)的数来说，number用求余符号`"%"`对26求余数，得到的余数就是最右边的"个"位数。然后用取整符号`"/"`除以26更新number，再继续用%26求余数就得到了"十"位数，然后不断重复此过程...
 
-举例：`number = 123`：  
-先把number用`"%"`对26求余：123 % 26 = 19，说明"个"位数就是二十六进制中的19\(也就是字母S\)；  
-然后number用`"/"`除以26，看能被整除几次：123 / 26 = 4，说明number能被26整除4次；\(number里有4个26\)
+### 要注意的是：
 
-"十"位数应该是4，但因为是26进制，所以对4求余：4 % 26 = 4，所以"十"位数就是二十六进制中的4\(也就是字母D\)；  
-继续把number用`"/"`除以26得：4 / 26 = 0，结束循环。
+我们在做上一题**字母转化为数字**的时候，我们对字符char加1才能得出正确的数字。那么，在做本道题**数字转化为字母**的时候，相应的，要对数字减1才能得出正确的字母。
 
-每求余一次`"%"`，就得出一位数字。
+假设我们把字符串`"ABZ"`转化为数字`n`：
 
-要注意的是：
+![](../.gitbook/assets/img_6413.jpg)
+
+
+
+在本题**数字转化为字母**里，假设input数字为`n`：
+
+![](../.gitbook/assets/img_6416.jpg)
+
+到上面这为止，一轮完整的循环结束。  
+我们可以总结出，要得到正确的字母，必须要在每一轮loop的开始把n减去1❗️  
+下面进入第二轮loop：
+
+![](../.gitbook/assets/img_64181.jpg)
+
+转化为代码就如下：
 
 ```text
 class Solution {
-    public String convertToTitle(int columnNumber) {
+    public String convertToTitle(int number) {
         StringBuilder sb = new StringBuilder();
         
-        while (columnNumber > 0) {
-            columnNumber--;    //注意这里
-            sb.append((char)(columnNumber % 26 + 'A'));
-            columnNumber /= 26;
+        while (number > 0) {
+            number--;    //注意这里
+            sb.append((char)(number % 26 + 'A'));
+            number /= 26;
         }
 
         return sb.reverse().toString();
@@ -70,16 +81,16 @@ class Solution {
 }
 ```
 
-
+Time: O\(k\)；k是number能被26整除的次数  
+Space: O\(k\)；k是最后string的长度
 
 
 
 ### 需要记住的重点：
 
 1. 数字一定要先减1❗️
-2. 因为是从个位开始append，所以最后转化为string前要先reverse；
-
-
+2. while的条件是大于0
+3. 因为是从个位开始append，所以最后转化为string前要先reverse；
 
 
 
