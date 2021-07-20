@@ -34,20 +34,22 @@ Time: `O(2 ^ n)`; 解释：T\(n\) = T\(n - 1\) + T\(n - 2\); 比如下图，当n
 
 ![](.gitbook/assets/img_6420.jpg)
 
-Space: O\(n\); 解释：按深度算，每return一次创建一个空间。
+Space: `O(n)`; 解释：按深度算，每return一次创建一个空间。
 
 
 
 ### 方法二：Dynamic Programming
 
+初始化`dp[]`数组来记录每一个位置的和，长度为n + 1，因为要处理n = 0的情况；
+
 ```text
 	public int Fibonacci(int n) {
-		int dp[] = new int[n + 2]; // 需要1个额外的空间来处理n = 0的情况
+		int dp[] = new int[n + 1]; // 需要1个额外的空间来处理n = 0的情况
 
-		dp[0] = 0;
+		dp[0] = 0; // 初始前两位数
 		dp[1] = 1;
 
-		for (int i = 2; i <= n; i++) { // i初始值是2
+		for (int i = 2; i <= n; i++) { // i初始值是2，因为0、1已经排除
 			dp[i] = dp[i - 1] + dp[i - 2];
 		}
 
@@ -55,11 +57,35 @@ Space: O\(n\); 解释：按深度算，每return一次创建一个空间。
 	}
 ```
 
+Time: `O(n)`;   
+Space: `O(n)`;
+
 ### 方法三：Dynamic Programming 优化 （optimal）
 
+不需要记录所有位置的和，只需要记录最后一个位置的和即可，节省空间。
 
+```text
 
+	public static int Fibonacci(int n) {
+		int num1 = 0, num2 = 1; // 初始前两位数
+		int sum = 0;
 
+		if (n == 0) {
+			return num1;
+		}
+
+		for (int i = 2; i <= n; i++) {
+			sum = num1 + num2;
+			num1 = num2;
+			num2 = sum;
+		}
+
+		return sum;
+	}
+```
+
+Time: `O(n)`;   
+Space: `O(1)`;
 
 
 
