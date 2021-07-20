@@ -1,5 +1,5 @@
 ---
-description: Fibonacci
+description: Fibonacci，Dynamic Programming
 ---
 
 # 斐波那契数列 Fibonacci number
