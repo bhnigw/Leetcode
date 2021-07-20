@@ -47,7 +47,7 @@ Space: O\(n\); 解释：按深度算，每return一次创建一个空间。
 		dp[0] = 0;
 		dp[1] = 1;
 
-		for (int i = 2; i <= n; i++) { // 初始值是2
+		for (int i = 2; i <= n; i++) { // i初始值是2
 			dp[i] = dp[i - 1] + dp[i - 2];
 		}
 
