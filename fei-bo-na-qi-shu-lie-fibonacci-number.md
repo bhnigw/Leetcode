@@ -80,7 +80,7 @@ Space: `O(n)`;
 			num2 = sum;
 		}
 
-		return num2;
+		return num2; //最末尾的数字就是num2
 	}
 ```
 
