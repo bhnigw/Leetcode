@@ -80,7 +80,7 @@ Space: `O(n)`;
 			num2 = sum;
 		}
 
-		return sum;
+		return num2;
 	}
 ```
 
