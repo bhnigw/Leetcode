@@ -16,5 +16,5 @@ description: Dynamic Programming，DP
 
 70. 爬楼梯
 
-斐波那契数列 Fibonacci number
+[斐波那契数列 Fibonacci number](https://bhnigw.gitbook.io/leetcode/fei-bo-na-qi-shu-lie-fibonacci-number)
 
