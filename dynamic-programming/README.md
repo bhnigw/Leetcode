@@ -54,7 +54,7 @@ public int Fibonacci(int n) {
 状态转移方程就是用**数学形式**来描述问题结构，它是解决问题的核心。
 {% endhint %}
 
-只要能写出状态转移方程，DP问题就迎刃而解。
+DP问题的思路往往是先想brute force，然后通过brute force总结出状态转移方程。只要能写出状态转移方程，DP问题就迎刃而解。
 
 例如：  
 计算Fibonacci number的状态转移方程是 `DP[i] = DP[i-1] + DP[i-2]`；

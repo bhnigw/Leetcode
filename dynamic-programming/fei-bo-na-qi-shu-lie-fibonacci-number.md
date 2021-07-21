@@ -18,8 +18,6 @@ description: Fibonacci，Dynamic Programming
 
 ### 方法一：Recursion（不推荐）
 
-此方法是一个「**自顶向下」**的过程。意思是：从一个规模较大的原问题比如fib\(20\)，向下逐渐分解规模，直到fib\(1\) 和fib\(2\) 触底，然后逐层返回答案，这就叫「自顶向下」
-
 优点：好理解；缺点：时间复杂度太高；
 
 ```text
@@ -42,11 +40,9 @@ Space: `O(n)`; 解释：按深度算，每return一次创建一个空间。
 
 ### 方法二：Dynamic Programming
 
-此方法是一个「**自底向上」**的过程。意思是：从最底下，问题规模最小的fib\(1\) 和fib\(2\) 开始往上推，直到推到我们想要的答案fib\(20\)，这就是动态规划的思路。
-
 初始化`dp[]`数组来记录每一个位置的和，长度为n + 1，因为要处理n = 0的情况；
 
-它的状态转移方程就是：`dp[i] = dp[i - 1] + dp[i - 2]`；
+它的状态转移方程是：`dp[i] = dp[i - 1] + dp[i - 2]`；
 
 ```text
 	public int Fibonacci(int n) {
@@ -65,6 +61,8 @@ Space: `O(n)`; 解释：按深度算，每return一次创建一个空间。
 
 Time: `O(n)`;   
 Space: `O(n)`;
+
+
 
 ### 方法三：Dynamic Programming 优化 （optimal）
 
