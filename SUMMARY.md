@@ -1,6 +1,11 @@
 # Table of contents
 
 * [\[Leetcode\]142. Linked List Cycle II](README.md)
+* [DP问题总结](dynamic-programming/README.md)
+  * [斐波那契数列 Fibonacci number](dynamic-programming/fei-bo-na-qi-shu-lie-fibonacci-number.md)
+  * [\[Leetcode\]70. Climbing Stairs](dynamic-programming/leetcode-70.-climbing-stairs.md)
+  * [\[Leetcode\]518. Coin Change 2](dynamic-programming/leetcode-518.-coin-change-2.md)
+  * [\[Leetcode\]53. Maximum Subarray](dynamic-programming/leetcode-53.-maximum-subarray.md)
 * [\[Leetcode\]3. Longest Substring Without Repeating Characters](leetcode-3.-longest-substring-without-repeating-characters.md)
 * [\[Leetcode\]15. 3Sum](leetcode-15.-3sum.md)
 * [\[Leetcode\]12. Integer to Roman](leetcode-12.-integer-to-roman.md)
@@ -11,8 +16,6 @@
   * [\[Leetcode\]283. Move Zeroes](leetcode27.-remove-element-tong-lei-ti-zong-jie/leetcode-283.-move-zeroes.md)
 * [\[Leetcode\]36. Valid Sudoku](leetcode-36.-valid-sudoku.md)
 * [\[Leetcode\]42. Trapping Rain Water](leetcode-42.-trapping-rain-water.md)
-* [\[Leetcode\]53. Maximum Subarray](leetcode-53.-maximum-subarray.md)
-* [\[Leetcode\]70. Climbing Stairs](leetcode-70.-climbing-stairs.md)
 * [\[Leetcode\]78. Subsets](leetcode-78.-subsets/README.md)
   * [\[Leetcode\]90. Subsets II](leetcode-78.-subsets/leetcode-90.-subsets-ii.md)
 * [\[Leetcode\]79. Word Search](leetcode-79.-word-search.md)
@@ -32,17 +35,14 @@
 * [\[Leetcode\]★261. Graph Valid Tree](leetcode-261.-graph-valid-tree.md)
 * [\[Leetcode\]268. Missing Number](leetcode-268.-missing-number.md)
 * [\[Leetcode\]287. Find the Duplicate Number](leetcode-287.-find-the-duplicate-number.md)
-* [\[Leetcode\]518. Coin Change 2](leetcode-518.-coin-change-2.md)
 * [\[Leetcode\]529. Minesweeper](leetcode-529.-minesweeper.md)
 * [\[Leetcode\]566. Reshape the Matrix](leetcode-566.-reshape-the-matrix.md)
 * [\[Leetcode\]1822. Sign of the Product of an Array](leetcode-1822.-sign-of-the-product-of-an-array.md)
-* [斐波那契数列 Fibonacci number](fei-bo-na-qi-shu-lie-fibonacci-number.md)
 
 ## 基础必会
 
 * [Binary Search](ji-chu-bi-hui/leetcode-704.-binary-search.md)
 * [Reverse Linked List](ji-chu-bi-hui/leetcode-206.-reverse-linked-list.md)
-* [Dynamic Programming](ji-chu-bi-hui/dynamic-programming.md)
 * [Valid Palindrome](ji-chu-bi-hui/valid-palindrome.md)
 * [Valid Anagram](ji-chu-bi-hui/valid-anagram.md)
 * [怎样reverse一个String](ji-chu-bi-hui/zen-yang-reverse-yi-ge-string.md)
