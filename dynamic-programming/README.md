@@ -48,13 +48,13 @@ public int Fibonacci(int n) {
 
 ###  <a id="&#x72B6;&#x6001;&#x8F6C;&#x79FB;&#x65B9;&#x7A0B;"></a>
 
-### 状态转移方程
+### 状态转移方程：
 
 {% hint style="warning" %}
 状态转移方程就是用**数学形式**来描述问题结构，它是解决问题的核心。
 {% endhint %}
 
-DP问题的思路往往是先想brute force，然后通过brute force总结出状态转移方程。只要能写出状态转移方程，DP问题就迎刃而解。
+只要能写出状态转移方程，DP问题就迎刃而解。
 
 例如：  
 计算Fibonacci number的状态转移方程是 `DP[i] = DP[i-1] + DP[i-2]`；
@@ -64,6 +64,12 @@ DP问题的思路往往是先想brute force，然后通过brute force总结出�
 升级的爬楼梯问题\(步数为1,2,5\)状态转移方程是 `DP[i] = DP[i-1] + DP[i-2] + DP[i-5]`；
 
 
+
+### DP的解题思路：
+
+1. 先想brute force；
+2. 思考题目的子问题是什么；
+3. 通过子问题，总结出状态转移方程。
 
 
 
