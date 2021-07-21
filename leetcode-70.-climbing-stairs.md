@@ -46,7 +46,7 @@ public class Solution {
 
 **所以我们得到公式`dp[n] = dp[n − 1] + dp[n − 2]`；**
 
-同时需要初始化`dp[0]=1`和`dp[1]=1`；
+同时需要初始化`dp[0] = 1`和`dp[1] = 1`；
 
 ![](.gitbook/assets/img_6421.jpg)
 
