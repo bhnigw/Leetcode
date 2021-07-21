@@ -41,7 +41,7 @@ class Solution {
         
         for (int coin : coins) {
             for (int i = coin; i <= amount; i++) { //注意是<=
-                dp[i] += dp[i - coin];
+                dp[i] = dp[i] + dp[i - coin];
             }
         }
         
