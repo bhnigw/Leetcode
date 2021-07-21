@@ -125,7 +125,7 @@ class Solution {
 }
 ```
 
-Time complexity: O\(N\), where N is the length of `nums`.
+Time complexity: O\(N\), where N is the length of `nums[]`.
 
 Space complexity: O\(1\)
 
