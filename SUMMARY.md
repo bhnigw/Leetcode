@@ -2,12 +2,6 @@
 
 * [Binary Search](README.md)
 * [Reverse Linked List](leetcode-206.-reverse-linked-list.md)
-* [Dynamic Programming问题总结](dynamic-programming/README.md)
-  * [斐波那契数列 Fibonacci number](dynamic-programming/fei-bo-na-qi-shu-lie-fibonacci-number.md)
-  * [\[Leetcode\]70. Climbing Stairs](dynamic-programming/leetcode-70.-climbing-stairs.md)
-  * [\[Leetcode\]518. Coin Change 2](dynamic-programming/leetcode-518.-coin-change-2.md)
-  * [\[Leetcode\]53. Maximum Subarray](dynamic-programming/leetcode-53.-maximum-subarray.md)
-* [DFS问题总结](dfs-wen-ti-zong-jie.md)
 * [Valid Palindrome](valid-palindrome.md)
 * [Valid Anagram](valid-anagram.md)
 * [怎样reverse一个String](zen-yang-reverse-yi-ge-string.md)
@@ -15,6 +9,13 @@
 * [无向图中检查环 Detect cycle in a undirected graph](wu-xiang-tu-zhong-jian-cha-huan-detect-cycle-inaundirected-graph.md)
 * [检查重复、统计字符或数字出现次数](ji-lu-zi-fu-shu-zi-chu-xian-ci-shu.md)
 * [Slide Window](slide-window.md)
+* [Dynamic Programming问题总结](dynamic-programming/README.md)
+  * [斐波那契数列 Fibonacci number](dynamic-programming/fei-bo-na-qi-shu-lie-fibonacci-number.md)
+  * [\[Leetcode\]70. Climbing Stairs](dynamic-programming/leetcode-70.-climbing-stairs.md)
+  * [\[Leetcode\]518. Coin Change 2](dynamic-programming/leetcode-518.-coin-change-2.md)
+  * [\[Leetcode\]53. Maximum Subarray](dynamic-programming/leetcode-53.-maximum-subarray.md)
+* [DFS问题总结](dfs-wen-ti-zong-jie.md)
+* [Backtrack问题总结](backtrack-wen-ti-zong-jie.md)
 
 ## Leetcode
 
@@ -28,6 +29,7 @@
   * [\[Leetcode\]80. Remove Duplicates from Sorted Array II](leetcode/leetcode27.-remove-element-tong-lei-ti-zong-jie/leetcode-80.-remove-duplicates-from-sorted-array-ii.md)
   * [\[Leetcode\]283. Move Zeroes](leetcode/leetcode27.-remove-element-tong-lei-ti-zong-jie/leetcode-283.-move-zeroes.md)
 * [\[Leetcode\]36. Valid Sudoku](leetcode/leetcode-36.-valid-sudoku.md)
+* [\[Leetcode\]39. Combination Sum](leetcode/leetcode-39.-combination-sum.md)
 * [\[Leetcode\]42. Trapping Rain Water](leetcode/leetcode-42.-trapping-rain-water.md)
 * [\[Leetcode\]79. Word Search](leetcode/leetcode-79.-word-search.md)
 * [\[Leetcode\]78. Subsets](leetcode/leetcode-78.-subsets/README.md)
