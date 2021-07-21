@@ -12,9 +12,11 @@ description: Dynamic Programming，DP
 
 DP是「自底向上」，Recursion是「自顶向下」。
 
-是什么意思？？以Fibonacci来举例解释：
+是什么意思？？以计算Fibonacci题来举例解释：
 
-「**自顶向下」**的意思是：从一个规模较大的原问题比如`fib(20)`，向下逐渐分解规模，直到`fib(1)`和`fib(2)`触底，然后逐层返回答案，这就叫「自顶向下」。
+![](../.gitbook/assets/screen-shot-2021-07-21-at-2.05.38-am.png)
+
+「**自顶向下」**的意思是：从一个规模较大的原问题比如`fib(4)`，向下逐渐分解规模，直到`fib(1)`和`fib(2)`触底，然后逐层返回答案，这就叫自顶向下（**Top-down**）。
 
 ```text
 public static int Fibonacci(int n) {
@@ -27,7 +29,7 @@ public static int Fibonacci(int n) {
 
 
 
-「**自底向上」**的意思是：从最底下，问题规模最小的`fib(1)`和`fib(2)`开始往上推，直到推到我们想要的答案`fib(20)`，这就是动态规划DP的思路。
+「**自底向上」**的意思是：从最底下，问题规模最小的`fib(1)`和`fib(2)`开始往上推，直到推到我们想要的答案`fib(4)`，这就是动态规划DP的思路。（**Bottom-up**）
 
 ```text
 public int Fibonacci(int n) {
@@ -52,7 +54,16 @@ public int Fibonacci(int n) {
 状态转移方程就是用**数学形式**来描述问题结构，它是解决问题的核心。
 {% endhint %}
 
-只要动态规划问题最困难的就是写出状态转移方程，
+只要能写出状态转移方程，DP问题就迎刃而解。
+
+例如：  
+计算Fibonacci number的状态转移方程是 `DP[i] = DP[i-1] + DP[i-2]`；
+
+基本的爬楼梯问题的状态转移方程是 `DP[i] = DP[i-1] + DP[i-2]`；
+
+升级的爬楼梯问题\(步数为1,2,5\)状态转移方程是 `DP[i] = DP[i-1] + DP[i-2] + DP[i-5]`；
+
+
 
 
 

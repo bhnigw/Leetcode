@@ -46,6 +46,8 @@ Space: `O(n)`; 解释：按深度算，每return一次创建一个空间。
 
 初始化`dp[]`数组来记录每一个位置的和，长度为n + 1，因为要处理n = 0的情况；
 
+它的状态转移方程就是：`dp[i] = dp[i - 1] + dp[i - 2]`；
+
 ```text
 	public int Fibonacci(int n) {
 		int dp[] = new int[n + 1]; // 需要1个额外的空间来处理n = 0的情况
