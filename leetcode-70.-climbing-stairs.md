@@ -50,6 +50,9 @@ public class Solution {
 
 ![](.gitbook/assets/img_6421.jpg)
 
+由上图，可一句话总结：  
+这道题目子问题是：problem\(i\) = sub\(i - 1\) + sub\(i - 2\)，即求解第`i`阶楼梯等于求解第`i - 1`阶楼梯和第`i - 2`阶楼梯之和。
+
 ```text
 class Solution {
     public int climbStairs(int n) {
