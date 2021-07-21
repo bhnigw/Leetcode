@@ -77,7 +77,7 @@ Space: `O(n)`；空间就是数组`dp[]`的长度
 
 ### 方法3：Fibonacci
 
-观察方法2的公式，正好符合Fibonacci的公式：
+观察方法2的公式，正好符合Fibonacci的公式：（此题为特殊情况，恰巧符合，所以不推荐）
 
 ![](.gitbook/assets/screen-shot-2021-07-20-at-12.30.22-am.png)
 
@@ -105,6 +105,40 @@ public class Solution {
 
 Time: `O(n)`;   
 Space: `O(1)`;
+
+
+
+### ❗️ Follow up：
+
+如果把问题泛化，步数不再是固定的 1、2，而是任意给定步数，例如 1、2、5 呢？
+
+答：我们只需要修改DP方程为`DP[i] = DP[i - 1] + DP[i - 2] + DP[i - 5]`即可；
+
+也就是`DP[i] = DP[i] + DP[i - j]`，`j =1,2,5`；在原来的基础上，代码可以做这样子修改，就成为了此问题的万能模板：
+
+```text
+class Solution {
+    public int climbStairs(int n) {
+        int dp[] = new int[n + 1];
+        int steps[] = {1, 2}; // 可以变化为任意的步数组合
+        
+        dp[0] = 1;
+        
+       for (int i = 1; i <= n; i++){
+            for (int step : steps){
+                if ( i < step ) continue; // 台阶少于跨越的步数        
+                dp[i] = dp[i] + dp[i-step];
+            }
+        }
+        
+        return dp[n];
+    }
+}
+```
+
+
+
+
 
 
 
