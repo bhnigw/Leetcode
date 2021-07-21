@@ -46,7 +46,7 @@ public class Solution {
 
 **所以我们得到公式`dp[n] = dp[n − 1] + dp[n − 2]`；**
 
-同时需要初始化`dp[0] = 1`和`dp[1] = 1`；
+同时需要初始化`dp[1] = 1`和`dp[2] = 2`；（input是正整数）
 
 ![](.gitbook/assets/img_6421.jpg)
 
@@ -55,10 +55,10 @@ class Solution {
     public int climbStairs(int n) {
         int dp[] = new int[n + 1]; //为什么加1，是为了处理n=0的情况
         
-        dp[0] = 1;  // 注意位置0的初始值是1
-        dp[1] = 1;
+        dp[1] = 1;  // 注意input是正整数，所以从1开始
+        dp[2] = 2;
         
-        for (int i = 2; i <= n; i++) {
+        for (int i = 3; i <= n; i++) { // 注意i从3开始
             dp[i] = dp[i - 1] + dp[i - 2];
         }
         
