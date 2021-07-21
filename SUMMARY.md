@@ -14,6 +14,7 @@
   * [\[Leetcode\]70. Climbing Stairs](dynamic-programming/leetcode-70.-climbing-stairs.md)
   * [\[Leetcode\]518. Coin Change 2](dynamic-programming/leetcode-518.-coin-change-2.md)
   * [\[Leetcode\]53. Maximum Subarray](dynamic-programming/leetcode-53.-maximum-subarray.md)
+  * [\[Leetcode\]64. Minimum Path Sum](dynamic-programming/leetcode-64.-minimum-path-sum.md)
 * [DFS问题总结](dfs-wen-ti-zong-jie.md)
 * [Backtrack问题总结](backtrack-wen-ti-zong-jie.md)
 
