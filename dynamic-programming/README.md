@@ -2,7 +2,7 @@
 description: Dynamic Programming，DP
 ---
 
-# DP问题总结
+# Dynamic Programming问题总结
 
 关键词：Dynamic Programming，DP
 
