@@ -48,7 +48,7 @@ public int Fibonacci(int n) {
 
 ###  <a id="&#x72B6;&#x6001;&#x8F6C;&#x79FB;&#x65B9;&#x7A0B;"></a>
 
-### 状态转移方程：
+### 状态转移方程（Governing equation）：
 
 {% hint style="warning" %}
 状态转移方程就是用**数学形式**来描述问题结构，它是解决问题的核心。
