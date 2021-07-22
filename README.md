@@ -43,3 +43,13 @@ Space: O\(1\);
 2. mid注意防止溢出；  
 **3. return的时候，返回`left`或者`right`都可以，结果都是一样。**
 
+\*\*\*\*
+
+其他例题：
+
+162. Find Peak Element
+
+
+
+
+

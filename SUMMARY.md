@@ -41,6 +41,7 @@
   * [\[Leetcode\]123. Best Time to Buy and Sell Stock III](leetcode/leetcode-121.-best-time-to-buy-and-sell-stock/leetcode-123.-best-time-to-buy-and-sell-stock-iii.md)
 * [\[Leetcode\]151. Reverse Words in a String](leetcode/leetcode-151.-reverse-words-in-a-string/README.md)
   * [\[Leetcode\]186. Reverse Words in a String II](leetcode/leetcode-151.-reverse-words-in-a-string/leetcode-186.-reverse-words-in-a-string-ii.md)
+* [\[Leetcode\]162. Find Peak Element](leetcode/leetcode-162.-find-peak-element.md)
 * [\[Leetcode\]171. Excel Sheet Column Number](leetcode/leetcode-171.-excel-sheet-column-number/README.md)
   * [\[Leetcode\]168. Excel Sheet Column Title](leetcode/leetcode-171.-excel-sheet-column-number/leetcode-168.-excel-sheet-column-title.md)
 * [\[Leetcode\]187. Repeated DNA Sequences](leetcode/leetcode-187.-repeated-dna-sequences.md)
