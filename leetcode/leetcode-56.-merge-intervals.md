@@ -20,7 +20,7 @@ Explanation: 区间 \[1,3\] 和 \[2,6\] 重叠, 将它们合并为 \[1,6\]
 
 使用ArrayList来记录结果，因为结果的长度未知；`List<int[]> res = new ArrayList<>();`
 
-要先以第一位数，来sort所有的intervals，注意方法：`Arrays.sort(intervals, (int[] a, int[] b) -> a[0] - b[0])`;
+要先以第一位数，来**sort**所有的intervals，注意方法❗️ ：`Arrays.sort(intervals, (int[] a, int[] b) -> a[0] - b[0])`;
 
 先把第一个线段加进去；for循环从1开始，每次取res最末尾的线段lastInterval，来与当前的线段i比较：  
 ● 如果lastInterval的尾巴比线段i的开头还大（大于或等于），说明重叠了，那么我们就更新res最末尾线段的尾巴：`Math.max(lastInterval[1], intervals[i][1])`；  
