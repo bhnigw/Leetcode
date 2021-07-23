@@ -20,7 +20,9 @@ description: DFS
 
 
 
-算法：DFS；算法简单直接，就是从`click[]`的点开始dfs；  
+### 算法：DFS
+
+算法简单直接，就是从`click[]`的点开始dfs：  
 1.点击`click[]`之后，如果点到雷M，把M变为X然后直接return board；  
 2.如果点到空白E，那么就开始检测这个空白点周围有没有雷，方法：统计这个空白点周围的8个点雷的个数，把数放进count，如果count为0则说明周围没有雷；  
 3.如果count==0，说明周围都没有雷，则把E变为B，然后对该点周围的8个点进行dfs \(recursive\)；  
@@ -44,7 +46,8 @@ class Solution {
 
         if (board[row][col] == 'E') { //点到空白
         
-            //检测这个空白点周围有没有雷，方法：统计这个空白点周围的8个点雷的个数，把数放进count，如果count为0则说明周围没有雷
+            // 检测这个空白点周围有没有雷，方法：统计这个空白点周围的8个点雷的个数，
+            // 把数放进count，如果count为0则说明周围没有雷
             int count = 0;
             for (int i = -1; i < 2; i++) {
                 for (int j = -1; j < 2; j++) {
@@ -78,12 +81,12 @@ class Solution {
 }
 ```
 
-Time: O\(m\*n\) 遍历了所有格子  
-Space: O\(m\*n\) 由dfs的深度/层数决定
+Time: `O(m*n)` 遍历了所有格子，m、n为长宽  
+Space: `O(m*n)` 由dfs的深度/层数决定
 
 
 
-重点总结：
+#### 重点总结：
 
 1.对于二维矩阵/数组，在dfs/bfs的时候对**index是否超出范围**的检查：
 
@@ -106,4 +109,6 @@ Space: O\(m\*n\) 由dfs的深度/层数决定
 
 3.注意复习string to integer，integer to string，char to integer，integer to char，string to char，char to string [https://bhnigw.gitbook.io/-1/](https://bhnigw.gitbook.io/-1/)  
 这里把整数count转化成为字符char的方法是`(char)(count + '0');` 注意是加0不是减0
+
+
 
