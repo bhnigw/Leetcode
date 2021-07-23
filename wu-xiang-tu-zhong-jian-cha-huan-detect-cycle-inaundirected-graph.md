@@ -6,7 +6,7 @@ description: undirected graph，bidirectional
 
 ### 怎样检测一个无向图undirected graph里是否有环？？
 
-假设一个图有n=5个节点，给出一个`edges = [[0,1],[1,2],[2,3],[1,3],[1,4]]`，做出下图。肉眼可以观察到有一个`1 -> 2 -> 3 -> 1`组成的cycle，但是怎样用程序来鉴别呢？
+假设一个图有n = 5个节点，给出一个`edges = [[0,1],[1,2],[2,3],[1,3],[1,4]]`，做出下图。肉眼可以观察到有一个`1 -> 2 -> 3 -> 1`组成的cycle，但是怎样用程序来鉴别呢？
 
 ![](.gitbook/assets/tree2-graph.jpg)
 
@@ -198,7 +198,7 @@ class Solution {
 ```
 
 Time：`O(N)`  
-`union()`和`find()`的过程都是O\(n\)；
+union\(\)和find\(\)的过程都是O\(n\)；
 
 Space：`O(N)`  
 Union Find需要`O(N)`的空间来存储array；
