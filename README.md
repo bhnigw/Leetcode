@@ -47,7 +47,7 @@ Space: O\(1\);
 
 其他例题：
 
-162. Find Peak Element
+[162. Find Peak Element](https://bhnigw.gitbook.io/leetcode/leetcode/leetcode-162.-find-peak-element)
 
 
 
