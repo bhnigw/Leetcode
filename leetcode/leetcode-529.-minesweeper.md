@@ -107,6 +107,8 @@ Space: `O(m*n)` 由dfs的深度/层数决定
 
 解释：i小于2表明i最多是1，那么i的-1，0，1和j的-1，0，1所形成的8种排列组合，就代表了8个方向。
 
+![](../.gitbook/assets/img_6423.jpg)
+
 3.注意复习string to integer，integer to string，char to integer，integer to char，string to char，char to string [https://bhnigw.gitbook.io/-1/](https://bhnigw.gitbook.io/-1/)  
 这里把整数count转化成为字符char的方法是`(char)(count + '0');` 注意是加0不是减0
 
