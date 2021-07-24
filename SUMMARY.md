@@ -36,6 +36,7 @@
 * [\[Leetcode\]79. Word Search](leetcode/leetcode-79.-word-search.md)
 * [\[Leetcode\]78. Subsets](leetcode/leetcode-78.-subsets/README.md)
   * [\[Leetcode\]90. Subsets II](leetcode/leetcode-78.-subsets/leetcode-90.-subsets-ii.md)
+* [Binary Search Tree](leetcode/binary-search-tree.md)
 * [\[Leetcode\]102. Binary Tree Level Order Traversal](leetcode/leetcode-102.-binary-tree-level-order-traversal.md)
 * [\[Leetcode\]121. Best Time to Buy and Sell Stock](leetcode/leetcode-121.-best-time-to-buy-and-sell-stock/README.md)
   * [\[Leetcode\]122. Best Time to Buy and Sell Stock II](leetcode/leetcode-121.-best-time-to-buy-and-sell-stock/leetcode-122.-best-time-to-buy-and-sell-stock-ii.md)
