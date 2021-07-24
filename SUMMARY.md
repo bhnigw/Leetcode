@@ -17,6 +17,7 @@
   * [\[Leetcode\]64. Minimum Path Sum](dynamic-programming/leetcode-64.-minimum-path-sum.md)
 * [DFS问题总结](dfs-wen-ti-zong-jie.md)
 * [Backtrack问题总结](backtrack-wen-ti-zong-jie.md)
+* [Dijkstra](dijkstra.md)
 
 ## Leetcode
 
