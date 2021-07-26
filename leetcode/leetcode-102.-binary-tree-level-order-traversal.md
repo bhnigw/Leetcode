@@ -82,7 +82,7 @@ Space: `O(N)`，queue的size
 
 那问题又来了！怎样确定节点来自哪一层呢？？
 
-我们只需要每次recursion的时候，都需要带一个整数level进去，表示当前的层数；每进入下一层，层数level就加1；并且在每一层level开始的时候初始化new一个ArrayList；
+我们需要在每次recursion的时候，带一个整数level进去，表示当前的层数；每进入下一层，层数level就加1；并且在每一层level开始的时候初始化new一个ArrayList；
 
 ```text
 class Solution {
