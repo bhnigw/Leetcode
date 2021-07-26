@@ -2,7 +2,7 @@
 description: Tree，Level Order Traversal
 ---
 
-# \[Leetcode\]102. Binary Tree Level Order Traversal
+# \[Leetcode\]★102. Binary Tree Level Order Traversal
 
 原题地址：[https://leetcode.com/problems/binary-tree-level-order-traversal/](https://leetcode.com/problems/binary-tree-level-order-traversal/) 关键词：Tree，Level Order Traversal
 
@@ -30,7 +30,7 @@ Output: `[[3],[9,20],[15,7]]`
 
 那问题就来了！怎样区分每一层的node，然后分层放进二维数组呢？？？这也是这道题的重点！
 
-我们只需要稍微修改一下代码，在每一层while循环开始时，记录当前queue的长度n，也就是每一层的size，然后在while里用for循环`(int i = 0; i < size; i++)`把这一层的node都poll光
+我们需要在每一层while循环开始时，记录当前queue的长度n，也就是每一层的size，然后在while里用for循环`(int i = 0; i < size; i++)`把这一层的node都poll光
 
 ![](../.gitbook/assets/img_6425.jpg)
 
@@ -74,13 +74,71 @@ Space: `O(N)`，queue的size
 
 
 
-### 方法2：DFS（不推荐）
+### 方法2：DFS
+
+按照DFS的步骤，会先访问节点 `1`、节点`2`、节点`3`；然后`4`，然后`5`，最后是`6`。
+
+![](../.gitbook/assets/aeed09e12573ec00d83663bb4f77562e8904ac58cdb2cbe6e995f2ac33b12934-0203_1.gif)
+
+那问题又来了！怎样确定节点来自哪一层呢？？
+
+我们只需要每次recursion的时候，都需要带一个整数level进去，表示当前的层数；每进入下一层，层数level就加1；并且在每一层level开始的时候初始化new一个ArrayList；
+
+```text
+class Solution {
+    public List<List<Integer>> levelOrder(TreeNode root) {
+        List<List<Integer>> res = new ArrayList<>();
+        if (root == null) return res;
+        
+        int level = 0;
+        helper(root, level, res);
+        
+        return res;
+    }
+    
+    private void helper(TreeNode root, int level, List<List<Integer>> res) {
+        if (res.size() == level) { // 注意什么意思
+            res.add(new ArrayList<Integer>());
+        }
+        
+        res.get(level).add(root.val);
+        
+        if (root.left != null) {
+            helper(root.left, level + 1, res); // 不能是++level
+        }
+        
+        if (root.right != null) {
+            helper(root.right, level + 1, res); 
+        }
+    }
+}
+```
+
+#### 要注意的地方：
+
+第13行本来的意思是，如果res里面没有还这一层的元素，就new一个list来装本层的元素；为什么不能用`if (res.get(i) != null)`呢？因为当位置i没有元素时，ArrayList会报错IndexOutOfBoundsException；所以只能用res的size来判断，当level在第0层也就是根节点root的时候，size也为0；17行add元素后res的size变为1，下面的dfs进入level 1的时候再new一个ArrayList；
+
+意思就是，每当`res.size() == level`的时候，**说明进入了全新的一个level**，那么就new一个ArrayList；那么问题就来了，怎样保证recursion的时候把同一层的加到同一个list里且不会new多余的list呢？下面就要注意level的用法：
+
+我们要保证DFS每前进一步，层数level要加1，同时要**保持回来的时候level的值在本层保持不变**！所以第20行用`level + 1`而不是`++level`；`level + 1`不会改变level本身的值，而`++level`会让level本身的值加1；
+
+`level + 1`可以保证在DFS每一层的时候，同一层的level值不变。能把同一层的node加到同样的list里面去。
+
+如果是`level + 1`会输出：`[[1], [2, 5], [3, 4, 6]]` ✅  
+如果是`++level`会输出：`[[1], [2], [3], [4], [5], [6]]` ❌
+
+举例：比如在dfs到第二层node = 5的位置时，进入到helper\(\)后，level值为1，res的size是3，所以第13行不会new多余的list。
 
 
+
+Time: `O(N)`，每个node走了一遍  
+Space: `O(h)`；h是树的高度，也就等于是recursive的层数；
 
 
 
 ### 本题要记住的重点：
 
-怎样区分Queue中的结点来自哪一层。
+怎样确定BFS和DFS中的结点来自哪一层。
+
+
 
