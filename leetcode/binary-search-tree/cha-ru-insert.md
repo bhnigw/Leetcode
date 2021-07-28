@@ -1,6 +1,10 @@
+---
+description: Binary Search Tree
+---
+
 # 插入 Insert
 
-原题地址：[https://leetcode.com/problems/insert-into-a-binary-search-tree/](https://leetcode.com/problems/insert-into-a-binary-search-tree/)
+原题地址：[https://leetcode.com/problems/insert-into-a-binary-search-tree/](https://leetcode.com/problems/insert-into-a-binary-search-tree/) 关键词：Binary Search Tree
 
 
 
