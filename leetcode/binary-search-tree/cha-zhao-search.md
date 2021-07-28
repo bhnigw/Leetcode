@@ -70,8 +70,8 @@ class Solution {
 }
 ```
 
-Time：`O(logn)`，也就是树的高度，最坏的情况是`O(n)`；   
-Space：`O(logn)`，也就是树的高度，最坏的情况是`O(n)`；
+Time：平均时间是`O(logn)`，也就是树的高度，最坏的情况是`O(n)`；   
+Space：平均时间是`O(logn)`，也就是树的高度，最坏的情况是`O(n)`；
 
 
 
