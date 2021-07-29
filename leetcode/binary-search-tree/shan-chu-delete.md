@@ -87,7 +87,7 @@ class Solution {
 }
 ```
 
-Time：`O(H)`，H是树的高度，height of the tree  
+Time：`O(H)`，H是树的高度，height of the tree，高度H平均值是`logn`，在worst case情况下是`n`；  
 Space：`O(H)`
 
 
