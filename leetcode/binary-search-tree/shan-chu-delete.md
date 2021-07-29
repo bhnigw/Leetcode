@@ -12,9 +12,9 @@ description: Binary Search Tree
 
 ### 算法：Recursion
 
-如果没找到删除的节点，遍历到空节点null直接返回；
+如果没找到删除的节点，直接返回null；
 
-当找到要删除的节点时，有以下4种情况：
+当找到要删除的节点时`key == root.val`，有以下4种情况：
 
 ● **节点情况1：**没有左child，也没有右child，也就是**Leaf节点**，则直接删除它：`return null`
 
@@ -31,8 +31,7 @@ description: Binary Search Tree
 ![](../../.gitbook/assets/img_6438.jpg)
 
   
-****● **节点情况4：**既有左child，又有右child。设当前要删除的节点为`cur_node`，找到它的**right** subtree中**值最小的节点**`min_node`，把`min_node`赋值给`cur_node`；  
-然后进行recursion，继续找`min_node`的right subtree中值最小的节点`min_min_node`，继续替换继续找...
+****● **节点情况4：**既有左child，又有右child。设当前要删除的节点为`cur_node`，找到它的**right** subtree中**值最小的节点**`min_node`，把`min_node.val`赋值给`cur_node.val`；然后删掉right subtree的这个`min_node`：进行recursion，继续找`min_node`的right subtree中值最小的节点`min_min_node`，继续替换继续找...
 
 ![](../../.gitbook/assets/del_succ.png)
 
@@ -46,18 +45,57 @@ description: Binary Search Tree
   * 如果该节点是Leaf节点，则直接删除它：`root = null`；
   * 如果该节点只有左child，。 
   * 如果该节点只有右child，。 
-  * 如果该节点左右都有child，找到它right subtree中值最小的节点，替换；然后以这个最小节点为当前要删除的节点，继续recursion找到它right subtree中值最小的节点，替换...
+  * 如果该节点左右都有child，找到它right subtree中值最小的节点，替换val；然后用recursion删掉right subtree的这个最小的节点...
 * 返回 root。
 
+```text
+class Solution {
+    public TreeNode deleteNode(TreeNode root, int key) {
+        if (root == null) return root;
+        
+        if (key < root.val) {
+            root.left = deleteNode(root.left, key);
+        } else {
+            root.right = deleteNode(root.right, key);
+        }
+        
+        if (key == root.val) {
+            if (root.left == null && root.right == null) {       // 情况1，Leaf节点
+                return null;
+            } else if (root.left != null && root.right == null) { // 情况2，有左child
+                root = root.left;
+            } else if (root.left == null && root.right != null) { // 情况3，有右child
+                root = root.right;
+            } else {                                              // 情况4，左右都有child
+                TreeNode minNode = findMinNode(root.right);
+                root.val = minNode.val;                         // 把root的值替换为minNode的值
+                
+                root.right = deleteNode(root.right, minNode.val); // 删去minNode
+            }
+        }
+        
+        return root;  
+    }
+    
+    private TreeNode findMinNode(TreeNode root) {
+        while (root.left != null) { // 最小的一定出现在左边
+            root = root.left;       //所以顺着左边一路找下去
+        }
+        
+        return root;
+    }
+}
+```
+
+Time：`O(H)`，H是树的高度，height of the tree  
+Space：`O(H)`
 
 
 
+### 要记住的重点：
 
-
-
-
-
-
+怎样在Binary Search Tree找最小的node；  
+怎样在Binary Search Tree找最大的node；
 
 
 
