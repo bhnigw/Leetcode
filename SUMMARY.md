@@ -23,6 +23,7 @@
 
 * [\[Leetcode\]142. Linked List Cycle II](leetcode/leetcode-142.-linked-list-cycle-ii.md)
 * [\[Leetcode\]3. Longest Substring Without Repeating Characters](leetcode/leetcode-3.-longest-substring-without-repeating-characters.md)
+* [\[Leetcode\]7. Reverse Integer](leetcode/leetcode-7.-reverse-integer.md)
 * [\[Leetcode\]12. Integer to Roman](leetcode/leetcode-12.-integer-to-roman.md)
 * [\[Leetcode\]13. Roman to Integer](leetcode/leetcode-13.-roman-to-integer.md)
 * [\[Leetcode\]15. 3Sum](leetcode/leetcode-15.-3sum.md)
