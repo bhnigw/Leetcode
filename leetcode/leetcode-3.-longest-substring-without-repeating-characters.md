@@ -11,9 +11,14 @@ description: 'Slide window, Hash set'
 
 
 
-方法一：Brute force；
+### 方法一：Brute force；
 
-方法二：Slide window；  
+求出所有的substring。
+
+
+
+### 方法二：Slide window；
+
 1. 跟duplicate有关，那么就用HashSet，然后初始一个left慢指针和一个right快指针。  
 2. 使用right指针看新字母是否在set，如果没有就将它添加到set，然后更新最大长度，然后right++；  
 3. 如果新字母已经存在set里了，说明它与当前的substring开头的第一个字母重复，那么我们就用`set.remove()`删去第一个字母`str.charAt(left)`，然后left++，使新的substring没有重复。
