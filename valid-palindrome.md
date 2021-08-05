@@ -11,17 +11,20 @@ description: Two pointer，Palindrome
 
 
 
-若题目没有额外的要求，就用two poniter方法，最简单最直观：
+若题目没有额外的要求，就用two poniter方法，比较首位两个字符是否相同即可：
 
 ```text
 public boolean isPalindromic(String str) {
+		int i = 0;
+		int j = str.length() - 1;
 
-		for (int i = 0; i < str.length() / 2; i++) {
-			if (str.charAt(i) != str.charAt(len - i - 1)) {
-				return false;
-			}
+		while (i < j) {
+			if (str.charAt(i) != str.charAt(j)) return false;
+
+			i++;
+			j--;
 		}
-		
+
 		return true;
 }
 ```
@@ -32,7 +35,14 @@ public boolean isPalindromic(String str) {
 
 ## 例题：[125. Valid Palindrome](https://leetcode.com/problems/valid-palindrome/)
 
-题意：给个string，判断是不是Palindrome，是就true；
+题意：给个string，可能含有空格或者特殊符号，需要判断出现的**字母和数字**是不是Palindrome，如果是就返回true；
+
+例：  
+Input: `s = "A man, a plan, a canal: Panama"`   
+Output: `true`   
+Explanation: "amanaplanacanalpanama" is a palindrome.
+
+
 
 ### 方法一：Compare with Reverse；
 
