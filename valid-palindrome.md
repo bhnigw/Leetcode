@@ -1,17 +1,38 @@
 ---
-description: Two pointer
+description: Two pointer，Palindrome
 ---
 
-# Valid Palindrome
+# 判断Palindrome
 
-原题地址：[https://leetcode.com/problems/valid-palindrome/](https://leetcode.com/problems/valid-palindrome/)
+### 定义：
+
+**Palindrome**：A word or phrase that reads the same backward as forward.  
+回文，即一个string正着看和倒着看，它的字母顺序都是一样的。
+
+
+
+若题目没有额外的要求，就用two poniter方法，最简单最直观：
+
+```text
+public boolean isPalindromic(String str) {
+
+		for (int i = 0; i < str.length() / 2; i++) {
+			if (str.charAt(i) != str.charAt(len - i - 1)) {
+				return false;
+			}
+		}
+		
+		return true;
+}
+```
+
+
+
+
+
+## 例题：[125. Valid Palindrome](https://leetcode.com/problems/valid-palindrome/)
 
 题意：给个string，判断是不是Palindrome，是就true；
-
-**Palindrome定义：**回文，即一个string正着看和倒着看，它的字母顺序都是一样的。  
-                                 A word or phrase that reads the same backward as forward.
-
-
 
 ### 方法一：Compare with Reverse；
 

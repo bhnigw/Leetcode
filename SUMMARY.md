@@ -2,8 +2,8 @@
 
 * [Binary Search](README.md)
 * [Reverse Linked List](leetcode-206.-reverse-linked-list.md)
-* [Valid Palindrome](valid-palindrome.md)
-* [Valid Anagram](valid-anagram.md)
+* [判断Palindrome](valid-palindrome.md)
+* [判断Anagram](valid-anagram.md)
 * [怎样reverse一个String](zen-yang-reverse-yi-ge-string.md)
 * [有向图中检查环 Detect cycle in a directed graph](detect-cycle-in-a-directed-graph.md)
 * [无向图中检查环 Detect cycle in a undirected graph](wu-xiang-tu-zhong-jian-cha-huan-detect-cycle-inaundirected-graph.md)
