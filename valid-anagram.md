@@ -4,9 +4,14 @@ description: Anagram
 
 # 判断Anagram
 
-原题地址：[https://leetcode.com/problems/valid-anagram/](https://leetcode.com/problems/valid-anagram/)
+### 定义：
 
-Anagram定义：两个string，由**相同字母组成，但字母顺序被打乱**。An anagram is a word formed by rearranging the letters.
+**Anagram**：An anagram is a word formed by rearranging the letters.  
+相同字母异序词：由相同字母组成，但字母顺序被打乱。
+
+
+
+### 例题：[242. Valid Anagram](https://leetcode.com/problems/valid-anagram/) 
 
 **事先要确认**：  
 1. 是否都是小写字母lowercase / 是否是case sensitive？  
