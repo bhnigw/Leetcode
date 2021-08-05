@@ -1,16 +1,18 @@
 ---
-description: 'Linked List, Two pointer，如何检查LinkedList有没有cycle/loop'
+description: 'Linked List, Two pointer'
 ---
 
 # \[Leetcode\]142. Linked List Cycle II
 
-原题地址：[https://leetcode.com/problems/linked-list-cycle-ii/](https://leetcode.com/problems/linked-list-cycle-ii/) 关键词：Linked List, Two pointer
+原题地址：[https://leetcode.com/problems/linked-list-cycle-ii/](https://leetcode.com/problems/linked-list-cycle-ii/) 关键词：Linked List, Two pointer，如何检查LinkedList有没有cycle/loop
 
 题意：判断LinkedList是否有环，如果有，找到环的入口位置。
 
 
 
-方法一：如果不考虑空间复杂度，可以使用一个HashSet记录走过的节点，当遇到第一个在HashSet中存在的节点时，就说明回到了出发点，即链表有环，同时也找到了环的入口。
+### 方法一：
+
+如果不考虑空间复杂度，可以使用一个HashSet记录走过的节点，当遇到第一个在HashSet中存在的节点时，就说明回到了出发点，即链表有环，同时也找到了环的入口。
 
 ```java
 public class Solution {
@@ -34,7 +36,10 @@ public class Solution {
 
 \*\*\*\*
 
-★方法二：**Two pointer，**空间复杂度是O\(1\)；一个slow，一个fast，slow每次移动一步而fast每次移动两步。那么如果有cycle的话，slow和fast一定会在circle里某处相遇，且相遇时fast pointer所走过的路程一定是slow pointer的两倍。  
+### ★方法二：Two pointer
+
+空间复杂度是O\(1\)；  
+****一个slow，一个fast，slow每次移动一步而fast每次移动两步。那么如果有cycle的话，slow和fast一定会在circle里某处相遇，且相遇时fast pointer所走过的路程一定是slow pointer的两倍。  
 此时把slow放回head，然后和fast再同时向前走\(此时fast一次移动一步\)，再次相遇时就是cycle开始的地方，返回这个node即可。  
 如果没有cycle，那么fast一定会遇到null，此时就返回null。
 
