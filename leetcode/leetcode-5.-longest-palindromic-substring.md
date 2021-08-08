@@ -122,6 +122,48 @@ class Solution {
 }
 ```
 
+更好理解的版本（**推荐**）：
+
+```text
+class Solution {
+    public String longestPalindrome(String s) {        
+        int length = s.length();        
+        if (s == null || length < 2) return s;
+        
+        boolean[][] dp = new boolean[length][length];
+        
+        int left = 0;
+        int right = 0;
+        
+        for (int j = 0; j < length; j++) {
+            for (int i = 0; i < j; i++) {
+                boolean isInnerWordPalindrome = dp[i + 1][j - 1] || j - i <= 2; // 这里处理了两个字母相邻且相同的情况
+                
+                if (s.charAt(i) == s.charAt(j) && isInnerWordPalindrome){
+                    dp[i][j] = true;
+                    
+                    if (j - i > right - left) {
+                        left = i;
+                        right = j;
+                    }
+                }                
+            }            
+        }
+        
+        return s.substring(left, right + 1);
+    }
+}
+```
+
 Time: `O(n^2)`；两层for loop  
 Space: `O(n^2)`；即`dp[][]`用的空间
+
+
+
+### 需要记住的重点：
+
+1. 两层for loop的顺序和范围;
+2. 怎样处理两个字母相邻且相同的情况，如"cbbd"；
+
+
 
