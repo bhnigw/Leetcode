@@ -25,6 +25,7 @@
 * [\[Leetcode\]2. Add Two Numbers](leetcode/leetcode-2.-add-two-numbers.md)
 * [\[Leetcode\]3. Longest Substring Without Repeating Characters](leetcode/leetcode-3.-longest-substring-without-repeating-characters.md)
 * [\[Leetcode\]5. Longest Palindromic Substring](leetcode/leetcode-5.-longest-palindromic-substring.md)
+* [\[Leetcode\]6. ZigZag Conversion](leetcode/leetcode-6.-zigzag-conversion.md)
 * [\[Leetcode\]7. Reverse Integer](leetcode/leetcode-7.-reverse-integer.md)
 * [\[Leetcode\]12. Integer to Roman](leetcode/leetcode-12.-integer-to-roman.md)
 * [\[Leetcode\]13. Roman to Integer](leetcode/leetcode-13.-roman-to-integer.md)

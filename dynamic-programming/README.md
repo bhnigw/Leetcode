@@ -75,17 +75,21 @@ public int Fibonacci(int n) {
 
 ### 经典例题：
 
-[斐波那契数列 Fibonacci number](https://bhnigw.gitbook.io/leetcode/fei-bo-na-qi-shu-lie-fibonacci-number)
+{% page-ref page="fei-bo-na-qi-shu-lie-fibonacci-number.md" %}
 
-[70. 爬楼梯](https://bhnigw.gitbook.io/leetcode/leetcode-70.-climbing-stairs)
+{% page-ref page="leetcode-70.-climbing-stairs.md" %}
 
-[518. Coin Change 2](https://bhnigw.gitbook.io/leetcode/leetcode-518.-coin-change-2)
+{% page-ref page="leetcode-518.-coin-change-2.md" %}
 
-[53. Maximum Subarray](https://bhnigw.gitbook.io/leetcode/leetcode-53.-maximum-subarray)
+{% page-ref page="leetcode-53.-maximum-subarray.md" %}
+
+{% page-ref page="../leetcode/leetcode-121.-best-time-to-buy-and-sell-stock/leetcode-123.-best-time-to-buy-and-sell-stock-iii.md" %}
+
+
 
 64. Minimum Path Sum
 
-[123. 买卖股票](https://bhnigw.gitbook.io/leetcode/leetcode/leetcode-121.-best-time-to-buy-and-sell-stock/leetcode-123.-best-time-to-buy-and-sell-stock-iii)
+
 
 
 
