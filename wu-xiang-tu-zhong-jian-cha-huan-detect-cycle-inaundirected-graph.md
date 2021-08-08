@@ -210,7 +210,11 @@ Union Find需要`O(N)`的空间来存储array；
 
 
 
-例题：[261. Graph Valid Tree](https://bhnigw.gitbook.io/leetcode/leetcode-261.-graph-valid-tree)
+例题：
+
+{% page-ref page="leetcode/leetcode-261.-graph-valid-tree.md" %}
+
+
 
 
 
