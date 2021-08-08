@@ -55,6 +55,25 @@ Input: s = `"cbbd"`；Output: `"bb"`
 
 ![](../.gitbook/assets/screen-shot-2021-08-08-at-3.21.20-am.png)
 
+### 所以，我们要用两层for loop来完成这个表格，下面就来到了本题较为关键的地方❗️
+
+如果是普通的顺序来进行两层for loop就会出错：  
+`for (int i = 0; i < s.length(); i++) {  
+    for (int j = 0; j < s.length(); j++) {  
+        ...}}`
+
+![](../.gitbook/assets/screen-shot-2021-08-08-at-3.28.00-am.png)
+
+为什么是错的❓   
+因为dp过程中我们需要取得左下角的值，但是在普通顺序下，当前格子的左下角还没有被赋值，所以错！
+
+**正确的做法是：**  
+`for (int j = 0; j < s.length(); j++) { // 把j放在外层  
+    for (int i = 0; i < j; i++) {      // 注意i的范围  
+        ...}}`
+
+![](../.gitbook/assets/screen-shot-2021-08-08-at-3.30.37-am.png)
+
 
 
 ```text
