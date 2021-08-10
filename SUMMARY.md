@@ -66,7 +66,11 @@
 * [\[Leetcode\]268. Missing Number](leetcode/leetcode-268.-missing-number.md)
 * [\[Leetcode\]287. Find the Duplicate Number](leetcode/leetcode-287.-find-the-duplicate-number.md)
 * [\[Leetcode\]529. Minesweeper](leetcode/leetcode-529.-minesweeper.md)
-* [\[Leetcode\]566. Reshape the Matrix](leetcode/leetcode-566.-reshape-the-matrix.md)
 * [\[Leetcode\]★863. All Nodes Distance K in Binary Tree](leetcode/leetcode-863.-all-nodes-distance-k-in-binary-tree.md)
-* [\[Leetcode\]1822. Sign of the Product of an Array](leetcode/leetcode-1822.-sign-of-the-product-of-an-array.md)
+
+## 重点不多的Easy题
+
+* [\[Leetcode\]11. Container With Most Water](zhong-dian-bu-duo-de-easy-ti/leetcode-11.-container-with-most-water.md)
+* [\[Leetcode\]566. Reshape the Matrix](zhong-dian-bu-duo-de-easy-ti/leetcode-566.-reshape-the-matrix.md)
+* [\[Leetcode\]1822. Sign of the Product of an Array](zhong-dian-bu-duo-de-easy-ti/leetcode-1822.-sign-of-the-product-of-an-array.md)
 
