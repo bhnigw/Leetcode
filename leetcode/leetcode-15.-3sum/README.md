@@ -56,7 +56,7 @@ class Solution {
 
 以上代码在nums没有duplicate的时候是成立的，但是如果有duplicate就会出现以下的错误：
 
-![](../.gitbook/assets/screen-shot-2021-01-26-at-4.34.22-pm.png)
+![](../../.gitbook/assets/screen-shot-2021-01-26-at-4.34.22-pm.png)
 
 为了解决以上错误，需要在left和right指针移动的时候加上检查是否是duplicate，如果是就要跳过，以下是正确代码：
 
@@ -102,10 +102,8 @@ class Solution {
 }
 ```
 
-Time：`O(n^2)`；  
-前面有sort，所以计算是O\(nlogn + n^2\)，结果就是O\(n^2\)
-
-Space：介于O\(logn\)到O\(n\)之间，取决于用哪种sorting algorithm.
+Time：`O(n^2)`；前面有sort，所以计算是O\(nlogn + n^2\)，结果就是O\(n^2\)  
+Space：`O(logn)`；
 
 
 
