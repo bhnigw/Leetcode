@@ -6,11 +6,17 @@ description: 'Array, Two pointer'
 
 原题地址：[https://leetcode.com/problems/3sum/](https://leetcode.com/problems/3sum/) 关键词：Array, Two pointer
 
-题意：在数组nums中找出三个数a, b, c，使之和为零（a + b + c = 0），返回**所有**符合条件的这三个数，如果没有则返回空list。要求：**结果中不含有duplicate**
+题意：在数组nums中找出三个数a, b, c，使之和为零`a + b + c = 0`，返回**所有**符合条件的这三个数，如果没有则返回空list。要求：**结果中不含有duplicate**
 
-算法：Two pointer；a + b + c = 0可变化为b + c = -a，这样就转化成了一个two sum的问题，target是\(-a\)；  
-如果要用two pointer来解决2sum问题，那么数组必须是sorted；  
-所以我们**先把数组sort**，然后用一个for loop，遍历数组里每一个数nums\[i\]，然后把\( - nums\[i\]\)作为target，在i右边的数里用two pointer方法找，如果nums\[left\] + nums\[right\] == target，就把nums\[left\]，nums\[right\]，nums\[i\]记录进结果。
+\*\*\*\*
+
+### 算法：Two pointer
+
+**核心思想**：`a + b + c = 0`可变化为`b + c = - a`，从而转化成了一个two sum的问题，target是`- a`；
+
+如果要用two pointer来解决2sum问题，那么数组必须是sorted；
+
+所以我们**先把数组sort**，然后用一个for loop，遍历数组里每一个数`nums[i]`，然后把`- nums[i]`作为target，在`i`右边的数里用two pointer方法找，如果`nums[left] + nums[right] == target`，就把`nums[left]`和`nums[right]`和`nums[i]`记录进结果res。
 
 ```text
 //错误代码
@@ -96,14 +102,14 @@ class Solution {
 }
 ```
 
-Time：O\(n^2\)；  
+Time：`O(n^2)`；  
 前面有sort，所以计算是O\(nlogn + n^2\)，结果就是O\(n^2\)
 
 Space：介于O\(logn\)到O\(n\)之间，取决于用哪种sorting algorithm.
 
 
 
-注意要点：
+### 注意要点：
 
 * 第一个skip duplicate的时候要注意i &gt; 0；后面skip duplicate时候要注意left &lt; right。
 * 对于用三个if来判断大于、等于、小于时，只要先写了其中任意两个条件，第三个可以直接else不用再写if。
@@ -111,7 +117,9 @@ Space：介于O\(logn\)到O\(n\)之间，取决于用哪种sorting algorithm.
 
 
 
-复习two sum：
+
+
+### 复习two sum：
 
 方法一：Brute force；两个for loop，Time: O\(n^2\)，Space: O\(1\)
 
