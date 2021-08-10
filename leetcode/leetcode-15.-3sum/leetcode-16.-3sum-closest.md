@@ -17,6 +17,8 @@
 
 取绝对值的方法：`Math.abs(res - target)`
 
+![](../../.gitbook/assets/screen-shot-2021-08-09-at-11.01.07-pm.png)
+
 ```text
 class Solution {
     public int threeSumClosest(int[] nums, int target) {
