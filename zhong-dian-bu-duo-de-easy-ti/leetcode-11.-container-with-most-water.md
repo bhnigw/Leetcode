@@ -29,11 +29,33 @@ Explanation: 图中垂直线代表输入数组 \[1,8,6,2,5,4,8,3,7\]。在此情
 
 
 
+```text
+class Solution {
+    public int maxArea(int[] height) {
+        int res = 0;
+        int curArea = 0;
+        int left = 0;
+        int right = height.length - 1;
+        
+        while (left < right) {
+            curArea = Math.min(height[left], height[right]) * (right - left);
+            res = Math.max(res, curArea);
+            
+            if (height[left] < height[right]) {
+                left++;
+            } else {
+                right--;
+            }
+        }
+        
+        
+        return res;
+    }
+}
+```
 
-
-
-
-
+Time: O\(n\)；  
+Space: O\(1\)；
 
 
 
