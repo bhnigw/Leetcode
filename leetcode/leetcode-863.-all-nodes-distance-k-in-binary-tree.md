@@ -49,9 +49,16 @@ BFS和DFS都有用到，但核心是BFS。
     **2. 右child；**得到它的方法：`root.right;`  
     **3. parent；** 得到它的方法：`map.get(root);`
 
-####  有了这些铺垫，接下来就可以对这个“无向图“来进行BFS：
+###  有了这些铺垫，接下来就可以对这个“无向图“来进行BFS：
 
-初始化level为0记录层数，把target node加入queue作为BFS起点。
+初始化level为0记录层数，把target加入queue作为BFS起点。然后把所有与该层相邻的node加入queue。
+
+那问题就来了！怎样区分每一个level的node，然后分层放进queue呢❓  
+答案：我们需要在每一层while循环开始时，**记录当前queue的长度n，也就是每一层的size**，然后在while里用for循环`(int i = 0; i < size; i++)`把这一层的node都poll光。
+
+⚠️  这里有一个易错的点：如果写成`for (int i = 0; i < queue.size(); i++)`就是错的。因为在for循环里会poll出元素，此时queue的size就变化了，就不对。所以在for循环开始之前要提前对size赋值：`int size = queue.size();`
+
+
 
 ```text
 class Solution {
@@ -76,7 +83,7 @@ class Solution {
                 return res;
             }
             
-            int size = queue.size();
+            int size = queue.size();    // 提前赋值确定size
             
             for (int i = 0; i < size; i++) { // 取得这一层所有未访问过的元素加入queue
                 TreeNode cur = queue.poll(); // 一次把这一层poll光（使用当前queue的size）
