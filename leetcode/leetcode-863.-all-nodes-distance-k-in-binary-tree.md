@@ -60,12 +60,41 @@ BFS和DFS都有用到，但核心是BFS。
 
 
 
+在加入相邻node的过程中，又会出现一个问题，看上图，比如在处理node2时，与2的相邻元素有5, 7, 4，但是5已经访问过了，属于上一层，我们只需要把7, 4加入queue就行了。  
+问题就又来了！怎样只把未访问过的元素加入queue呢❓  
+答案：使用HashSet，每poll一个元素就加入set，加入新元素之前检查是否已经在set里。
+
+
+
+**BFS核心步骤：**  
+`while (!queue.isEmpty()) {  
+    int size = queue.size(); // 提前赋值确定size  
+    for (int i = 0; i < size; i++) { // 一次把这一层poll光   
+        TreeNode cur = queue.poll();    
+        visited.add(cur);   
+        if (cur.left != null && visited.add(cur.left)) {//add()方法里已经包含了contains()方法  
+            queue.offer(cur.left);   
+        }   
+        if (cur.right != null && visited.add(cur.right)) {   
+            queue.offer(cur.right);   
+        }  
+        if (map.get(cur) != null && visited.add(map.get(cur))) {   
+            queue.offer(map.get(cur));   
+        }   
+    }  
+    level++;   // 处理完一层后level加一  
+}`
+
+
+
+完整代码：
+
 ```text
 class Solution {
     public List<Integer> distanceK(TreeNode root, TreeNode target, int k) {
         List<Integer> res = new ArrayList<>();
         HashMap<TreeNode, TreeNode> map = new HashMap<>();
-        Set<TreeNode> visited = new HashSet<>(); // 避免死循环
+        Set<TreeNode> visited = new HashSet<>(); // 记录已经访问过的元素
         int level = 0;  // 记录层数
                
         dfsToFindParent(root, map);    // DFS来记录每个node的parent
@@ -85,8 +114,8 @@ class Solution {
             
             int size = queue.size();    // 提前赋值确定size
             
-            for (int i = 0; i < size; i++) { // 取得这一层所有未访问过的元素加入queue
-                TreeNode cur = queue.poll(); // 一次把这一层poll光（使用当前queue的size）
+            for (int i = 0; i < size; i++) { // 一次把这一层poll光（使用当前queue的size）
+                TreeNode cur = queue.poll(); 
                 visited.add(cur);
                 if (cur.left != null && visited.add(cur.left)) {
                     queue.offer(cur.left); 
@@ -119,20 +148,22 @@ class Solution {
 }
 ```
 
+Time: `O(N)`；即BFS所耗时间；  
+解释：无向图BFS所耗时间为顶点vertex总数，加上edge数的总和，即`O(N + E)`；  
+对于树来说，**如果一个tree有n个节点，那么它必然有n - 1条edges**；  
+所以，时间就是`O(N + N - 1)`；最终结果就是`O(N)`；
+
+Space: `O(N)`；map存了n个node
 
 
 
+### 要记住的重点：
 
-`private void dfs(root, map) {  
-    if (root.left != null) {   
-        map.put(root.left, root);   
-        dfs(root.left, map);   
-    }   
-    if (root.right != null) {   
-        map.put(root.right, root);   
-        dfs(root.right, map);   
-    }  
-}`
+1. 怎样把node上面的parent加入到queue里；
+2. 怎样区分每一个level的node，然后分层放进queue
+3. 时间复杂度是怎么算的；
+
+
 
 
 
