@@ -111,14 +111,13 @@ class Solution {
 3. DFS；  
 4. 检查所有点是否都被访问过了（是否全部connected）
 
-Time：`O(N + E)`；  
-DFS的时间就是node总数加上edges的总数  
-N是顶点总数，也是构造Adjacency List所花时间；  
-E是edges的总数；
+Time：`O(N)`；  
+解释：DFS所耗时间为：顶点vertex总数N，加上edge总数E的总和，即`O(N + E)`；  
+根据树的特性：如果一个tree有n个节点，那么它必然有n - 1条edges；  
+所以，时间就是`O(N + N - 1)`；最终结果就是`O(N)`；
 
-Space：`O(N + E)`  
-N是Adjacency List的长度；  
-E是Adjacency List的子List的总长度；
+Space：`O(N)`  
+Adjacency List的size；
 
 **要记住的东西：**
 
@@ -195,8 +194,10 @@ public boolean validTree(int n, int[][] edges) {
 3. 构建queue，构建HashSet；  
 4. BFS检查所有点是否相连
 
-Time：`O(N)`  
-我们只是遍历了一遍所有node加进seen里，所以是`O(N)`；
+Time：`O(N)`；  
+解释：BFS所耗时间为：顶点vertex总数N，加上edge总数E的总和，即`O(N + E)`；  
+根据树的特性：如果一个tree有n个节点，那么它必然有n - 1条edges；  
+所以，时间就是`O(N + N - 1)`；最终结果就是`O(N)`；
 
 Space：`O(N)`  
 我们只是遍历了一遍所有node加进seen里，所以是`O(N)`；

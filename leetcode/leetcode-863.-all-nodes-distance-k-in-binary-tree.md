@@ -149,8 +149,8 @@ class Solution {
 ```
 
 Time: `O(N)`；即BFS所耗时间；  
-解释：无向图BFS所耗时间为顶点vertex总数，加上edge数的总和，即`O(N + E)`；  
-对于树来说，**如果一个tree有n个节点，那么它必然有n - 1条edges**；  
+解释：无向图BFS所耗时间为：顶点vertex总数N，加上edge总数E的总和，即`O(N + E)`；  
+根据树的特性：**如果一个tree有n个节点，那么它必然有n - 1条edges**；  
 所以，时间就是`O(N + N - 1)`；最终结果就是`O(N)`；
 
 Space: `O(N)`；map存了n个node
