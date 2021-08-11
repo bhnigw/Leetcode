@@ -39,7 +39,7 @@ BFS和DFS都有用到，但核心是BFS。
 
 我们先用DFS遍历整棵树，把每一个node作为key，它的parent作为value。（具体实现见代码46行）
 
- 此番操作后，我们就可以通过`map.get(curNode)`来得到当前node的parent node。
+ 此番操作后，我们就可以通过`map.get(curNode)`来得到当前node的parent node。（[一个小知识点](https://bhnigw.gitbook.io/-1/shu-ju-jie-gou-map#ru-guo-ba-treenode-jia-ru-hashmap)）
 
 因此，对于每一个node，我们就可以得到与这个node所有相邻的node。因此我们就相当于得到了这个无向图的adjacency list！
 
