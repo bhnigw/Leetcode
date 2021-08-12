@@ -51,6 +51,8 @@
 * [\[Leetcode\]121. Best Time to Buy and Sell Stock](leetcode/leetcode-121.-best-time-to-buy-and-sell-stock/README.md)
   * [\[Leetcode\]122. Best Time to Buy and Sell Stock II](leetcode/leetcode-121.-best-time-to-buy-and-sell-stock/leetcode-122.-best-time-to-buy-and-sell-stock-ii.md)
   * [\[Leetcode\]123. Best Time to Buy and Sell Stock III](leetcode/leetcode-121.-best-time-to-buy-and-sell-stock/leetcode-123.-best-time-to-buy-and-sell-stock-iii.md)
+* [\[Leetcode\]543. Diameter of Binary Tree \(对应124题\)](leetcode/leetcode-543.-diameter-of-binary-tree.md)
+* [\[Leetcode\]★124. Binary Tree Maximum Path Sum \(对应543题\)](leetcode/leetcode124.-binary-tree-maximum-path-sum-dui-ying-543-ti.md)
 * [\[Leetcode\]151. Reverse Words in a String](leetcode/leetcode-151.-reverse-words-in-a-string/README.md)
   * [\[Leetcode\]186. Reverse Words in a String II](leetcode/leetcode-151.-reverse-words-in-a-string/leetcode-186.-reverse-words-in-a-string-ii.md)
 * [\[Leetcode\]162. Find Peak Element](leetcode/leetcode-162.-find-peak-element.md)
@@ -66,7 +68,6 @@
 * [\[Leetcode\]268. Missing Number](leetcode/leetcode-268.-missing-number.md)
 * [\[Leetcode\]287. Find the Duplicate Number](leetcode/leetcode-287.-find-the-duplicate-number.md)
 * [\[Leetcode\]529. Minesweeper](leetcode/leetcode-529.-minesweeper.md)
-* [\[Leetcode\]543. Diameter of Binary Tree](leetcode/leetcode-543.-diameter-of-binary-tree.md)
 * [\[Leetcode\]★863. All Nodes Distance K in Binary Tree](leetcode/leetcode-863.-all-nodes-distance-k-in-binary-tree.md)
 
 ## 重点不多的Easy题
