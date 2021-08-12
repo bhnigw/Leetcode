@@ -132,7 +132,7 @@ public void reverseEachWord(char[] charArray, int length) {
 
 下一步：也是最难的一步，删去首尾和单词间的多余空格；
 
-思想类似于[move zeros（点击查看）](https://bhnigw.gitbook.io/leetcode/leetcode/leetcode27.-remove-element-tong-lei-ti-zong-jie)
+思想类似于[move zeros（点击查看）](https://bhnigw.gitbook.io/leetcode/leetcode/leetcode27.-remove-element-tong-lei-ti-zong-jie)，下面的`usefulCharIndex`就相当于move zeros里面的`reserved`指针。
 
 算法：核心就是在原来char array的基础上，把**所需要的字符**，重新依次放进array（从index零开始），最后保留前面需要的，去掉后面不要的：
 
