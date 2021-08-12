@@ -42,7 +42,7 @@ Explanation: 最优路径是`15 -> 20 -> 7`，路径和为`15 + 20 + 7 = 42`
 ```text
 class Solution {
     public int maxPathSum(TreeNode root) {
-        int[] res = new int[]{Integer.MIN_VALUE};
+        int[] res = new int[]{Integer.MIN_VALUE}; // 可能会和负数比较，所以设为最小整数
         
         dfs(root, res);
         
