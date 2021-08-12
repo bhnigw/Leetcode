@@ -12,7 +12,7 @@ description: char array，substring
 
 
 
-#### 方法一：使用build-in class（一般不用此方法）
+### 方法一：使用build-in class（一般不用此方法）
 
 ```text
 public class Solution {
@@ -30,9 +30,7 @@ Space：O\(N\)； to store the result of split by spaces.
 
 
 
-
-
-#### 方法二：不使用trim\( \)、split\( \)、StringBuilder：
+### 方法二：不使用trim\( \)、split\( \)、StringBuilder：
 
 **算法：先reverse整个string；再分别reverse每个单词；最后去掉空格；**
 
@@ -60,7 +58,7 @@ Space：O\(N\)； to store the result of split by spaces.
 
 
 
-此方法的难点在于：如何去掉单词之间多余的空格；
+此方法的难点在于：如何去掉单词之间多余的空格❓
 
 
 
@@ -134,7 +132,7 @@ public void reverseEachWord(char[] charArray, int length) {
 
 下一步：也是最难的一步，删去首尾和单词间的多余空格；
 
-思想类似于move zeros：[https://app.gitbook.com/@bhnigw/s/leetcode/~/drafts/-MaapjwV4XVSaZQrmAPA/leetcode-283.-move-zeroes](https://app.gitbook.com/@bhnigw/s/leetcode/~/drafts/-MaapjwV4XVSaZQrmAPA/leetcode-283.-move-zeroes)
+思想类似于[move zeros（点击查看）](https://bhnigw.gitbook.io/leetcode/leetcode/leetcode27.-remove-element-tong-lei-ti-zong-jie)
 
 算法：核心就是在原来char array的基础上，把**所需要的字符**，重新依次放进array（从index零开始），最后保留前面需要的，去掉后面不要的：
 
