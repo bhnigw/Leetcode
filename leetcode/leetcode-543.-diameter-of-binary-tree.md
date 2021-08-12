@@ -21,17 +21,17 @@ Explanation: 最长的path可以是`[4,2,1,3]`或者`[5,2,1,3]`，最长的路�
 
 ### 算法：DFS
 
-**核心思想：**对于每一个node，`穿过它的最长路径` = `穿过左child的最长路径` + `穿过右child的最长路径`；
+★**核心思想：**对于每一个node，**`穿过它的最长路径` = `穿过左child的最长路径` + `穿过右child的最长路径`**；
 
-初始化一个`int[] res = new int[1]`来记录结果；Recursion的过程：从最底层leaf向上，对当前的node，拿到它左child的最长路径，和它右child的最长路径，把它们加起来，然后加上当前node的路径长度\(也就是加1\)。与此同时，把这个路径长度和global变量`res[]`里的值做一个对比，更新最大长度。
+初始化一个长度为1的`res[]`数组来记录结果；Recursion的过程：从最底层leaf向上，对当前的node，拿到它左child的最长路径，和它右child的最长路径，然后加上当前node的路径长度\(也就是加1\)，即为穿过该node的最长路径。与此同时，把这个路径长度和global变量`res[]`里的值做一个对比，更新最大长度。
 
-接下来，向上recursion，向它的parent node返回一个最大长度。如果parent node一旦选择走这个node，那就要加上这个最大长度。事实上，parent node会**在自己的左右两个child中选择一个最长的来走。**
+接下来，向上recursion，向它的parent node返回一个最大长度。如果parent node一旦选择走这个node，那就要加上这个最大长度。事实上，parent node会**在自己的左右两个child中选择一个对路径贡献更大的（路径更长的child）来走。**
 
 **❗️**这就是本题的难点，要弄清楚Recursion时我们要返回的是什么！！  
 我们的目标：判断parent node到底要走左右child哪一条路！  
 怎样判断：选最长的那条路走！  
-所以我们返回的是：  
-`该node能贡献的最大长度最长路径` = `Max(穿过左child的最长路径, 穿过右child的最长路径) + 1`；
+所以我们返回的是：该node能给parent贡献的最长路径！  
+**`该node能给parent贡献的最长路径` = `Max(该node左child的最长路径, 该node右child的最长路径) + 1`**；
 
 
 
@@ -113,7 +113,10 @@ Space: `O(N)`；空间是DFS的stack个数，**也就是DFS的深度，也就是
 
 ### 要记住的重点：
 
-1. DFS时返回的是什么？是
+1. DFS时返回的是什么？是返回该node能给parent贡献的最长路径
+2. 用`res[0]`来记录结果
+
+
 
 
 
