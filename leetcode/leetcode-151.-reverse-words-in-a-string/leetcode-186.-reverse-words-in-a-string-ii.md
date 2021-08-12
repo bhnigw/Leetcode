@@ -6,7 +6,9 @@
 例如：Input: `s = ['t','h','e',' ','s','k','y',' ','i','s',' ','b','l','u','e']`  
          Output: `s = ['b','l','u','e',' ','i','s',' ','s','k','y',' ','t','h','e']`
 
-算法：先reverse整个char array，再分别reverse每一个单词即可；
+### 算法：
+
+先reverse整个char array，再分别reverse每一个单词即可；
 
 重点是怎样分别reverse每一个单词：  
 既然是char array，用while遍历，遇到空格则跳过，遇到单词，则**确定每个单词起始点、终点的index**，然后调用reverse的方法翻转这个单词即可；
