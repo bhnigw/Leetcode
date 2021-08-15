@@ -48,6 +48,7 @@
   * [查找 Search](leetcode/binary-search-tree/cha-zhao-search.md)
   * [插入 Insert](leetcode/binary-search-tree/cha-ru-insert.md)
   * [★删除 Delete](leetcode/binary-search-tree/shan-chu-delete.md)
+  * [\[Leetcode\]230. Kth Smallest Element in a BST](leetcode/binary-search-tree/leetcode-230.-kth-smallest-element-in-a-bst.md)
 * [\[Leetcode\]★102. Binary Tree Level Order Traversal](leetcode/leetcode-102.-binary-tree-level-order-traversal.md)
 * [\[Leetcode\]138. Copy List with Random Pointer](leetcode/leetcode-138.-copy-list-with-random-pointer.md)
 * [\[Leetcode\]121. Best Time to Buy and Sell Stock](leetcode/leetcode-121.-best-time-to-buy-and-sell-stock/README.md)
