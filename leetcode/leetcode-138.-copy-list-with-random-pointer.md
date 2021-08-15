@@ -54,7 +54,8 @@ random指针同理：      `map.get(cur).random = map.get(cur.random);`
 
 #### 要注意的地方：
 
-代码第14行，如果写成`map.get(cur).next = cur.next;`就是错误的❌  ，为什么？因为cur是属于原来的LinkedList，cur.next也属于原来的LinkedList，而题目要求的是deep copy，所以必须指向新的node，不能指向原来的LinkedList。
+1. 代码第14行，如果写成`map.get(cur).next = cur.next;`就是错误的❌  ，为什么？因为cur是属于原来的LinkedList，cur.next也属于原来的LinkedList，而题目要求的是deep copy，所以必须指向新的node，不能指向原来的LinkedList。
+2. 要返回新的LinkedList的head，也就是`return map.get(head);`
 
 ```text
 class Solution {
