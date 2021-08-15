@@ -49,6 +49,7 @@
   * [插入 Insert](leetcode/binary-search-tree/cha-ru-insert.md)
   * [★删除 Delete](leetcode/binary-search-tree/shan-chu-delete.md)
 * [\[Leetcode\]★102. Binary Tree Level Order Traversal](leetcode/leetcode-102.-binary-tree-level-order-traversal.md)
+* [\[Leetcode\]138. Copy List with Random Pointer](leetcode/leetcode-138.-copy-list-with-random-pointer.md)
 * [\[Leetcode\]121. Best Time to Buy and Sell Stock](leetcode/leetcode-121.-best-time-to-buy-and-sell-stock/README.md)
   * [\[Leetcode\]122. Best Time to Buy and Sell Stock II](leetcode/leetcode-121.-best-time-to-buy-and-sell-stock/leetcode-122.-best-time-to-buy-and-sell-stock-ii.md)
   * [\[Leetcode\]123. Best Time to Buy and Sell Stock III](leetcode/leetcode-121.-best-time-to-buy-and-sell-stock/leetcode-123.-best-time-to-buy-and-sell-stock-iii.md)
