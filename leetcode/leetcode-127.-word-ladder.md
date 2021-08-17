@@ -6,7 +6,12 @@ description: BFS，Queue
 
 原题地址：[https://leetcode.com/problems/word-ladder/](https://leetcode.com/problems/word-ladder/) 关键词：BFS，Queue
 
-题意：
+题意：把beginWord转化为endWord，每次只能变换一个字母，且每次变换后的新单词必须存在于给定的词典wordList中。求转换最少步骤数；如果不存在这样的转换序列，返回 0。
+
+例：  
+Input:`beginWord = "hit"`, `endWord = "cog"`, `wordList = ["hot","dot","dog","lot","log","cog"]`   
+Output: 5   
+解释：一个最短转换序列是 `"hit" -> "hot" -> "dot" -> "dog" -> "cog"`, 返回它的长度 5。
 
 
 
