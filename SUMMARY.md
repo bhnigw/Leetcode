@@ -33,6 +33,7 @@
   * [\[Leetcode\]16. 3Sum Closest](leetcode/leetcode-15.-3sum/leetcode-16.-3sum-closest.md)
   * [\[Leetcode\]18. 4Sum](leetcode/leetcode-15.-3sum/leetcode-18.-4sum.md)
 * [\[Leetcode\]19. Remove Nth Node From End of List](leetcode/leetcode-19.-remove-nth-node-from-end-of-list.md)
+* [\[Leetcode\]23. Merge k Sorted Lists](leetcode/leetcode-23.-merge-k-sorted-lists.md)
 * [\[Leetcode\]27. Remove Element\(同类题总结\)](leetcode/leetcode27.-remove-element-tong-lei-ti-zong-jie/README.md)
   * [\[Leetcode\]26. Remove Duplicates from Sorted Array](leetcode/leetcode27.-remove-element-tong-lei-ti-zong-jie/leetcode-26.-remove-duplicates-from-sorted-array.md)
   * [\[Leetcode\]80. Remove Duplicates from Sorted Array II](leetcode/leetcode27.-remove-element-tong-lei-ti-zong-jie/leetcode-80.-remove-duplicates-from-sorted-array-ii.md)
