@@ -42,6 +42,7 @@
 * [\[Leetcode\]39. Combination Sum](leetcode/leetcode-39.-combination-sum.md)
 * [\[Leetcode\]42. Trapping Rain Water](leetcode/leetcode-42.-trapping-rain-water.md)
 * [\[Leetcode\]56. Merge Intervals](leetcode/leetcode-56.-merge-intervals.md)
+* [\[Leetcode\]75. Sort Colors](leetcode/leetcode-75.-sort-colors.md)
 * [\[Leetcode\]79. Word Search](leetcode/leetcode-79.-word-search.md)
 * [\[Leetcode\]78. Subsets](leetcode/leetcode-78.-subsets/README.md)
   * [\[Leetcode\]90. Subsets II](leetcode/leetcode-78.-subsets/leetcode-90.-subsets-ii.md)
