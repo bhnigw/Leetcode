@@ -29,7 +29,7 @@ Output: `[1,1,2,3,4,4]`
 
 
 
-当有`l1`, `l2`其中一个链表已经为空时，把剩余的链表直接连到`cur.next`中（因为剩余部分是sorted）
+当有`l1`, `l2`其中一个指针指向null时，把剩余的链表直接连到`cur.next`中（因为剩余部分是sorted）
 
 ![](../.gitbook/assets/img_6463.jpg)
 
@@ -41,7 +41,7 @@ Output: `[1,1,2,3,4,4]`
 
 ###  要注意的地方：
 
-
+while loop只能处理等长的部分，其中一个链表到达null后就停止了loop。所以当有`l1`, `l2`其中一个指针指向null时，把剩余的链表直接连到`cur.next`中，因为剩余部分是sorted。（代码第19～24行）
 
 ```text
 class Solution {
@@ -75,13 +75,7 @@ class Solution {
 ```
 
 Time: `O(n + m)`；n是l1的节点总数，m是l2的节点总数；  
-Space: `O(n + m)`；
-
-
-
-
-
-
+Space: `O(n + m)`；最终list的size
 
 
 
