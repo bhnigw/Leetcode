@@ -17,7 +17,9 @@ Output: `[1,1,2,3,4,4]`
 
 ### 算法：
 
+**核心思想：**两两比较，连接最小的。
 
+用`cur`指针来扫所有的，`l1`和`l2`当作双指针来扫两个链表；两两比较，把更小的连接到`cur.next`，直到`l1`和`l2`指针其中一个指向null；
 
 ![](../.gitbook/assets/img_6460.jpg)
 
@@ -27,15 +29,17 @@ Output: `[1,1,2,3,4,4]`
 
 
 
-
+当有`l1`, `l2`其中一个链表已经为空时，把剩余的链表直接连到`cur.next`中（因为剩余部分是sorted）
 
 ![](../.gitbook/assets/img_6463.jpg)
 
 
 
+最终结果：返回`dummy.next`即可
+
 ![](../.gitbook/assets/img_6465.jpg)
 
-
+###  要注意的地方：
 
 
 
@@ -61,7 +65,7 @@ class Solution {
         if (l1 != null) {  // 如果l1和l2不等长，那么下面是处理后面不等长的部分 
             cur.next = l1;
         }
-        if (l2 != null) {
+        if (l2 != null) { 
             cur.next = l2;
         }
         
