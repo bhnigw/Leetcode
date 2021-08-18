@@ -70,7 +70,8 @@ class Solution {
 }
 ```
 
-
+Time: `O(n + m)`；n是l1的节点总数，m是l2的节点总数；  
+Space: `O(n + m)`；
 
 
 
