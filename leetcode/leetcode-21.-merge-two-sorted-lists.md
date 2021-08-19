@@ -29,7 +29,7 @@ Output: `[1,1,2,3,4,4]`
 
 
 
-当有`l1`, `l2`其中一个指针指向null时，把剩余的链表直接连到`cur.next`中（因为剩余部分是sorted）
+当有`l1`, `l2`其中一个指针指向null时，把剩余的链表直接连到`cur.next`（因为剩余部分是sorted）：
 
 ![](../.gitbook/assets/img_6463.jpg)
 
