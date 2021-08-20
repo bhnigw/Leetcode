@@ -22,6 +22,7 @@
 ## Leetcode
 
 * [\[Leetcode\]142. Linked List Cycle II](leetcode/leetcode-142.-linked-list-cycle-ii.md)
+* [\[Leetcode\]★146. LRU Cache](leetcode/leetcode-146.-lru-cache.md)
 * [\[Leetcode\]2. Add Two Numbers](leetcode/leetcode-2.-add-two-numbers.md)
 * [\[Leetcode\]3. Longest Substring Without Repeating Characters](leetcode/leetcode-3.-longest-substring-without-repeating-characters.md)
 * [\[Leetcode\]5. Longest Palindromic Substring](leetcode/leetcode-5.-longest-palindromic-substring.md)
@@ -60,7 +61,6 @@
 * [\[Leetcode\]138. Copy List with Random Pointer](leetcode/leetcode-138.-copy-list-with-random-pointer.md)
 * [\[Leetcode\]543. Diameter of Binary Tree \(对应124题\)](leetcode/leetcode-543.-diameter-of-binary-tree.md)
 * [\[Leetcode\]★124. Binary Tree Maximum Path Sum \(对应543题\)](leetcode/leetcode124.-binary-tree-maximum-path-sum-dui-ying-543-ti.md)
-* [\[Leetcode\]★146. LRU Cache](leetcode/leetcode-146.-lru-cache.md)
 * [\[Leetcode\]151. Reverse Words in a String](leetcode/leetcode-151.-reverse-words-in-a-string/README.md)
   * [\[Leetcode\]186. Reverse Words in a String II](leetcode/leetcode-151.-reverse-words-in-a-string/leetcode-186.-reverse-words-in-a-string-ii.md)
 * [\[Leetcode\]162. Find Peak Element](leetcode/leetcode-162.-find-peak-element.md)

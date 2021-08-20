@@ -132,7 +132,11 @@ Space complexity: O\(1\); Allocates only pointers, so it runs with constant memo
 
 
 
-类似的题：[287. Find the Duplicate Number](https://bhnigw.gitbook.io/leetcode/leetcode-287.-find-the-duplicate-number)
+### 类似的题：
+
+{% page-ref page="leetcode-287.-find-the-duplicate-number.md" %}
+
+
 
 
 

@@ -12,7 +12,7 @@ description: Dynamic Programming，DP
 
 DP是「自底向上」，Recursion是「自顶向下」。
 
-是什么意思？？以计算Fibonacci题来举例解释：
+是什么意思？？以计算Fibonacci题来举例解释，如果使用Recursion：
 
 ![](../.gitbook/assets/screen-shot-2021-07-21-at-2.05.38-am.png)
 
