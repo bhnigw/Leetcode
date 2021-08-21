@@ -19,6 +19,8 @@ Output: `[0,0,1,1,2,2]`
 
 
 
+![](../.gitbook/assets/screen-shot-2021-08-21-at-12.53.23-am.png)
+
 
 
 ```text
