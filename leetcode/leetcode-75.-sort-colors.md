@@ -1,6 +1,6 @@
 # \[Leetcode\]75. Sort Colors
 
-原题地址：[https://leetcode.com/problems/sort-colors/](https://leetcode.com/problems/sort-colors/) 关键词：
+原题地址：[https://leetcode.com/problems/sort-colors/](https://leetcode.com/problems/sort-colors/) 关键词：多指针
 
 题意：颜色分类；  
 给一个乱序的数组，包含整数0、1、2代表三种颜色，对它们进行排序，使得相同颜色的元素相邻，并按照0、1、2顺序排列。
