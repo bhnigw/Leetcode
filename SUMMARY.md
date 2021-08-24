@@ -72,6 +72,7 @@
   * [\[Leetcode\]210. Course Schedule II](leetcode/leetcode-207.-course-schedule/leetcode-210.-course-schedule-ii.md)
 * [\[Leetcode\]208. Implement Trie \(Prefix Tree\)](leetcode/leetcode-208.-implement-trie-prefix-tree.md)
 * [\[Leetcode\]★212. Word Search II](leetcode/leetcode-212.-word-search-ii.md)
+* [\[Leetcode\]226. Invert Binary Tree](leetcode/leetcode-226.-invert-binary-tree.md)
 * [\[Leetcode\]★261. Graph Valid Tree](leetcode/leetcode-261.-graph-valid-tree.md)
 * [\[Leetcode\]268. Missing Number](leetcode/leetcode-268.-missing-number.md)
 * [\[Leetcode\]287. Find the Duplicate Number](leetcode/leetcode-287.-find-the-duplicate-number.md)
