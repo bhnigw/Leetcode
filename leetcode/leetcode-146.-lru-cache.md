@@ -33,7 +33,7 @@ Follow up：是否可以在 O\(1\) 时间复杂度内完成这两种操作？
 
 这个LRU cache由`Doubly LinkedList`和`HashMap`一起构成。
 
-**`HashMap`作用**：用于检索key，获取对应的node和它的val。map的key是input里的key，map的value是Doubly LinkedList的ListNode  
+**`HashMap`作用**：用于检索key，获取对应的node和它的val。HashMap的key是input里的key，HashMap的value是Doubly LinkedList的ListNode  
 **`Doubly LinkedList`作用**：可以实现双向遍历，插入和删除操作简便快捷，耗时仅为`O(1)`；
 
 
