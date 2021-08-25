@@ -116,10 +116,7 @@ Space: `O(N)`；空间是DFS的stack个数，**也就是DFS的深度，也就是
 1. DFS时返回的是什么？是返回该node能给parent贡献的最长路径
 2. 用`res[0]`来记录结果
 
-
-
-
-
+  
 同类题：
 
 {% page-ref page="leetcode124.-binary-tree-maximum-path-sum-dui-ying-543-ti.md" %}
