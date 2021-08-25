@@ -204,13 +204,13 @@ private void moveToHead(ListNode node) {
         if (node.prev != null) {
             node.prev.next = node.next;
         } else {
-            head = node.next;
+            head = node.next;          // 如果是head
         }
         
         if (node.next != null) {
             node.next.prev = node.prev;
         } else {
-            tail = node.prev;
+            tail = node.prev;         // 如果是tail
         }
 }
 ```
@@ -300,13 +300,13 @@ class LRUCache {
         if (node.prev != null) {
             node.prev.next = node.next;
         } else {
-            head = node.next;
+            head = node.next;             // 如果是head
         }
         
         if (node.next != null) {
             node.next.prev = node.prev;
         } else {
-            tail = node.prev;
+            tail = node.prev;            // 如果是tail
         }  
     }
     
