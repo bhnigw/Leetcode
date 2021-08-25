@@ -92,7 +92,7 @@ public LRUCache(int capacity) {
 
 **作用：**读取Cache里key所对应的value。
 
-**算法：**
+#### 算法：
 
 * 检查input给的key，是否在map里有对应的node
   * 如果map里有对应的node，就从LinkedList里把这个node拎出来，放到链表的表头，作为新的head。然后返回该node的值；
@@ -120,7 +120,7 @@ public LRUCache(int capacity) {
 
 **作用：**把一对新的key和value放进Cache里。
 
-**算法：**
+#### 算法：
 
 * 检查input给的key，是否在map里有对应的node：
 * 如果map里没有对应的node，意味着要new一个新的node加入cache：
@@ -160,13 +160,19 @@ public void put(int key, int value) {
 
 
 
-### ●`moveToHead(ListNode node)`方法：
+### ★`moveToHead(ListNode node)`方法：
 
 **作用：**把node放到LinkedList的表头，作为新的head。
 
-算法：
+#### 算法：
 
+1. 重置当前node的两个指针，next指向head，prev指向null；⚠️  一定要记得把prev指向null，否则还会指向原来的上一个node！
+2. 把原来的head与当前node连起来；方法：head的prev指针指向node
+3. 更新head位置，放到表头；
 
+如果只是单纯的把当前的node放到表头，那么上面三步就足够了。但是，这个方法内还必须要初始化`tail`的位置❗️
+
+**如果`tail`为空，那么说明这个LinkedList之前一个元素也没有**，也是空的。那么在一个新的node被加入作为head时，**`tail`也指向`head`**，在后续的新的node加进来的时候，head会不断地往前更新，而tail就一直在链表的末端作为tail。
 
 ```text
 private void moveToHead(ListNode node) {
@@ -181,13 +187,17 @@ private void moveToHead(ListNode node) {
 
 
 
-### ●`deleteNode(ListNode node)`方法：
+### ★`deleteNode(ListNode node)`方法：
 
 **作用：**从LinkedList里删掉指定的的node。
 
-算法：
+#### 算法：
 
-
+* 如果node的前面还有节点，那就把它前一个节点的next指向node的下一个节点（跳过了node）：`node.prev.next = node.next;`
+* 如果node的前面为空，说明这个node就是头节点head，那么就把head移到下一个节点：`head = node.next`。但是移完后还要把它下一个节点的prev处理了，但是下一个节点又有可能为null，怎么办呢？
+* 所以下一步要判断node的后面是否还有节点，也就是判断`node.next`是否为空：
+  * 如果node的后面还有节点，那就把它后面节点的prev指向node的前面的节点（跳过了node）：`node.next.prev = node.prev;`
+  * 如果node的后面为空，说明这个node就是尾节点tail，那么就把tail移到前面一个节点：`tail = node.prev;`
 
 ```text
  private void deleteNode(ListNode node) {
@@ -311,6 +321,8 @@ Space: `O(capacity)`; 空间取决于cache的size
 ### 要记住的重点：
 
 1. 对map的操作永远放在第一步，对LinkedList的操作永远放在map之后。
+2. 要在`moveToHead()`方法里初始化`tail`节点的位置。
+3. 注意记住delete node的写法。
 
 
 
