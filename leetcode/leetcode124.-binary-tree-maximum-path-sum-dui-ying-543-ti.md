@@ -75,15 +75,12 @@ Space: `O(N)`；空间是DFS的stack个数，**也就是DFS的深度，也就是
 2. `res[0]`来的初始值是Integer.MIN\_VALUE
 3. DFS时返回的是什么？是返回该node能给parent贡献的最大sum
 
-
-
-
-
-
-
+  
 同类题：
 
 {% page-ref page="leetcode-543.-diameter-of-binary-tree.md" %}
+
+
 
 
 
