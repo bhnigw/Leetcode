@@ -62,7 +62,7 @@ class Solution {
 
 ![](../../.gitbook/assets/screen-shot-2021-01-26-at-4.34.22-pm.png)
 
-为了解决以上错误，需要在left和right指针移动的时候加上检查是否是duplicate，如果是就要跳过，以下是正确代码：
+为了解决以上错误，**需要在left和right指针移动的时候加上检查是否是duplicate，如果是就要跳过**，以下是正确代码：
 
 ```text
 class Solution {
