@@ -8,7 +8,11 @@ description: 'Array, Two pointer'
 
 题意：在数组nums中找出三个数a, b, c，使之和为零`a + b + c = 0`，返回**所有**符合条件的这三个数，如果没有则返回空list。要求：**结果中不含有duplicate**
 
-\*\*\*\*
+例：  
+Input: `nums = [-1,0,1,2,-1,-4]`  
+Output: `[[-1,-1,2],[-1,0,1]]`
+
+
 
 ### 算法：Two pointer
 
