@@ -2,7 +2,7 @@
 description: 'Palindrome, Dynamic Programming'
 ---
 
-# \[Leetcode\]5. Longest Palindromic Substring
+# \[Leetcode\]★5. Longest Palindromic Substring
 
 原题地址：[https://leetcode.com/problems/longest-palindromic-substring/](https://leetcode.com/problems/longest-palindromic-substring/) 关键词：[Palindrome](https://bhnigw.gitbook.io/leetcode/valid-palindrome), [Dynamic Programming](https://bhnigw.gitbook.io/leetcode/dynamic-programming)
 
