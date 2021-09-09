@@ -99,6 +99,8 @@ private int binarySearch(int left, int right, int[] nums, int target) {
 
 {% page-ref page="leetcode/leetcode-162.-find-peak-element.md" %}
 
+{% page-ref page="leetcode/leetcode-33.-search-in-rotated-sorted-array.md" %}
+
 
 
 
