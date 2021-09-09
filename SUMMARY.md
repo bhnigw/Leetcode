@@ -40,6 +40,7 @@
   * [\[Leetcode\]26. Remove Duplicates from Sorted Array](leetcode/leetcode27.-remove-element-tong-lei-ti-zong-jie/leetcode-26.-remove-duplicates-from-sorted-array.md)
   * [\[Leetcode\]80. Remove Duplicates from Sorted Array II](leetcode/leetcode27.-remove-element-tong-lei-ti-zong-jie/leetcode-80.-remove-duplicates-from-sorted-array-ii.md)
   * [\[Leetcode\]283. Move Zeroes](leetcode/leetcode27.-remove-element-tong-lei-ti-zong-jie/leetcode-283.-move-zeroes.md)
+* [\[Leetcode\]33. Search in Rotated Sorted Array](leetcode/leetcode-33.-search-in-rotated-sorted-array.md)
 * [\[Leetcode\]36. Valid Sudoku](leetcode/leetcode-36.-valid-sudoku.md)
 * [\[Leetcode\]39. Combination Sum](leetcode/leetcode-39.-combination-sum.md)
 * [\[Leetcode\]42. Trapping Rain Water](leetcode/leetcode-42.-trapping-rain-water.md)
