@@ -20,7 +20,7 @@ Output: -1
 
 ### 算法：Binary Search
 
-
+核心思想：先找到peak element，如果target在peak的左边就在左边进行Binary Search，如果target在peak的右边就在右左边进行Binary Search。
 
 
 
