@@ -20,9 +20,15 @@ Output: -1
 
 ### 算法：Binary Search
 
-核心思想：先找到peak element，如果target在peak的左边就在左边进行Binary Search，如果target在peak的右边就在右左边进行Binary Search。
+**核心思想：**先找到peak element，如果target在peak的左边就在左边进行Binary Search，如果target在peak的右边就在右左边进行Binary Search。
 
+![](../.gitbook/assets/img_6472.jpg)
 
+1. 找到数组中的peak element；注意两个corner case：
+   1. 如果数组没有被Rotated，也就是sorted单调递增的话，那么第一个数，一定小于最后一个数，也就是说**peak element就是数组最后一个数**（如果数组Rotated，那么第一个数，一定大于最后一个数）
+   2. 如果数组只有一个元素，那么peak element就是第一个数；
+2. 如果target大于`nums[0]`，那么target一定在peak的左边部分，所以对左边的部分进行binary search；
+3. 如果target小于`nums[0]`，那么target一定在peak的右边部分，所以对右边的部分进行binary search；
 
 ```text
 class Solution {
@@ -45,7 +51,7 @@ class Solution {
         int index = 0;
         
         for (int i = 1; i < nums.length; i++) {
-            if (nums[i] < nums[i - 1]) {
+            if (nums[i] < nums[i - 1]) { // 如果出现右边的数比左边小，那么左边的数一定是peak
                 index = i - 1;
                 break;
             }
@@ -70,9 +76,18 @@ class Solution {
 }
 ```
 
+Time: `O(logn)`；  
+Space: `O(1)`；
 
 
 
+### 要记住的重点：
+
+1. 上面`left < right` 无等号，下面if判断中，=等号只能交给`right`；  
+2. mid注意防止溢出；  
+**3. return的时候，只能返回`right`。**
+
+简便记忆：if中等号判断交给right，下面返回right，**什么都是right，统统都是right！**
 
 
 
