@@ -22,16 +22,16 @@ Output: true
 
 **核心思想：**对tree进行recursion，只要探测到任何一个子树，与input给的subRoot完全相同，那么就返回true；（两棵树完全相同也可以看做一棵树是另一棵树的子树）
 
-算法不复杂可以直接看代码；本题需要记住的重点：怎样避免nullPointerException❓
+所以要做的就是两件事：
 
-#### 在主方法里，终止条件与返回值：
+#### 第一：对树进行recursion（DFS）：
 
 * 当`subRoot`为null，则返回true；因为null是所有树的子树；
 * 当`subRoot`不为null，只要`root`为null肯定不是子树；
 * 如果两棵树完全相同返回true；
 * 探测到任何一个子树，与input给的subRoot完全相同，那么就返回true；
 
-#### 在判断两棵树是否相同时：
+#### 第二：判断两棵树是否相同：
 
 * 如果两个node同时为null，算是相同的树，返回true；
 * 如果只有一个为null则不是相同的树；
@@ -68,6 +68,16 @@ Time: `O(M * N)`；
 
 Space: `O(max(H1, H2))`；  
 解释：H1是`root`的深度，H2是`subRoot`的深度；为什么不直接是H1，因为input给出的`subRoot`深度有可能会比root大。
+
+
+
+### 本题需要记住的重点：
+
+1. 怎样避免nullPointerException❓
+2. 方法里的终止条件与返回值
+3. 复杂度的计算
+
+
 
 
 
