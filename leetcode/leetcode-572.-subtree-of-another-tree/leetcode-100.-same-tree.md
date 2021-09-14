@@ -35,17 +35,20 @@ class Solution {
 //Time: O(n); Space:O(logn)
 ```
 
-Time: `O(M * N)`；  
-解释：M和N分别是`root`和`subRoot`的节点总数，对于每一个`root`上的点，都需要做一次DFS来和`subRoot`匹配，匹配一次的时间代价是`O(N)`，那么总的时间代价就是`O(M * N)`
+Time: `O(min(M, N))`；  
+解释：M和N分别是两棵树的节点总数，只有当两个二叉树中的对应节点都不为空时才会访问到该节点，因此被访问到的节点数不会超过较小的二叉树的节点数。
 
 Space: `O(min(H1, H2))`；  
-解释：H1和H2分别是两棵树度；为什么不直接是H1，因为input给出的`subRoot`深度有可能会比root大。
+解释：H1和H2分别是两棵树的高度；空间复杂度取决于递归调用的层数，递归调用的层数不会超过较小的二叉树的最大高度。
 
 
 
 ### 本题要记住的重点：
 
-怎样避免nullPointerException❓
+1. 怎样避免nullPointerException❓
+2. 复杂度计算；
+
+
 
 
 
