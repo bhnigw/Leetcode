@@ -79,7 +79,8 @@
 * [\[Leetcode\]268. Missing Number](leetcode/leetcode-268.-missing-number.md)
 * [\[Leetcode\]287. Find the Duplicate Number](leetcode/leetcode-287.-find-the-duplicate-number.md)
 * [\[Leetcode\]529. Minesweeper](leetcode/leetcode-529.-minesweeper.md)
-* [\[Leetcode\]572. Subtree of Another Tree](leetcode/leetcode-572.-subtree-of-another-tree.md)
+* [\[Leetcode\]572. Subtree of Another Tree](leetcode/leetcode-572.-subtree-of-another-tree/README.md)
+  * [\[Leetcode\]100. Same Tree](leetcode/leetcode-572.-subtree-of-another-tree/leetcode-100.-same-tree.md)
 * [\[Leetcode\]★863. All Nodes Distance K in Binary Tree](leetcode/leetcode-863.-all-nodes-distance-k-in-binary-tree.md)
 
 ## 重点不多的Easy题

@@ -1,13 +1,17 @@
+---
+description: Recursion
+---
+
 # \[Leetcode\]572. Subtree of Another Tree
 
-原题地址：[https://leetcode.com/problems/subtree-of-another-tree/](https://leetcode.com/problems/subtree-of-another-tree/)
+原题地址：[https://leetcode.com/problems/subtree-of-another-tree/](https://leetcode.com/problems/subtree-of-another-tree/) 关键词：DFS，Recursion
 
 题意：判断是不是Subtree。  
 给两棵二叉树`root`和`subRoot`。检验`root`中是否包含`subRoot`。如果存在，返回 true，否则返回 false 。两棵树完全相同也可以看做一棵树是另一棵树的子树。
 
 例：
 
-![](../.gitbook/assets/subtree1-tree.jpg)
+![](../../.gitbook/assets/subtree1-tree.jpg)
 
 Input: `root = [3,4,5,1,2], subRoot = [4,1,2]`  
 Output: true
@@ -20,7 +24,7 @@ Output: true
 
 算法不复杂可以直接看代码；本题需要记住的重点：怎样避免nullPointerException❓
 
-#### 在主方法里：
+#### 在主方法里，终止条件与返回值：
 
 * 当`subRoot`为null，则返回true；因为null是所有树的子树；
 * 当`subRoot`不为null，只要`root`为null肯定不是子树；
@@ -68,6 +72,8 @@ Space: `O(max(H1, H2))`；
 
 
 相关题目：
+
+{% page-ref page="leetcode-100.-same-tree.md" %}
 
 
 
