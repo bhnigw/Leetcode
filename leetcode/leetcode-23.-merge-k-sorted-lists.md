@@ -31,7 +31,7 @@ Output: `[1,1,2,3,4,4,5,6]`
 
 1. 初始化一个dummy node来储存结果。初始化cur node指向dummy，用来进行遍历。
 
-2. 初始化一个PriorityQueue，初始化方法：**`PriorityQueue pq = new PriorityQueue<>((node1, node2) -> node1.val - node2.val);`**
+2. 初始化一个PriorityQueue，初始化方法：**`PriorityQueue<ListNode> pq = new PriorityQueue<>((node1, node2) -> node1.val - node2.val);`**
 
 后面的意思是：根据ListNode的val值，构建最小堆**min Heap**，它的Heap堆顶会存放val值最小的node。
 
