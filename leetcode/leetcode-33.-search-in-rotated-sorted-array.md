@@ -85,7 +85,8 @@ Space: `O(1)`；
 
 1. 上面`left < right` 无等号，下面if判断中，=等号只能交给`right`；  
 2. mid注意防止溢出；  
-**3. return的时候，只能返回`right`。**
+**3. return的时候，只能返回`right`。**  
+4. 注意`findPeakElement()`的两个corner case
 
 简便记忆：if中等号判断交给right，下面返回right，**什么都是right，统统都是right！**
 
