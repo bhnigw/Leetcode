@@ -78,7 +78,7 @@ Space: `O(N)`；空间是DFS的stack个数，**也就是DFS的深度，也就是
   
 同类题：
 
-{% page-ref page="leetcode-543.-diameter-of-binary-tree.md" %}
+{% page-ref page="leetcode-543.-diameter-of-binary-tree/" %}
 
 
 
