@@ -128,7 +128,9 @@ Space: `O(N)`;  HashMap的size
 
 
 
+### 本题要记住的重点：
 
+1. PriorityQueue构建的是最小堆min-Heap，并且size不超过k
 
 
 
