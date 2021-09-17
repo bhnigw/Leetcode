@@ -82,6 +82,8 @@ Space: `O(N)`;
 
 由图可知，最后只要倒序遍历`bucket[]`数组，记录前k个不为空的元素，即为最后结果。
 
+注意：`bucket[]`是数组，但是它里面的每一个元素是ArrayList❗️ 初始化方法：**`List<Integer>[] bucket = new ArrayList[nums.length+1];`**
+
 ```text
 class Solution {
     public int[] topKFrequent(int[] nums, int k) {
@@ -93,22 +95,22 @@ class Solution {
         }
         
         //将频率作为数组下标，对于出现频率不同的数字集合，存入对应的数组下标
-        List<Integer>[] list = new List[nums.length+1];
+        List<Integer>[] bucket = new ArrayList[nums.length+1];
         for(int key : map.keySet()){
             int i = map.get(key);
-            if(list[i] == null){        // 如果key里出现且为空，那么就new一个ArrayList
-               list[i] = new ArrayList();
+            if(bucket[i] == null){        // 如果key里出现且为空，那么就new一个ArrayList
+               bucket[i] = new ArrayList();
             } 
-            list[i].add(key);
+            bucket[i].add(key);
         }
         
         // 倒序遍历数组获取出现顺序从大到小的排列
         int[] res = new int[k];
         int j = 0;
         
-        for(int i = list.length - 1; i >= 0 && j < k; i--){
-            if(list[i] != null) {
-                for (int num : list[i]) {
+        for(int i = bucket.length - 1; i >= 0 && j < k; i--){
+            if(bucket[i] != null) {
+                for (int num : bucket[i]) {
                     res[j] = num;
                     j++;
                 }
@@ -120,7 +122,9 @@ class Solution {
 }
 ```
 
+Time: `O(N)`; 
 
+Space: `O(N)`;  HashMap的size
 
 
 
