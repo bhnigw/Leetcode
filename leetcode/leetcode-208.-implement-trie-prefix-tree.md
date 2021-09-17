@@ -50,7 +50,7 @@ class TrieNode {
     1. 如果它不为空，说明cur node含有字母为ch的child node；  
     2. 如果为空，则说明cur不含有该字母的child node，那么我们就在字符ch所对应的children\[ \]的位置new一个val为ch的TrieNode，方法：`cur.children[ch - 'a'] = new TrieNode(ch);`
 
-便利结束后，给最后一个node的内部值isWord赋值true，表明这个关键词的insert过程完成。方法：`cur.isWord = true;`
+遍历结束后，给最后一个node的内部值isWord赋值true，表明这个关键词的insert过程完成。方法：`cur.isWord = true;`
 
 ![](../.gitbook/assets/screen-shot-2021-05-31-at-11.21.36-pm.png)
 

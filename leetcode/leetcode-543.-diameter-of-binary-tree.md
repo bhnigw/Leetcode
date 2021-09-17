@@ -123,6 +123,10 @@ Space: `O(N)`；空间是DFS的stack个数，**也就是DFS的深度，也就是
 
 
 
+相关题：
+
+104. Maximum Depth of Binary Tree
+
 
 
 

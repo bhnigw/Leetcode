@@ -126,7 +126,7 @@ description: ASCII，HashSet
 ![](../.gitbook/assets/screen-shot-2021-07-10-at-2.54.57-am.png)
 
 首先第一层for 循环，遍历九个小正方形\(9个box\)；  
-第二层和第三层for循环，便利3×3的小正方里的每一个元素：
+第二层和第三层for循环，遍历3×3的小正方里的每一个元素：
 
 `for (int box = 0; box < 9; box++) {  
     for (int row = 0; row < 3; row++) {   
