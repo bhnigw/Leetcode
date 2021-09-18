@@ -1,6 +1,6 @@
 # \[Leetcode\]104. Maximum Depth of Binary Tree
 
-原题地址：[https://leetcode.com/problems/maximum-depth-of-binary-tree/](https://leetcode.com/problems/maximum-depth-of-binary-tree/) 关键词：Recursion
+原题地址：[https://leetcode.com/problems/maximum-depth-of-binary-tree/](https://leetcode.com/problems/maximum-depth-of-binary-tree/) 关键词：DFS，BFS
 
 题意：求树的高度/最大深度。
 

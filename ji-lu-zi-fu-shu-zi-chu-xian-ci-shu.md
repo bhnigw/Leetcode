@@ -98,6 +98,18 @@ public static void main(String[] args) {
 
 map输出为：`{2=1, 3=3, 5=1, 7=1, 8=1, 9=2}`
 
+★更简便的写法：
+
+```text
+		Map<Integer, Integer> map = new HashMap<>();
+
+		for (int num : nums) {
+            map.put(num, map.getOrDefault(num, 0) + 1); // 计算频率
+        }
+```
+
+
+
 #### 要记住的重点：
 
 1. map.get\(i\)后面不能直接++；
