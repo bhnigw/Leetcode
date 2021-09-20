@@ -21,7 +21,21 @@ Circular Queue是一种线性数据结构，其操作基于 FIFO（先进先出�
 
 ### 算法：
 
+**核心思想：**用一个同size的array来存储数据。queue的特性是先进先出，所以新进来的数据存在rear上，poll出数据的时候删去front元素。
+
 ![](../.gitbook/assets/c439d282d60c40642f7fed325597969acfac091ff95e483131596ddfa90c664d-circularqueue.gif)
+
+Global变量有四个：  
+1. 用来存储数据的array  
+2. array的size  
+3. 头节点的指数front  
+4. 尾节点的指数rear
+
+
+
+●`enQueue(int value)`：只动rear；如果超过array长度，index就变为0；
+
+●`deQueue(int value)`：只动front；如果超过array长度，index就变为0；
 
 ```text
 class MyCircularQueue {
@@ -66,7 +80,7 @@ class MyCircularQueue {
         return arr[front];
     }
     
-    public int Rear() {
+    public int Rear() {   // 注意
         if (size == 0) return -1;
         
         if (rear == 0) {
