@@ -86,6 +86,7 @@
   * [\[Leetcode\]100. Same Tree](leetcode/leetcode-572.-subtree-of-another-tree/leetcode-100.-same-tree.md)
 * [\[Leetcode\]622. Design Circular Queue](leetcode/leetcode-622.-design-circular-queue.md)
 * [\[Leetcode\]★863. All Nodes Distance K in Binary Tree](leetcode/leetcode-863.-all-nodes-distance-k-in-binary-tree.md)
+* [\[Leetcode\]1048. Longest String Chain](leetcode/leetcode-1048.-longest-string-chain.md)
 
 ## 重点不多的Easy题
 
