@@ -45,14 +45,11 @@ class Solution {
         PriorityQueue<Integer> pq = new PriorityQueue<>((num1, num2) -> map.get(num1) - map.get(num2)); // min-Heap
         
         for (int key : map.keySet()) {
-            if (pq.size() >= k) { //如果Heap的size满了，达到k了
-                if (map.get(key) > map.get(pq.peek())) { // 那就看新元素的频率有没有比堆顶大
-                    pq.poll();       // 如果新元素频率更大，就poll出原来heap中最小的
-                    pq.offer(key);   // 然后加入新的
-                }
-            } else {
-                pq.offer(key); // 如果Heap的size不到k，直接加进去
-            }
+            pq.offer(key);
+            
+            if (pq.size() > k) { // 如果Heap的size超过k了，就把上面频率最小的poll出去
+                pq.poll();       
+            } 
         }
         
         int[] res = new int[k];
@@ -71,6 +68,23 @@ Time: `O(Nlogk)`;
 
 Space: `O(N)`;   
 解释：PriorityQueue最大size是`O(K)`，HashMap的size是`O(N)`；所以空间复杂度为`O(K + N) = O(N)`
+
+在上面第14行加入PriorityQueue的方法中，我原来写的笨办法是：
+
+```text
+for (int key : map.keySet()) {
+    if (pq.size() >= k) { //如果Heap的size满了，达到k了
+        if (map.get(key) > map.get(pq.peek())) { // 那就看新元素的频率有没有比堆顶大
+            pq.poll();       // 如果新元素频率更大，就poll出原来heap中最小的
+            pq.offer(key);   // 然后加入新的
+        }
+    } else {
+        pq.offer(key); // 如果Heap的size不到k，直接加进去
+    }
+}
+```
+
+其实完全没有必要，因为PriorityQueue已经为你按照频率排序，只需要在超过容量时把顶端的poll出去就行
 
 
 
