@@ -2,7 +2,7 @@
 description: Topological，Directed graph，HashMap，BFS
 ---
 
-# \[Leetcode\]207. Course Schedule
+# \[Leetcode\]★207. Course Schedule
 
 原题地址：[https://leetcode.com/problems/course-schedule/](https://leetcode.com/problems/course-schedule/) 关键词：Topological, Directed graph，BFS
 

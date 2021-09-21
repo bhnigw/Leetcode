@@ -71,7 +71,7 @@
   * [\[Leetcode\]168. Excel Sheet Column Title](leetcode/leetcode-171.-excel-sheet-column-number/leetcode-168.-excel-sheet-column-title.md)
 * [\[Leetcode\]187. Repeated DNA Sequences](leetcode/leetcode-187.-repeated-dna-sequences.md)
 * [\[Leetcode\]200. Number of Islands](leetcode/leetcode-200.-number-of-islands.md)
-* [\[Leetcode\]207. Course Schedule](leetcode/leetcode-207.-course-schedule/README.md)
+* [\[Leetcode\]★207. Course Schedule](leetcode/leetcode-207.-course-schedule/README.md)
   * [\[Leetcode\]210. Course Schedule II](leetcode/leetcode-207.-course-schedule/leetcode-210.-course-schedule-ii.md)
 * [\[Leetcode\]208. Implement Trie \(Prefix Tree\)](leetcode/leetcode-208.-implement-trie-prefix-tree.md)
 * [\[Leetcode\]★212. Word Search II](leetcode/leetcode-212.-word-search-ii.md)
