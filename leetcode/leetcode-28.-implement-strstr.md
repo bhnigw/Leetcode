@@ -47,6 +47,8 @@ Time：`O(n × m)`；其中n是字符串`haystack`的长度，m是字符串`need
 
 Space：`O(1)`；
 
+在第8行中，如果在condition的判断里加上`haystack.length() - i >= needle.length();`的话，时间会更加优化，意思是如果haystack剩下的长度小于了needle的长度，那么就不用再判断了因为肯定装不下needle。
+
 
 
 ### 方法2：Build in method（一般不允许使用）
