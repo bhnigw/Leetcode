@@ -76,6 +76,7 @@
   * [\[Leetcode\]210. Course Schedule II](leetcode/leetcode-207.-course-schedule/leetcode-210.-course-schedule-ii.md)
 * [\[Leetcode\]208. Implement Trie \(Prefix Tree\)](leetcode/leetcode-208.-implement-trie-prefix-tree.md)
 * [\[Leetcode\]★212. Word Search II](leetcode/leetcode-212.-word-search-ii.md)
+* [\[Leetcode\]214. Shortest Palindrome](leetcode/leetcode-214.-shortest-palindrome.md)
 * [\[Leetcode\]232. Implement Queue using Stacks](leetcode/leetcode-232.-implement-queue-using-stacks.md)
 * [\[Leetcode\]226. Invert Binary Tree](leetcode/leetcode-226.-invert-binary-tree.md)
 * [\[Leetcode\]★261. Graph Valid Tree](leetcode/leetcode-261.-graph-valid-tree.md)
