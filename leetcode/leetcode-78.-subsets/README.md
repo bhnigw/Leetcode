@@ -1,8 +1,8 @@
 ---
-description: 'Backtracking, ArrayList'
+description: Backtracking, ArrayList
 ---
 
-# \[Leetcode\]78. Subsets
+# \[Leetcode]78. Subsets
 
 原题地址：[https://leetcode.com/problems/subsets/](https://leetcode.com/problems/subsets/) 关键词：Backtracking, ArrayList, DFS, Recursive
 
@@ -12,11 +12,11 @@ description: 'Backtracking, ArrayList'
 
 #### 详细图解：
 
-![](../../.gitbook/assets/picture1.jpg)
+![](../../.gitbook/assets/Picture1.jpg)
 
 
 
-#### 算法/代码结构：使用[backtrack](%20https://bhnigw.gitbook.io/-1/backtrack-mo-ban)
+#### 算法/代码结构：使用[backtrack](https://bhnigw.gitbook.io/-1/backtrack-mo-ban)
 
 1. 无需null check；初始化二维List作为res，初始化一维List作为backtrack时候的current Subset；
 2. 无需for循环遍历数组，直接用0作为初始index进入helper方法；
@@ -27,7 +27,7 @@ description: 'Backtracking, ArrayList'
       2. 开始递归找此刻i + 1的subset；（对应下面第2步）
       3. ★每一轮for循环结束前，都要去掉curren subset里最后一个元素（因为要backtrack到上一轮给末尾加入新的元素，详细看上图和[backtrack讲解](https://bhnigw.gitbook.io/-1/backtrack-mo-ban)）（对应下面第3步）
 
-```text
+```
 class Solution {
     public List<List<Integer>> subsets(int[] nums) {
         List<List<Integer>> res = new ArrayList<>();
@@ -52,26 +52,26 @@ class Solution {
 }
 ```
 
-Time：O\(n × 2 ^ n\)； 解释见下图  
-Space：O\(n\)；
+Time：O(n × 2 ^ n)； 解释见下图\
+Space：O(n)；
 
 #### 时间复杂度的计算：
 
-![](../../.gitbook/assets/img_6389.jpg)
+![](../../.gitbook/assets/IMG\_6389.jpg)
 
-![](../../.gitbook/assets/img_6391.jpg)
+![](../../.gitbook/assets/IMG\_6391.jpg)
 
-\*\*\*\*
+****
 
 **空间复杂度计算：**
 
-![](../../.gitbook/assets/img_6393.jpg)
+![](../../.gitbook/assets/IMG\_6393.jpg)
 
-\*\*\*\*
+****
 
-**注意事先确认**：  
-1. 给的input数组是否有duplicates，如果有，那么需要**先sort**，然后在for循环里skip掉相同元素 `if(i > startIndex && input[i] == input[i-1]) continue`;  
-2. 给的input数组里装的是char还是String还是integer
+**注意事先确认**：\
+1\. 给的input数组是否有duplicates，如果有，那么需要**先sort**，然后在for循环里skip掉相同元素` if(i > startIndex && input[i] == input[i-1]) continue`;\
+2\. 给的input数组里装的是char还是String还是integer
 
 
 
@@ -88,8 +88,6 @@ Space：O\(n\)；
 
 
 
-  
-
-
+\
 
 

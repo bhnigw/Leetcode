@@ -1,8 +1,8 @@
 ---
-description: 'Linked List, Two pointer'
+description: Linked List, Two pointer
 ---
 
-# \[Leetcode\]142. Linked List Cycle II
+# \[Leetcode]142. Linked List Cycle II
 
 原题地址：[https://leetcode.com/problems/linked-list-cycle-ii/](https://leetcode.com/problems/linked-list-cycle-ii/) 关键词：Linked List, Two pointer，如何检查LinkedList有没有cycle/loop
 
@@ -34,20 +34,20 @@ public class Solution {
 }
 ```
 
-\*\*\*\*
+****
 
 ### ★方法二：Two pointer
 
-空间复杂度是O\(1\)；  
-****一个slow，一个fast，slow每次移动一步而fast每次移动两步。那么如果有cycle的话，slow和fast一定会在circle里某处相遇，且相遇时fast pointer所走过的路程一定是slow pointer的两倍。  
-此时把slow放回head，然后和fast再同时向前走\(此时fast一次移动一步\)，再次相遇时就是cycle开始的地方，返回这个node即可。  
+空间复杂度是O(1)；\
+****一个slow，一个fast，slow每次移动一步而fast每次移动两步。那么如果有cycle的话，slow和fast一定会在circle里某处相遇，且相遇时fast pointer所走过的路程一定是slow pointer的两倍。\
+此时把slow放回head，然后和fast再同时向前走(此时fast一次移动一步)，再次相遇时就是cycle开始的地方，返回这个node即可。\
 如果没有cycle，那么fast一定会遇到null，此时就返回null。
 
 证明如下：
 
-![](../.gitbook/assets/img_6044.jpg)
+![](../.gitbook/assets/IMG\_6044.jpg)
 
-![](../.gitbook/assets/img_6047.jpg)
+![](../.gitbook/assets/IMG\_6047.jpg)
 
 
 
@@ -84,7 +84,7 @@ public class Solution {
 }
 ```
 
-上面的代码，在有cycle的情况下是可以通过的，但是如果input只有一个node\[1\]，第一个while loop就不会进入，下面就会返回1，是错误的，应该返回null。在test case的时候应该要考虑到。
+上面的代码，在有cycle的情况下是可以通过的，但是如果input只有一个node\[1]，第一个while loop就不会进入，下面就会返回1，是错误的，应该返回null。在test case的时候应该要考虑到。
 
 为了解决上面的问题，下面是改进的正确代码：
 
@@ -127,16 +127,16 @@ public class Solution {
 }
 ```
 
-Time complexity: O\(n\)  
-Space complexity: O\(1\); Allocates only pointers, so it runs with constant memory usage.
+Time complexity: O(n)\
+Space complexity: O(1); Allocates only pointers, so it runs with constant memory usage.
 
 
 
 ### 类似的题：
 
-{% page-ref page="leetcode-287.-find-the-duplicate-number.md" %}
-
-
+{% content-ref url="leetcode-287.-find-the-duplicate-number.md" %}
+[leetcode-287.-find-the-duplicate-number.md](leetcode-287.-find-the-duplicate-number.md)
+{% endcontent-ref %}
 
 
 

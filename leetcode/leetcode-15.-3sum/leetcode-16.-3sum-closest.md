@@ -1,4 +1,4 @@
-# \[Leetcode\]16. 3Sum Closest
+# \[Leetcode]16. 3Sum Closest
 
 原题地址：[https://leetcode.com/problems/3sum-closest/](https://leetcode.com/problems/3sum-closest/) 关键词：Array, Two pointer
 
@@ -17,9 +17,9 @@
 
 取绝对值的方法：`Math.abs(res - target)`
 
-![](../../.gitbook/assets/screen-shot-2021-08-09-at-11.01.07-pm.png)
+![](<../../.gitbook/assets/Screen Shot 2021-08-09 at 11.01.07 PM.png>)
 
-```text
+```
 class Solution {
     public int threeSumClosest(int[] nums, int target) {
         if (nums == null || nums.length < 3) {
@@ -54,6 +54,5 @@ class Solution {
 }
 ```
 
-Time：`O(n^2)`；前面有sort，所以计算是O\(nlogn + n^2\)，结果就是O\(n^2\)  
+Time：`O(n^2)`；前面有sort，所以计算是O(nlogn + n^2)，结果就是O(n^2)\
 Space：`O(logn)`；
-

@@ -1,19 +1,19 @@
-# \[Leetcode\]622. Design Circular Queue
+# \[Leetcode]622. Design Circular Queue
 
 原题地址：[https://leetcode.com/problems/design-circular-queue/](https://leetcode.com/problems/design-circular-queue/)
 
-题意：设计循环队列Circular Queue。   
+题意：设计循环队列Circular Queue。 \
 Circular Queue是一种线性数据结构，其操作基于 FIFO（先进先出）原则，**并且队尾被连接在队首**，以形成一个循环。它也被称为“环形缓冲器“（Ring Buffer）。
 
 要求实现如下操作：
 
-●MyCircularQueue\(k\) Initializes the object with the size of the queue to be k.   
-●int Front\(\) Gets the front item from the queue. If the queue is empty, return -1.   
-●int Rear\(\) Gets the last item from the queue. If the queue is empty, return -1.   
-●boolean enQueue\(int value\) Inserts an element into the circular queue. Return true if the operation is successful.   
-●boolean deQueue\(\) Deletes an element from the circular queue. Return true if the operation is successful.   
-●boolean isEmpty\(\) Checks whether the circular queue is empty or not.   
-●boolean isFull\(\) Checks whether the circular queue is full or not.
+●MyCircularQueue(k) Initializes the object with the size of the queue to be k. \
+●int Front() Gets the front item from the queue. If the queue is empty, return -1. \
+●int Rear() Gets the last item from the queue. If the queue is empty, return -1. \
+●boolean enQueue(int value) Inserts an element into the circular queue. Return true if the operation is successful. \
+●boolean deQueue() Deletes an element from the circular queue. Return true if the operation is successful. \
+●boolean isEmpty() Checks whether the circular queue is empty or not. \
+●boolean isFull() Checks whether the circular queue is full or not.
 
 例子：
 
@@ -23,13 +23,13 @@ Circular Queue是一种线性数据结构，其操作基于 FIFO（先进先出�
 
 **核心思想：**用一个同size的array来存储数据。queue的特性是先进先出，所以新进来的数据存在rear上，poll出数据的时候删去front元素。
 
-![](../.gitbook/assets/c439d282d60c40642f7fed325597969acfac091ff95e483131596ddfa90c664d-circularqueue.gif)
+![](../.gitbook/assets/c439d282d60c40642f7fed325597969acfac091ff95e483131596ddfa90c664d-CircularQueue.gif)
 
-Global变量有四个：  
-1. 用来存储数据的array  
-2. array的size  
-3. 头节点的指数front  
-4. 尾节点的指数rear
+Global变量有四个：\
+1\. 用来存储数据的array\
+2\. array的size\
+3\. 头节点的指数front\
+4\. 尾节点的指数rear
 
 
 
@@ -37,7 +37,7 @@ Global变量有四个：
 
 ●`deQueue(int value)`：只动front；如果超过array长度，index就变为0；
 
-```text
+```
 class MyCircularQueue {
     int[] arr;
     int size;
@@ -110,8 +110,6 @@ class MyCircularQueue {
  * boolean param_6 = obj.isFull();
  */
 ```
-
-
 
 
 

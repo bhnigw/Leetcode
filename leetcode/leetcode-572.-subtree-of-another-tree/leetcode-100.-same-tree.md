@@ -2,7 +2,7 @@
 description: Recursion
 ---
 
-# \[Leetcode\]100. Same Tree
+# \[Leetcode]100. Same Tree
 
 原题地址：[https://leetcode.com/problems/same-tree/](https://leetcode.com/problems/same-tree/) 关键词：DFS，Recursion
 
@@ -20,7 +20,7 @@ description: Recursion
 
 （[一个小知识点](https://bhnigw.gitbook.io/-1/shu-ju-jie-gou-map#ru-guo-ba-treenode-jia-ru-hashmap)）
 
-```text
+```
 class Solution {
     public boolean isSameTree(TreeNode p, TreeNode q) {
         if (p == null && q == null) return true;
@@ -35,10 +35,10 @@ class Solution {
 //Time: O(n); Space:O(logn)
 ```
 
-Time: `O(min(M, N))`；  
+Time: `O(min(M, N))`；\
 解释：M和N分别是两棵树的节点总数，只有当两个二叉树中的对应节点都不为空时才会访问到该节点，因此被访问到的节点数不会超过较小的二叉树的节点数。
 
-Space: `O(min(H1, H2))`；  
+Space: `O(min(H1, H2))`；\
 解释：H1和H2分别是两棵树的高度；空间复杂度取决于递归调用的层数，递归调用的层数不会超过较小的二叉树的最大高度。
 
 
@@ -54,7 +54,7 @@ Space: `O(min(H1, H2))`；
 
 相关题目：
 
-{% page-ref page="./" %}
-
-
+{% content-ref url="./" %}
+[.](./)
+{% endcontent-ref %}
 

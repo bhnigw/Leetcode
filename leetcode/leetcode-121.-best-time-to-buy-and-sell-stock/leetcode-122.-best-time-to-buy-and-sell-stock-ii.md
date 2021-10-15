@@ -1,10 +1,10 @@
-# \[Leetcode\]122. Best Time to Buy and Sell Stock II
+# \[Leetcode]122. Best Time to Buy and Sell Stock II
 
 原题地址：[https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/)
 
 题意：在给出的时间段内，不限交易次数，求能获得的最大股票收益。
 
-![](../../.gitbook/assets/122_maxprofit_1.png)
+![](../../.gitbook/assets/122\_maxprofit\_1.png)
 
 ### 算法：
 
@@ -12,7 +12,7 @@
 
 所以，找出input数组内所有的单调递增区间，然后求和即可；
 
-```text
+```
 class Solution {
     public int maxProfit(int[] prices) {
         if (prices == null || prices.length < 2) return 0;
@@ -28,11 +28,9 @@ class Solution {
 }
 ```
 
-Time: O\(n\);
+Time: O(n);
 
-Space: O\(1\);
-
-
+Space: O(1);
 
 
 

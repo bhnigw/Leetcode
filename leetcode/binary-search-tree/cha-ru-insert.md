@@ -8,10 +8,10 @@ description: Binary Search Tree
 
 题意：向BST插入一个值为val的node，返回整个tree；
 
-![](../../.gitbook/assets/insertbst-1-.jpg)
+![](<../../.gitbook/assets/insertbst (1).jpg>)
 
-Input: `root = [4,2,7,1,3], val = 5`   
-Output: `[4,2,7,1,3,5]` 有多种解，返回一种即可
+Input: `root = [4,2,7,1,3], val = 5 `\
+Output: `[4,2,7,1,3,5] `有多种解，返回一种即可
 
 
 
@@ -21,7 +21,7 @@ Output: `[4,2,7,1,3,5]` 有多种解，返回一种即可
 
 根据Binary Search Tree特性，当val值小于节点node值时，插入位置在左侧树；相反，当val值大于节点node值时，插入位置在右侧树。
 
-```text
+```
 class Solution {
     public TreeNode insertIntoBST(TreeNode root, int val) {
         if (root == null) {
@@ -39,6 +39,5 @@ class Solution {
 }
 ```
 
-Time：平均时间是`O(logn)`，也就是树的高度，最坏的情况是`O(n)`； height of the tree  
+Time：平均时间是`O(logn)`，也就是树的高度，最坏的情况是`O(n)`； height of the tree\
 Space：平均时间是`O(logn)`，也就是树的高度，最坏的情况是`O(n)`；
-

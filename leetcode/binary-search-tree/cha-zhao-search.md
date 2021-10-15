@@ -10,9 +10,9 @@ description: Binary Search Tree
 
 例：
 
-![](../../.gitbook/assets/tree1%20%281%29.jpg)
+![](<../../.gitbook/assets/tree1 (1).jpg>)
 
-Input: `root = [4,2,7,1,3], val = 2`   
+Input: `root = [4,2,7,1,3], val = 2 `\
 Output: `[2,1,3]`
 
 
@@ -23,11 +23,11 @@ Output: `[2,1,3]`
 
 如果根节点root的值等于搜索值val，返回root；`root.val == val`
 
-如果 val &lt; root.val，进入根节点的左子树left subtree查找；`searchBST(root.left, val)`
+如果 val < root.val，进入根节点的左子树left subtree查找；`searchBST(root.left, val)`
 
-如果 val &gt; root.val，进入根节点的右子树right subtree查找；`searchBST(root.right, val)`
+如果 val > root.val，进入根节点的右子树right subtree查找；`searchBST(root.right, val)`
 
-```text
+```
 class Solution {
     public TreeNode searchBST(TreeNode root, int val) {
         TreeNode res = new TreeNode();
@@ -51,7 +51,7 @@ class Solution {
 
 上面的好理解，下面的更简洁：
 
-```text
+```
 class Solution {
     public TreeNode searchBST(TreeNode root, int val) {
         if (root == null) return null;
@@ -70,8 +70,6 @@ class Solution {
 }
 ```
 
-Time：平均时间是`O(logn)`，也就是树的高度，最坏的情况是`O(n)`； height of the tree  
+Time：平均时间是`O(logn)`，也就是树的高度，最坏的情况是`O(n)`； height of the tree\
 Space：平均时间是`O(logn)`，也就是树的高度，最坏的情况是`O(n)`；
-
-
 

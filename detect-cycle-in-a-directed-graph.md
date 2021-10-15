@@ -8,24 +8,24 @@ description: HashMap，ArrayList，backtrack
 
 给出下面一个directed graph，肉眼可以观察到有一个`4 -> 2 -> 3 -> 4`组成的cycle，但是怎样用程序来鉴别呢？（注意上面的正方形不算cycle，因为从箭头出发没有可以组成的闭环loop）
 
-![](.gitbook/assets/img_6332.jpg)
+![](.gitbook/assets/IMG\_6332.jpg)
 
 #### 第一个问题：怎样记录和表示一个有向图？
 
-我们可以用一个HashMap和ArrayList来记录：  
+我们可以用一个HashMap和ArrayList来记录：\
 ★`HashMap<Integer, List<Integer>()> map = new HashMap<>();`
 
-其中，map的key记录当前节点；  
+其中，map的key记录当前节点；\
             map的value记录**由当前点出发，指向的别的点的值；**
 
-那么上面的有向图就可以用HashMap表示为：  
-`{0 = [1],   
-1 = [null],   
-2 = [1, 3],   
-3 = [4],   
-4 = [0, 2]}`
+那么上面的有向图就可以用HashMap表示为：\
+`{0 = [1], `\
+`1 = [null], `\
+`2 = [1, 3], `\
+`3 = [4], `\
+`4 = [0, 2]}`
 
-![](.gitbook/assets/img_6361-copy.jpg)
+![](<.gitbook/assets/IMG\_6361 copy.jpg>)
 
 #### 第二个问题，怎样Detect loop/cycle？
 
@@ -40,35 +40,35 @@ description: HashMap，ArrayList，backtrack
 3. 把走过的节点都在`visited[]`里标记true，backtrack回去时变回false；
 4. 在遍历时如果遇到true，说明已经访问过，说明有loop/cycle；
 
-详细图解：  
+详细图解：\
 假设从节点4开始遍历，第一次的路径为`4 -> 0 -> 1`：
 
-![](.gitbook/assets/img_6338.jpg)
+![](.gitbook/assets/IMG\_6338.jpg)
 
 
 
 回到4后重新出发，路径为`4 -> 2 -> 1`：
 
-![](.gitbook/assets/img_6339.jpg)
+![](.gitbook/assets/IMG\_6339.jpg)
 
 
 
 回到2后重新出发，路径为`2 -> 3 -> 4`：
 
-![](.gitbook/assets/img_6340.jpg)
+![](.gitbook/assets/IMG\_6340.jpg)
 
 
 
-所以在backtrack时，用下面两个if放在前面判断：  
-`if (visited[cur] == true) return true; //若已访问过，说明有loop   
-if (map.get(cur) == null) return false; //为null说明当前点没有子节点，为终点`
+所以在backtrack时，用下面两个if放在前面判断：\
+`if (visited[cur] == true) return true; //若已访问过，说明有loop `\
+`if (map.get(cur) == null) return false; //为null说明当前点没有子节点，为终点`
 
-**backtrack完成时，要把visited变回false：**  
+**backtrack完成时，要把visited变回false：**\
 **`visited[cur] = false;`**
 
 ★注意这里，是与[无向图undirected graph检查环](https://bhnigw.gitbook.io/leetcode/ji-chu-bi-hui/wu-xiang-tu-zhong-jian-cha-huan-detect-cycle-inaundirected-graph)最大的区别：undirected graph里不需要重新把`visited[cur]`变回false，因为用的是DFS不需要backtrack；另外，undirected graph的子节点中包含parent node，所以必须剔除掉parent node才能DFS；而directed graph子节点中不包含parent node，所以不用。
 
-```text
+```
 public boolean detectLoop(int[][] graph) {
 
 		HashMap<Integer, ArrayList<Integer>> map = new HashMap<>();
@@ -112,26 +112,26 @@ public boolean detectLoop(int[][] graph) {
 	}
 ```
 
-Time：`O(M + N^2)`  
-M是build graph所需时间，也就是图的size；  
+Time：`O(M + N^2)`\
+M是build graph所需时间，也就是图的size；\
 N是顶点总数，在worst case下，Backtrack的时间为N^2，所以时间复杂度为`O(M + N^2)`
 
-Space：`O(M + N)`  
-M是build graph所需要使用的HashMap的空间；  
+Space：`O(M + N)`\
+M是build graph所需要使用的HashMap的空间；\
 N是顶点总数，我们需要用一个`visited[]`的数组来记录已经访问过的node，这个数组的长度是N，所以空间复杂度为`O(M + N)`
 
-时间复杂度相关知识：[https://bhnigw.gitbook.io/-1/shi-jian-fu-za-du-time-complexity](https://bhnigw.gitbook.io/-1/shi-jian-fu-za-du-time-complexity)  
+时间复杂度相关知识：[https://bhnigw.gitbook.io/-1/shi-jian-fu-za-du-time-complexity](https://bhnigw.gitbook.io/-1/shi-jian-fu-za-du-time-complexity)\
 空间复杂度相关知识：[https://bhnigw.gitbook.io/-1/kong-jian-fu-za-du-space-complexity](https://bhnigw.gitbook.io/-1/kong-jian-fu-za-du-space-complexity)
 
 
 
 例题：
 
-{% page-ref page="leetcode/leetcode-207.-course-schedule/" %}
+{% content-ref url="leetcode/leetcode-207.-course-schedule/" %}
+[leetcode-207.-course-schedule](leetcode/leetcode-207.-course-schedule/)
+{% endcontent-ref %}
 
 
 
 视频讲解：[https://www.youtube.com/watch?v=0dJmTuMrUZM](https://www.youtube.com/watch?v=0dJmTuMrUZM)
-
-
 

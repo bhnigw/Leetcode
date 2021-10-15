@@ -2,19 +2,19 @@
 description: DFS，Trie
 ---
 
-# \[Leetcode\]★212. Word Search II
+# \[Leetcode]★212. Word Search II
 
 原题地址：[https://leetcode.com/problems/word-search-ii/](https://leetcode.com/problems/word-search-ii/) 关键词：DFS，Trie
 
-题意：给一个充满字符char的二维数组`board[][]`，和一个关键词的stirng数组`words[]`，找出board中所有存在于words\[ \]中的单词。  
+题意：给一个充满字符char的二维数组`board[][]`，和一个关键词的stirng数组`words[]`，找出board中所有存在于words\[ ]中的单词。\
 
 
-![char board\[ \]\[ \]](../.gitbook/assets/screen-shot-2021-06-02-at-1.59.29-am.png)
+![char board\[ \]\[ \]](<../.gitbook/assets/Screen Shot 2021-06-02 at 1.59.29 AM.png>)
 
- Input: `board = [['o','a','a','n'],['e','t','a','e'],['i','h','k','r'],['i','f','l','v']]`，`words = ["oath", "pea", "eat", "rain"]`   
+ Input: `board = [['o','a','a','n'],['e','t','a','e'],['i','h','k','r'],['i','f','l','v']]`，`words = ["oath", "pea", "eat", "rain"] `\
 Output: `["eat", "oath"]`
 
-#### 
+####
 
 ### 算法：
 
@@ -28,27 +28,27 @@ Output: `["eat", "oath"]`
 
 **1.把words全部转换到Trie tree上：**
 
-![](../.gitbook/assets/screen-shot-2021-06-02-at-2.32.42-am.png)
+![](<../.gitbook/assets/Screen Shot 2021-06-02 at 2.32.42 AM.png>)
 
 **2. 结合Trie tree对这个二位矩阵board进行DFS：**
 
-![](../.gitbook/assets/screen-shot-2021-06-02-at-2.32.59-am.png)
+![](<../.gitbook/assets/Screen Shot 2021-06-02 at 2.32.59 AM.png>)
 
 
 
-所以，代码的结构应该是：  
-1. 定义主要的方法，确定input和output：`public List findWords(char[][] board, String[] words) { }`然后  
-2. 然后在此方法内，**先把words全部转换到Trie tree上**：`buildTrieTree(root, words);`  
-3. 然后需要一个**helper function来DFS**：`helper(board, cur, i, j, res);`
+所以，代码的结构应该是：\
+1\. 定义主要的方法，确定input和output：`public List findWords(char[][] board, String[] words) { }`然后\
+2\. 然后在此方法内，**先把words全部转换到Trie tree上**：`buildTrieTree(root, words);`\
+3\. 然后需要一个**helper function来DFS**：`helper(board, cur, i, j, res);`
 
 
 
 ### 具体实现：
 
-**首先要初始化Trie：**  
-★这里要注意的是，一般的Trie的node附带的值是一个char和一个boolean值isWord；但是因为这里我们要返回的是复合体对的关键词string，所以这里我们用一个string值来代替这个boolean值；见下图
+**首先要初始化Trie：**\
+****★这里要注意的是，一般的Trie的node附带的值是一个char和一个boolean值isWord；但是因为这里我们要返回的是复合体对的关键词string，所以这里我们用一个string值来代替这个boolean值；见下图
 
-```text
+```
 class TrieNode {
     char val;
     String word; //注意这里是string
@@ -64,14 +64,14 @@ class TrieNode {
 }
 ```
 
-![](../.gitbook/assets/img_6329.jpg)
+![](../.gitbook/assets/IMG\_6329.jpg)
 
 
 
-**build一个TrieTree的方法：**  
+**build一个TrieTree的方法：**\
 ★遍历完一个关键词所有字符后，就把cur的trie node里的string标记为这个关键词的string
 
-```text
+```
 private TrieNode buildTrieTree(TrieNode root, String[] words) {
         TrieNode cur = root;
 
@@ -108,7 +108,7 @@ DFS时：
 5. 如果cur node里面含有的string不为空，说明到这个字符为止可以组成关键词，所以就把这个string加入res；`res.add(cur.word);`
 6. ★重点来了！！下面代码第31行，当我们找到一个关键词时，就要把它的string变为null，为什么要这样做？因为，如果关键词有同样的prefix，比如"car"和"card"这两个单词，遍历完"car"后如果不变为null，那么在遍历"card"经过'r'这个字母时，就会把"car"再一次加入到结果集res，出现重复，就不对了；所以一定要记得加入res后把string变为null；具体图解见下面。
 
-```text
+```
 public List<String> findWords(char[][] board, String[] words) {
         List<String> res = new ArrayList<>();
         
@@ -154,7 +154,7 @@ public List<String> findWords(char[][] board, String[] words) {
 
 这里把"car"加入res后，要把string变为null：`cur.word = null;`
 
-![](../.gitbook/assets/img_6329.jpg)
+![](../.gitbook/assets/IMG\_6329.jpg)
 
 
 
@@ -162,9 +162,9 @@ public List<String> findWords(char[][] board, String[] words) {
 
 #### 复杂度：
 
-Time: `O(M * N * 3^L)`；  
-M和N分别是是board的长和宽，M\*N也就是board里格子的总数；  
-3的意思是在DFS的时候每个node可以展开的方向，为什么不是4，因为parent node已经访问过了所以只有三个方向；  
+Time: `O(M * N * 3^L)`；\
+M和N分别是是board的长和宽，M\*N也就是board里格子的总数；\
+3的意思是在DFS的时候每个node可以展开的方向，为什么不是4，因为parent node已经访问过了所以只有三个方向；\
 L是words里最长的单词的长度，也就是Trie tree最高的高度；
 
 Space: `O(W)`；W是words中所有字母的数量，也就是Trie tree中所有node的总数
@@ -188,7 +188,7 @@ Space: `O(W)`；W是words中所有字母的数量，也就是Trie tree中所有n
 
 附完整代码：
 
-```text
+```
 class TrieNode {
     char val;
     String word;
@@ -265,6 +265,4 @@ class Solution {
     }
 }
 ```
-
-
 

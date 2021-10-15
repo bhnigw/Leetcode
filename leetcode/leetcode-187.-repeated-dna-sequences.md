@@ -2,7 +2,7 @@
 description: Hash Set
 ---
 
-# \[Leetcode\]187. Repeated DNA Sequences
+# \[Leetcode]187. Repeated DNA Sequences
 
 原题地址：[https://leetcode.com/problems/repeated-dna-sequences/](https://leetcode.com/problems/repeated-dna-sequences/) 关键词：HashSet
 
@@ -12,7 +12,7 @@ description: Hash Set
 
 初步思路：跟
 
-```text
+```
 class Solution {
     public List<String> findRepeatedDnaSequences(String s) { 
         List<String> res = new ArrayList<String>();
@@ -36,7 +36,7 @@ class Solution {
 
 
 
-```text
+```
 class Solution {
     public List<String> findRepeatedDnaSequences(String s) { 
         
@@ -56,10 +56,8 @@ class Solution {
 }
 ```
 
-Time: O\(n\)  
-Space: O\(n\)
-
-
+Time: O(n)\
+Space: O(n)
 
 
 

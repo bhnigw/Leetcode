@@ -2,16 +2,16 @@
 description: Dynamic Programming，DP
 ---
 
-# \[Leetcode\]1048. Longest String Chain
+# \[Leetcode]1048. Longest String Chain
 
 原图地址：[https://leetcode.com/problems/longest-string-chain/](https://leetcode.com/problems/longest-string-chain/) 关键词：HashMap，Dynamic Programming，DP
 
-题意：如果我们可以在 word1 的任何地方添加一个字母使其变成 word2，那么我们认为 word1 是 word2 的前身**predecessor**。例如，"abc" 是 "abac" 的前身。  
-词链是单词 \[word\_1, word\_2, ..., word\_k\] 组成的序列，k &gt;= 1，其中 word\_1 是 word\_2 的前身，word\_2 是 word\_3 的前身，依此类推。从给定单词列表 words 中选择单词组成词链，返回词链的最长可能长度。
+题意：如果我们可以在 word1 的任何地方添加一个字母使其变成 word2，那么我们认为 word1 是 word2 的前身**predecessor**。例如，"abc" 是 "abac" 的前身。\
+词链是单词 \[word\_1, word\_2, ..., word_k] 组成的序列，k >= 1，其中 word\_1 是 word\_2 的前身，word\_2 是 word\_3 的前身，依此类推。从给定单词列表 words 中选择单词组成词链，返回词链的最长可能长度。
 
-例：  
-Input: `words = ["a", "b", "ba", "bca", "bda", "bdca"]`  
-Output: 4  
+例：\
+Input: `words = ["a", "b", "ba", "bca", "bda", "bdca"]`\
+Output: 4\
 Explanation: One of the longest word chains is `["a", "ba", "bda", "bdca"]`.
 
 
@@ -26,7 +26,7 @@ Explanation: One of the longest word chains is `["a", "ba", "bda", "bdca"]`.
 
 最后对比得出最大的res即可。
 
-```text
+```
 class Solution {
     public int longestStrChain(String[] words) {
         if (words.length < 1) return 0;
@@ -59,8 +59,6 @@ class Solution {
 Time: `O(NlogN + (N * L))`；前面部分sort的时间是`O(NlogN)`，后面部分遍历单词的时间是`O(N * L)`
 
 Space: `O(N)`；map的size
-
-
 
 
 

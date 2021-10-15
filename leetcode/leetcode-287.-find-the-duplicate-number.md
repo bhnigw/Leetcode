@@ -1,8 +1,8 @@
 ---
-description: 'Array, Two pointer'
+description: Array, Two pointer
 ---
 
-# \[Leetcode\]287. Find the Duplicate Number
+# \[Leetcode]287. Find the Duplicate Number
 
 原题地址：[https://leetcode.com/problems/find-the-duplicate-number/](https://leetcode.com/problems/find-the-duplicate-number/) 关键词：Array, Two pointer
 
@@ -10,13 +10,13 @@ description: 'Array, Two pointer'
 
 ### 方法一：Brute force
 
-两层for loop。Time complexity: O\(n^2\)；Space complexity: O\(1\)
+两层for loop。Time complexity: O(n^2)；Space complexity: O(1)
 
 ### 方法二：Sorting
 
-Time complexity: O\(nlogn\)；Space complexity: O\(1\)
+Time complexity: O(nlogn)；Space complexity: O(1)
 
-```text
+```
 class Solution {
     public int findDuplicate(int[] nums) {
         Arrays.sort(nums);
@@ -35,9 +35,9 @@ class Solution {
 
 ### 方法三：HashSet
 
-Time complexity: O\(n\)；Space complexity: O\(n\)
+Time complexity: O(n)；Space complexity: O(n)
 
-```text
+```
 class Solution {
     public int findDuplicate(int[] nums) {
         Set<Integer> seen = new HashSet<Integer>();
@@ -55,7 +55,7 @@ class Solution {
 
 
 
-### 方法四\(**重要**\)：**Two pointer**。
+### 方法四(**重要**)：**Two pointer**。
 
 对于一个长度为n，包含n个整数，数字都在1到n之间，且无duplicate的乱序数组nums，它具有一个特点，就是如果用当前的`nums[i]`指向`nums[nums[i]]`，那最后所有的数都会被指到。
 
@@ -63,13 +63,13 @@ class Solution {
 
 所以这道题就**演变成了一个找环的题**，算法和题目142. Linked List Cycle几乎一样。
 
-定义一个slow pointer，一个fast pointer，slow每次移动到`nums[i]`，fast每次移动到`nums[nums[i]]`。那么如果有cycle的话，slow和fast一定会在circle里某处相遇，且相遇时fast pointer所走过的路程一定是slow pointer的两倍。此时把slow放回起点`nums[0]`，然后和fast再同时向前走\(此时fast一次移动一步\)，再次相遇时就是cycle开始的地方，返回这个数即可。
+定义一个slow pointer，一个fast pointer，slow每次移动到`nums[i]`，fast每次移动到`nums[nums[i]]`。那么如果有cycle的话，slow和fast一定会在circle里某处相遇，且相遇时fast pointer所走过的路程一定是slow pointer的两倍。此时把slow放回起点`nums[0]`，然后和fast再同时向前走(此时fast一次移动一步)，再次相遇时就是cycle开始的地方，返回这个数即可。
 
-![](../.gitbook/assets/img_6044%20%281%29.jpg)
+![](<../.gitbook/assets/IMG\_6044 (1).jpg>)
 
-![](../.gitbook/assets/img_6045-2%20%281%29.jpg)
+![](<../.gitbook/assets/IMG\_6045 2 (1).jpg>)
 
-```text
+```
 class Solution {
     public int findDuplicate(int[] nums) {
         // 1.build图
@@ -93,16 +93,16 @@ class Solution {
 }
 ```
 
-Time complexity: O\(n\)；  
-**Space complexity: O\(1\)；** 此方法空间复杂度最优
+Time complexity: O(n)；\
+**Space complexity: O(1)； **此方法空间复杂度最优
 
 
 
 ### 方法五：数学技巧，高斯求和 Gauss Sum
 
-题干是该数字可能会重复多次，所以该方法不适合，但是如果该重复数字之重复了一次，那就可以使用。用数组之和减去1到n的和，就是那个重复的数字。Time: O\(n\)；Space: O\(1\)
+题干是该数字可能会重复多次，所以该方法不适合，但是如果该重复数字之重复了一次，那就可以使用。用数组之和减去1到n的和，就是那个重复的数字。Time: O(n)；Space: O(1)
 
-```text
+```
 class Solution {
     public int findDuplicate(int[] nums) {
         
@@ -120,8 +120,6 @@ class Solution {
     }
 }
 ```
-
-
 
 
 

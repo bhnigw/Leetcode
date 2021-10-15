@@ -2,26 +2,26 @@
 description: Tree，DFS
 ---
 
-# \[Leetcode\]★124. Binary Tree Maximum Path Sum \(对应543题\)
+# \[Leetcode]★124. Binary Tree Maximum Path Sum (对应543题)
 
 原题地址：[https://leetcode.com/problems/binary-tree-maximum-path-sum/](https://leetcode.com/problems/binary-tree-maximum-path-sum/) 关键词：Tree，DFS
 
-题意：求最大路径和。  
+题意：求最大路径和。\
 给一个二叉树，每两个node之间都有一条唯一的路径。路径和就是路径中各节点值val的总和。路径不一定经过根节点。
 
 例子：
 
 ![](../.gitbook/assets/exx2.jpg)
 
-Input: `root = [-10,9,20,null,null,15,7]`   
-Output: 42   
+Input: `root = [-10,9,20,null,null,15,7] `\
+Output: 42 \
 Explanation: 最优路径是`15 -> 20 -> 7`，路径和为`15 + 20 + 7 = 42`
 
 
 
 ### 算法：DFS
 
-★**核心思想:** 对于每一个node，**`穿过它的最大路径和` = `穿过左child的最大路径和` + `穿过右child的最大路径和`**
+★**核心思想: **对于每一个node，**`穿过它的最大路径和` = `穿过左child的最大路径和` + `穿过右child的最大路径和`**
 
 
 
@@ -31,15 +31,15 @@ Explanation: 最优路径是`15 -> 20 -> 7`，路径和为`15 + 20 + 7 = 42`
 
 接下来，向上recursion，向它的parent node返回一个最大的和。如果parent node一旦选择走这个node，那就要加上这个最大的和。事实上，parent node会**在自己的左右两个child中选择一个对sum贡献更大的来走。**
 
-**❗️**这就是本题的难点，要弄清楚Recursion时我们要返回的是什么！！  
-我们的目标：判断parent node到底要走左右child哪一条路！  
-怎样判断：选路径和最大的那条路走！  
-所以我们返回的是：该node能给parent贡献的最大路径和！  
+**❗️**这就是本题的难点，要弄清楚Recursion时我们要返回的是什么！！\
+我们的目标：判断parent node到底要走左右child哪一条路！\
+怎样判断：选路径和最大的那条路走！\
+所以我们返回的是：该node能给parent贡献的最大路径和！\
 **`该node能给parent贡献的最大路径和` = `Max(该node左child的最大和, 该node右child的最大和) + parent.val`**
 
 ⚠️  注意：如果此时求出的这个`"能给parent贡献的最大路径和"`的值为负数，说明此条经过该node的路径，对求最大路径和一点帮助都没有！应该舍弃掉它。所以如果遇到负数就把`"能给parent贡献的最大路径和"`的值设为0；（见代码第18行）
 
-```text
+```
 class Solution {
     public int maxPathSum(TreeNode root) {
         int[] res = new int[]{Integer.MIN_VALUE}; // 可能会和负数比较，所以设为最小整数
@@ -72,15 +72,15 @@ Space: `O(N)`；空间是DFS的stack个数，**也就是DFS的深度，也就是
 ### 要记住的重点：
 
 1. 用`res[]`来记录结果
-2. `res[0]`来的初始值是Integer.MIN\_VALUE
+2. `res[0]`来的初始值是Integer.MIN_VALUE
 3. DFS时返回的是什么？是返回该node能给parent贡献的最大sum
 
-  
+\
 同类题：
 
-{% page-ref page="leetcode-543.-diameter-of-binary-tree/" %}
-
-
+{% content-ref url="leetcode-543.-diameter-of-binary-tree/" %}
+[leetcode-543.-diameter-of-binary-tree](leetcode-543.-diameter-of-binary-tree/)
+{% endcontent-ref %}
 
 
 

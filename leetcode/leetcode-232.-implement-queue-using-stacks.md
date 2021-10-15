@@ -2,11 +2,11 @@
 description: Stack
 ---
 
-# \[Leetcode\]232. Implement Queue using Stacks
+# \[Leetcode]232. Implement Queue using Stacks
 
 原题地址：[https://leetcode.com/problems/implement-queue-using-stacks/](https://leetcode.com/problems/implement-queue-using-stacks/) 关键词：Stack
 
-题意：用Stack实现Queue。  
+题意：用Stack实现Queue。\
 要求仅使用两个Stack实现先进先出Queue。Queue应当支持下列操作：`push()`、`pop()`、`peek()`、`isEmpty()`。
 
 
@@ -19,32 +19,32 @@ Queue的特性是先进先出，而Stack的特性是先进后出。我们需要�
 
 直接把新元素放入`inStack`，时间为`O(1)`；
 
-![](../.gitbook/assets/img_6479.jpg)
+![](../.gitbook/assets/IMG\_6479.jpg)
 
 
 
 #### ●`pop()`操作：平均`O(1)`, Worst-case `O(n)`.
 
-有两种情况：  
+有两种情况：\
 如果`outStack`不为空，直接把`outStack`栈顶的元素pop出来即可：
 
-![](../.gitbook/assets/img_6482.jpg)
+![](../.gitbook/assets/IMG\_6482.jpg)
 
 
 
 在pop时，如果`outStack`为空，且，那么需要将`inStack`的元素转移到`outStack`，然后pop即可：
 
-![](../.gitbook/assets/img_6483.jpg)
+![](../.gitbook/assets/IMG\_6483.jpg)
 
 
 
-![](../.gitbook/assets/img_6484.jpg)
+![](../.gitbook/assets/IMG\_6484.jpg)
 
 
 
 完整代码：
 
-```text
+```
 class MyQueue {
 
     private Stack<Integer> inStack;
@@ -99,15 +99,13 @@ class MyQueue {
 
 
 
-●`push()`：  
-Time：`O(1)`；  
+●`push()`：\
+Time：`O(1)`；\
 Space：`O(n)`；Stack的size
 
-●`pop()`：  
-Time：平均`O(1)`, Worst-case `O(n)`；  
+●`pop()`：\
+Time：平均`O(1)`, Worst-case `O(n)`；\
 Space：`O(1)`；
-
-
 
 
 

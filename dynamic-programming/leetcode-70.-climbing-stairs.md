@@ -2,11 +2,11 @@
 description: Fibonacci，Dynamic Programming
 ---
 
-# \[Leetcode\]70. Climbing Stairs
+# \[Leetcode]70. Climbing Stairs
 
 原题地址：[https://leetcode.com/problems/climbing-stairs/](https://leetcode.com/problems/climbing-stairs/) 关键词：Dynamic Programming，Fibonacci
 
-题意：爬楼梯；  
+题意：爬楼梯；\
 共有n个阶梯，每次可以爬1或2个台阶。问有多少种不同的方法可以爬到阶梯n。
 
 
@@ -15,7 +15,7 @@ description: Fibonacci，Dynamic Programming
 
 此方法时间是`O(2 ^ n)`，是指数复杂度（**exponential**）
 
-```text
+```
 public class Solution {
     public int climbStairs(int n) {
         return climb_Stairs(0, n);
@@ -38,7 +38,7 @@ public class Solution {
 
 ### 方法2：Dynamic Programming（重要）
 
-倒过来想，如果已经爬到了台阶n上，往回退，只有两种退法：要么往回退1步站到台阶`n - 1`上，要么往回退2步站到台阶`n - 2`上；  
+倒过来想，如果已经爬到了台阶n上，往回退，只有两种退法：要么往回退1步站到台阶`n - 1`上，要么往回退2步站到台阶`n - 2`上；\
 那么，能够爬到台阶n上的方法总数就是下面两部分之和：
 
 1. 爬上`n − 1`阶楼梯的方法总数，因为再爬 1 阶就能到第`n`阶 
@@ -48,12 +48,12 @@ public class Solution {
 
 同时需要初始化`dp[1] = 1`和`dp[2] = 2`；（input是正整数）
 
-![](../.gitbook/assets/img_6421.jpg)
+![](../.gitbook/assets/IMG\_6421.jpg)
 
-由上图，可一句话总结：  
-这道题目子问题是：problem\(i\) = sub\(i - 1\) + sub\(i - 2\)，即求解第`i`阶楼梯等于求解第`i - 1`阶楼梯和第`i - 2`阶楼梯之和。
+由上图，可一句话总结：\
+这道题目子问题是：problem(i) = sub(i - 1) + sub(i - 2)，即求解第`i`阶楼梯等于求解第`i - 1`阶楼梯和第`i - 2`阶楼梯之和。
 
-```text
+```
 class Solution {
     public int climbStairs(int n) {
         int dp[] = new int[n + 1]; //为什么加1，是为了处理n=0的情况
@@ -70,7 +70,7 @@ class Solution {
 }
 ```
 
-Time: `O(n)`；  
+Time: `O(n)`；\
 Space: `O(n)`；空间就是数组`dp[]`的长度
 
 
@@ -79,11 +79,11 @@ Space: `O(n)`；空间就是数组`dp[]`的长度
 
 观察方法2的公式，正好符合Fibonacci的公式：（此题为特殊情况，恰巧符合，所以不推荐）
 
-![](../.gitbook/assets/screen-shot-2021-07-20-at-12.30.22-am.png)
+![](<../.gitbook/assets/Screen Shot 2021-07-20 at 12.30.22 AM.png>)
 
 所以可以得到一个更加节省空间的方法：
 
-```text
+```
 public class Solution {
     public int climbStairs(int n) {
         if (n == 1) {
@@ -103,7 +103,7 @@ public class Solution {
 }
 ```
 
-Time: `O(n)`;   
+Time: `O(n)`; \
 Space: `O(1)`;
 
 
@@ -116,7 +116,7 @@ Space: `O(1)`;
 
 也就是`DP[i] = DP[i] + DP[i - j]`，`j =1,2,5`；在原来的基础上，代码可以做这样子修改，就成为了此问题的万能模板：
 
-```text
+```
 class Solution {
     public int climbStairs(int n) {
         int dp[] = new int[n + 1];
@@ -135,8 +135,6 @@ class Solution {
     }
 }
 ```
-
-
 
 
 

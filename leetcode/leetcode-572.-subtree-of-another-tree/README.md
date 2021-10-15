@@ -2,18 +2,18 @@
 description: Recursion
 ---
 
-# \[Leetcode\]572. Subtree of Another Tree
+# \[Leetcode]572. Subtree of Another Tree
 
 原题地址：[https://leetcode.com/problems/subtree-of-another-tree/](https://leetcode.com/problems/subtree-of-another-tree/) 关键词：DFS，Recursion
 
-题意：判断是不是Subtree。  
+题意：判断是不是Subtree。\
 给两棵二叉树`root`和`subRoot`。检验`root`中是否包含`subRoot`。如果存在，返回 true，否则返回 false 。两棵树完全相同也可以看做一棵树是另一棵树的子树。
 
 例：
 
 ![](../../.gitbook/assets/subtree1-tree.jpg)
 
-Input: `root = [3,4,5,1,2], subRoot = [4,1,2]`  
+Input: `root = [3,4,5,1,2], subRoot = [4,1,2]`\
 Output: true
 
 
@@ -41,7 +41,7 @@ Output: true
 
 （[一个小知识点](https://bhnigw.gitbook.io/-1/shu-ju-jie-gou-map#ru-guo-ba-treenode-jia-ru-hashmap)）
 
-```text
+```
 class Solution {
     public boolean isSubtree(TreeNode root, TreeNode subRoot) {
         if (subRoot == null) return true; // subRoot为null一定都是true
@@ -63,10 +63,10 @@ class Solution {
 }
 ```
 
-Time: `O(M * N)`；  
+Time: `O(M * N)`；\
 解释：M和N分别是`root`和`subRoot`的节点总数，对于每一个`root`上的点，都需要做一次DFS来和`subRoot`匹配，匹配一次的时间代价是`O(N)`，那么总的时间代价就是`O(M * N)`
 
-Space: `O(max(H1, H2))`；  
+Space: `O(max(H1, H2))`；\
 解释：H1是`root`的深度，H2是`subRoot`的深度；为什么不直接是H1，因为input给出的`subRoot`深度有可能会比root大。
 
 
@@ -83,9 +83,9 @@ Space: `O(max(H1, H2))`；
 
 相关题目：
 
-{% page-ref page="leetcode-100.-same-tree.md" %}
-
-
+{% content-ref url="leetcode-100.-same-tree.md" %}
+[leetcode-100.-same-tree.md](leetcode-100.-same-tree.md)
+{% endcontent-ref %}
 
 
 

@@ -2,13 +2,13 @@
 description: Two pointer
 ---
 
-# \[Leetcode\]283. Move Zeroes
+# \[Leetcode]283. Move Zeroes
 
 原题地址：[https://leetcode.com/problems/move-zeroes/](https://leetcode.com/problems/move-zeroes/) 关键词：Two pointer
 
-题意：一个整数array，把所有的0移到右边，其余数左移且顺序不变  
-`Input: nums = [0, 1, 0, 3, 12]   
-Output: [1, 3, 12, 0, 0]`  
+题意：一个整数array，把所有的0移到右边，其余数左移且顺序不变\
+`Input: nums = [0, 1, 0, 3, 12] `\
+`Output: [1, 3, 12, 0, 0]`\
 （要求做到Space Optimal，不能另外创建新数组，只能在原数组上操作）
 
 
@@ -23,7 +23,7 @@ Output: [1, 3, 12, 0, 0]`
 
 ### 将模板代入本题算法：
 
-●**reserve起始位置：**第一个数\(index 0\)；  
+●**reserve起始位置：**第一个数(index 0)；\
 ●**需要满足的条件：**值不等于0；
 
 若满足条件，则赋值`nums[reserve] = nums[i]`，然后`reserve++`；
@@ -32,13 +32,13 @@ Output: [1, 3, 12, 0, 0]`
 
 详细图解：
 
-![](../../.gitbook/assets/img_6384.jpg)
+![](../../.gitbook/assets/IMG\_6384.jpg)
 
 
 
-![](../../.gitbook/assets/img_6386.jpg)
+![](../../.gitbook/assets/IMG\_6386.jpg)
 
-```text
+```
 class Solution {
     public void moveZeroes(int[] nums) {
         if (nums == null || nums.length == 0) return; //null check
@@ -59,12 +59,11 @@ class Solution {
 }
 ```
 
-代码结构：  
-1. 初始化reserve的值；  
-2. for循环  
-3. 判断if，如果满足就`nums[reserve] = nums[i]`然后reserve++；  
-4. 遍历结束后reserve右边赋值0；
+代码结构：\
+1\. 初始化reserve的值；\
+2\. for循环\
+3\. 判断if，如果满足就`nums[reserve] = nums[i]`然后reserve++；\
+4\. 遍历结束后reserve右边赋值0；
 
-Time: O\(n\);  
-Space: O\(1\);
-
+Time: O(n);\
+Space: O(1);

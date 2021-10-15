@@ -2,13 +2,13 @@
 description: Topological，Directed graph，HashMap，BFS
 ---
 
-# \[Leetcode\]210. Course Schedule II
+# \[Leetcode]210. Course Schedule II
 
 原题地址：[https://leetcode.com/problems/course-schedule-ii/](https://leetcode.com/problems/course-schedule-ii/)
 
 与[207题](https://bhnigw.gitbook.io/leetcode/leetcode-207.-course-schedule)完全一样的思路，只是途中加入了一个数组记录Topological Sort的排序：
 
-```text
+```
 class Solution {
     public int[] findOrder(int numCourses, int[][] prerequisites) {
         int[] res = new int[numCourses];  
@@ -65,9 +65,8 @@ class Solution {
 }
 ```
 
-**总结代码结构：  
-1. Build graph;  
-2. Build the queue;  
-3. BFS  
-4. Check inDegree**
-
+**总结代码结构：**\
+**1. Build graph;**\
+**2. Build the queue;**\
+**3. BFS**\
+**4. Check inDegree**

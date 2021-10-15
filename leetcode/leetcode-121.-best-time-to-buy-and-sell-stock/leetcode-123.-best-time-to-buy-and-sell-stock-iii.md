@@ -2,7 +2,7 @@
 description: Dynamic programing，DP
 ---
 
-# \[Leetcode\]123. Best Time to Buy and Sell Stock III
+# \[Leetcode]123. Best Time to Buy and Sell Stock III
 
 原题地址：[https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iii/](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iii/) 关键词：Dynamic programing，DP
 
@@ -18,12 +18,12 @@ description: Dynamic programing，DP
 
 那怎么知道这个总的收益是最大的呢？？
 
-那么我们可以在原数组**每个位置上都砍一刀**，每砍一次，都算出左右两边的最大profit然后加起来，最后比较总的profit哪一个最大即可。  
+那么我们可以在原数组**每个位置上都砍一刀**，每砍一次，都算出左右两边的最大profit然后加起来，最后比较总的profit哪一个最大即可。\
 理解：因为全砍一遍，相当于是把所有能够交易2次的情况全部算出来。
 
-![](../../.gitbook/assets/img_6400.jpg)
+![](../../.gitbook/assets/IMG\_6400.jpg)
 
-此方法优点是好理解，缺点是太费时间，需要O\(n ^2\)。
+此方法优点是好理解，缺点是太费时间，需要O(n ^2)。
 
 
 
@@ -35,14 +35,14 @@ description: Dynamic programing，DP
 
 数组`DP2[]`记录：**从每个点开始**，能获得的最大收益。（从指数`i`开始到指数`prices.length - 1`这段区间内只交易一次）
 
-**注意：**  
+**注意：**\
 `DP1[]`是从`prices[]`左边开始遍历，从指数0开始找到最低点minPrice，然后`i`右边每一个点都减去minPrice一遍，减的时候和`DP1[i - 1]`比较，把最大值放入`DP1[i]`；
 
 `DP2[]`是从`prices[]`右边开始遍历，从指数`prices.length - 1`开始找到最高点maxPrice，然后`i`左边边每一个点都**被**maxPrice减一遍，减的时候和`DP1[i + 1]`比较，把最大值放入`DP1[i]`；
 
-![](../../.gitbook/assets/img_6401.jpg)
+![](../../.gitbook/assets/IMG\_6401.jpg)
 
-```text
+```
 class Solution {
     public int maxProfit(int[] prices) {
         if (prices == null || prices.length < 2) return 0;
@@ -80,13 +80,12 @@ class Solution {
 }
 ```
 
-Time: O\(n\);
+Time: O(n);
 
-Space: O\(n\);
+Space: O(n);
 
 
 
 #### 要记住的重点：
 
 `DP2[]`一定要倒着算；
-

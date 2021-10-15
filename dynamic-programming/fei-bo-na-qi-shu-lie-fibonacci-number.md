@@ -10,7 +10,7 @@ description: Fibonacci，Dynamic Programming
 
 用数学表示就是：
 
-![](../.gitbook/assets/screen-shot-2021-07-20-at-12.30.22-am.png)
+![](<../.gitbook/assets/Screen Shot 2021-07-20 at 12.30.22 AM.png>)
 
 怎样用程序求第n个Fibonacci数字呢？
 
@@ -20,7 +20,7 @@ description: Fibonacci，Dynamic Programming
 
 优点：好理解；缺点：时间复杂度太高；
 
-```text
+```
 	public static int Fibonacci(int n) {
 		if (n <= 1) {
 			return n;
@@ -30,9 +30,9 @@ description: Fibonacci，Dynamic Programming
 	}
 ```
 
-Time: `O(2 ^ n)`; 解释：T\(n\) = T\(n - 1\) + T\(n - 2\); 比如下图，当n=5时，调用了16次fib\(\)方法，所以是指数复杂度（**exponential**）；
+Time: `O(2 ^ n)`; 解释：T(n) = T(n - 1) + T(n - 2); 比如下图，当n=5时，调用了16次fib()方法，所以是指数复杂度（**exponential**）；
 
-![](../.gitbook/assets/img_6420.jpg)
+![](../.gitbook/assets/IMG\_6420.jpg)
 
 Space: `O(n)`; 解释：按深度算，每return一次创建一个空间。
 
@@ -44,7 +44,7 @@ Space: `O(n)`; 解释：按深度算，每return一次创建一个空间。
 
 它的状态转移方程是：`dp[i] = dp[i - 1] + dp[i - 2]`；
 
-```text
+```
 	public int Fibonacci(int n) {
 		int dp[] = new int[n + 1]; // 需要1个额外的空间来处理n = 0的情况
 
@@ -59,7 +59,7 @@ Space: `O(n)`; 解释：按深度算，每return一次创建一个空间。
 	}
 ```
 
-Time: `O(n)`;   
+Time: `O(n)`; \
 Space: `O(n)`;
 
 
@@ -68,7 +68,7 @@ Space: `O(n)`;
 
 不需要记录所有位置的和，只需要记录最后一个位置的和即可，节省空间。
 
-```text
+```
 
 	public static int Fibonacci(int n) {
 		int num1 = 0, num2 = 1; // 初始前两位数
@@ -88,10 +88,8 @@ Space: `O(n)`;
 	}
 ```
 
-Time: `O(n)`;   
+Time: `O(n)`; \
 Space: `O(1)`;
-
-
 
 
 

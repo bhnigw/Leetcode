@@ -2,15 +2,15 @@
 description: LinkedList
 ---
 
-# \[Leetcode\]19. Remove Nth Node From End of List
+# \[Leetcode]19. Remove Nth Node From End of List
 
 原题地址：[https://leetcode.com/problems/remove-nth-node-from-end-of-list/](https://leetcode.com/problems/remove-nth-node-from-end-of-list/) 关键词：LinkedList
 
-题意：删去倒数第n个节点；  
+题意：删去倒数第n个节点；\
 给一个LinkedList，删除LinkedList的倒数第 n 个结点，并且返回LinkedList的头结点。
 
-例：  
-Input: `head = [1,2,3,4,5]`, `n = 2`  
+例：\
+Input: `head = [1,2,3,4,5]`, `n = 2`\
 Output: `[1,2,3,5]`
 
 
@@ -27,25 +27,25 @@ Output: `[1,2,3,5]`
 
 第1步：初始化dummy指向head，初始化slow、fast指向dummy；
 
-![](../.gitbook/assets/img_6449.jpg)
+![](../.gitbook/assets/IMG\_6449.JPG)
 
 
 
 第2步：把fast往前移动n步，也就是移动2步；
 
-![](../.gitbook/assets/img_6450.jpg)
+![](../.gitbook/assets/IMG\_6450.JPG)
 
 
 
 第3步：slow和fast一起向前走，直到fast到达最末尾；
 
-![](../.gitbook/assets/img_6451.jpg)
+![](../.gitbook/assets/IMG\_6451.JPG)
 
 
 
 第4步：删去slow后面那一个元素；方法：`slow.next = slow.next.next;`
 
-![](../.gitbook/assets/img_6452.jpg)
+![](../.gitbook/assets/IMG\_6452.JPG)
 
 最后返回`dummy.next`即可。
 
@@ -53,10 +53,10 @@ Output: `[1,2,3,5]`
 
 重点来了❗️  为什么结果不能返回head？
 
-看上面的链表，假如我们删除的是倒数第5个node，那么此时head就从链表里被删掉了，此时再返回head就是错误的！  
+看上面的链表，假如我们删除的是倒数第5个node，那么此时head就从链表里被删掉了，此时再返回head就是错误的！\
 所以最后返回的是`dummy.next`！
 
-```text
+```
 class Solution {
     public ListNode removeNthFromEnd(ListNode head, int n) {
         ListNode dummy = new ListNode(-1);
@@ -80,7 +80,7 @@ class Solution {
 }
 ```
 
-Time: `O(n)`;  
+Time: `O(n)`;\
 Space: `O(1)`;
 
 
@@ -89,8 +89,6 @@ Space: `O(1)`;
 
 1. 单方向的链表怎样来倒数node；
 2. 返回的是dummy.next而不是head；
-
-
 
 
 

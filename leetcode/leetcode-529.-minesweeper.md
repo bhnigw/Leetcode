@@ -2,19 +2,19 @@
 description: DFS
 ---
 
-# \[Leetcode\]529. Minesweeper
+# \[Leetcode]529. Minesweeper
 
 原题地址：[https://leetcode.com/problems/minesweeper/](https://leetcode.com/problems/minesweeper/) 关键词：DFS
 
-题意：扫雷。给一个matrix和一个初始点击的点`click[]`；点击之前雷是M，空白是E；  
-点击之后：如果点到雷M，游戏结束，把M变为X然后直接return；  
-如果点到空白E，那么：  
-如果E周围的8个点都没有雷M，则把E变为B；  
+题意：扫雷。给一个matrix和一个初始点击的点`click[]`；点击之前雷是M，空白是E；\
+点击之后：如果点到雷M，游戏结束，把M变为X然后直接return；\
+如果点到空白E，那么：\
+如果E周围的8个点都没有雷M，则把E变为B；\
 如果E周围的8个点中有雷M，则统计周围8个点中雷的总数，然后把E变为此数，然后return；
 
-![](../.gitbook/assets/screen-shot-2021-01-27-at-11.23.57-pm.png)
+![](<../.gitbook/assets/Screen Shot 2021-01-27 at 11.23.57 PM.png>)
 
-![](../.gitbook/assets/screen-shot-2021-01-27-at-11.24.07-pm.png)
+![](<../.gitbook/assets/Screen Shot 2021-01-27 at 11.24.07 PM.png>)
 
 解释：为什么上图雷M的正上方E没有变成B，因为无论是dfs还是bfs，把空白格变成数字后就会立即return，不会遍历到雷上方的点。
 
@@ -22,17 +22,17 @@ description: DFS
 
 ### 算法：DFS
 
-算法简单直接，就是从`click[]`的点开始dfs：  
-1.点击`click[]`之后，如果点到雷M，把M变为X然后直接return board；  
-2.如果点到空白E，那么就开始检测这个空白点周围有没有雷，方法：统计这个空白点周围的8个点雷的个数，把数放进count，如果count为0则说明周围没有雷；  
-3.如果count==0，说明周围都没有雷，则把E变为B，然后对该点周围的8个点进行dfs \(recursive\)；  
+算法简单直接，就是从`click[]`的点开始dfs：\
+1.点击`click[]`之后，如果点到雷M，把M变为X然后直接return board；\
+2.如果点到空白E，那么就开始检测这个空白点周围有没有雷，方法：统计这个空白点周围的8个点雷的个数，把数放进count，如果count为0则说明周围没有雷；\
+3.如果count==0，说明周围都没有雷，则把E变为B，然后对该点周围的8个点进行dfs (recursive)；\
 4.如果count !=0，说明周围有雷，那么就把E变为数字count，然后return board；
 
-因为后期要对click里的数进行操作，而且会频繁用到matrix的长宽，所以要注意把matrix的长宽定义成m和n，然后click的数定义成row和col，这样方便看。同时要注意函数头的输入和输出是什么：  
-input: `char[][] board, int[] click`  
+因为后期要对click里的数进行操作，而且会频繁用到matrix的长宽，所以要注意把matrix的长宽定义成m和n，然后click的数定义成row和col，这样方便看。同时要注意函数头的输入和输出是什么：\
+input: `char[][] board, int[] click`\
 output: `board[][]`
 
-```text
+```
 class Solution {
     public char[][] updateBoard(char[][] board, int[] click) {
         int m = board.length, n = board[0].length;
@@ -81,7 +81,7 @@ class Solution {
 }
 ```
 
-Time: `O(m*n)` 遍历了所有格子，m、n为长宽  
+Time: `O(m*n)` 遍历了所有格子，m、n为长宽\
 Space: `O(m*n)` 由dfs的深度/层数决定
 
 
@@ -91,11 +91,11 @@ Space: `O(m*n)` 由dfs的深度/层数决定
 1.对于二维矩阵/数组，在dfs/bfs的时候对**index是否超出范围**的检查：
 
 * 要注意提前定义边的长度：`int m = board.length, n = board[0].length;`
-* 然后在dfs时，检查`row < 0 || row  >= m || col < 0 || col >= n` 如果不满足就continue或return。注意这里的m和n不用减去1，因为上面定义的长度是本身的length，当index等于该length时就直接判定算越界
+* 然后在dfs时，检查`row < 0 || row  >= m || col < 0 || col >= n `如果不满足就continue或return。注意这里的m和n不用减去1，因为上面定义的长度是本身的length，当index等于该length时就直接判定算越界
 
 2.对于二维矩阵/数组，如何处理当前node旁所有的相邻node，除了上下左右外，还包括左上左下右上右下：
 
-```text
+```
             for (int i = -1; i < 2; i++) {
                 for (int j = -1; j < 2; j++) {
                     if (i == 0 && j == 0) continue; //等于0说明是当前点本身，应跳过
@@ -107,10 +107,8 @@ Space: `O(m*n)` 由dfs的深度/层数决定
 
 解释：i小于2表明i最多是1，那么i的-1，0，1和j的-1，0，1所形成的8种排列组合，就代表了8个方向。
 
-![](../.gitbook/assets/img_6423.jpg)
+![](../.gitbook/assets/IMG\_6423.jpg)
 
-3.注意复习string to integer，integer to string，char to integer，integer to char，string to char，char to string [https://bhnigw.gitbook.io/-1/](https://bhnigw.gitbook.io/-1/)  
+3.注意复习string to integer，integer to string，char to integer，integer to char，string to char，char to string [https://bhnigw.gitbook.io/-1/](https://bhnigw.gitbook.io/-1/)\
 这里把整数count转化成为字符char的方法是`(char)(count + '0');` 注意是加0不是减0
-
-
 

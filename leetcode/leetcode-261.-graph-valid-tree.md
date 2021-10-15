@@ -2,7 +2,7 @@
 description: Union find，Undirected graph，DFS，BFS
 ---
 
-# \[Leetcode\]★261. Graph Valid Tree
+# \[Leetcode]★261. Graph Valid Tree
 
 原题地址：[https://leetcode.com/problems/graph-valid-tree/](https://leetcode.com/problems/graph-valid-tree/)关键词：Union find，Undirected graph，DFS，BFS
 
@@ -12,15 +12,15 @@ Example 1：
 
 ![](../.gitbook/assets/tree1-graph.jpg)
 
-`Input: n = 5, edges = [[0,1],[0,2],[0,3],[1,4]]   
-Output: true`
+`Input: n = 5, edges = [[0,1],[0,2],[0,3],[1,4]] `\
+`Output: true`
 
 Example 2：
 
-![](../.gitbook/assets/tree2-graph-copy.jpg)
+![](<../.gitbook/assets/tree2-graph copy.jpg>)
 
-`Input: n = 5, edges = [[1,2],[2,3],[1,3],[1,4]]   
-Output: false`
+`Input: n = 5, edges = [[1,2],[2,3],[1,3],[1,4]] `\
+`Output: false`
 
 
 
@@ -30,7 +30,9 @@ Output: false`
 
 1. 任何两个节点之间都有一条连接的路径；也就是说，所有点都必须fully connected，不能有落单的；
 2. 图中不能有环cycle/loop；
-3. ★**如果一个tree有n个节点，那么它必然有n - 1条edges**； 若少于`n - 1`则必然有点没有连接上， 若多于`n - 1`则必然有环cycle/loop；
+3. ★**如果一个tree有n个节点，那么它必然有n - 1条edges**；\
+   若少于`n - 1`则必然有点没有连接上，\
+   若多于`n - 1`则必然有环cycle/loop；
 
 ⇒ 所以，只要一个graph不满足以上三个条件中任意一个，就不能称作是一个tree，就要return false；
 
@@ -40,9 +42,9 @@ Output: false`
 
 ## 方法一：构建Adjacency list，用DFS检查环cycle/loop
 
-基本算法步骤：  
-1. 检查图中是否有环；\(详细步骤参考[检测无向图中是否存在环](https://bhnigw.gitbook.io/leetcode/ji-chu-bi-hui/wu-xiang-tu-zhong-jian-cha-huan-detect-cycle-inaundirected-graph)\)  
-2. ★检查所有节点是否都连接上；
+基本算法步骤：\
+1\. 检查图中是否有环；(详细步骤参考[检测无向图中是否存在环](https://bhnigw.gitbook.io/leetcode/ji-chu-bi-hui/wu-xiang-tu-zhong-jian-cha-huan-detect-cycle-inaundirected-graph))\
+2\. ★检查所有节点是否都连接上；
 
 **根据tree特点，如果edges总数不等于n - 1，直接false；（在代码开头判断）**
 
@@ -54,7 +56,7 @@ Output: false`
 4. 在DFS时如果遇到true，说明已经访问过，说明有loop/cycle；
 5. 在DFS的同时，我们要用一个int来记录parent node，比如在DFS进入到节点1的时候，0是1的parent node，但1的Adjacency List是`[0, 2, 3, 4]`包含了0，所以我们在对1的Adjacency List遍历DFS的时候，要加入一个判断条件，只有当current node不等于parent node的时候我们才进行DFS，如果current node等于parent node那就跳过它；起始点0的parent node我们设置为-1，然后DFS下一个节点的时候把当前current node设置为下一个节点的parent node；（参见代码41行）
 
-```text
+```
 class Solution {
     public boolean validTree(int n, int[][] edges) {
         if (edges.length != n - 1) return false;
@@ -105,18 +107,18 @@ class Solution {
 }
 ```
 
-代码结构总结：  
-1. 构建Adjacency List；  
-2. Add edges；  
-3. DFS；  
-4. 检查所有点是否都被访问过了（是否全部connected）
+代码结构总结：\
+1\. 构建Adjacency List；\
+2\. Add edges；\
+3\. DFS；\
+4\. 检查所有点是否都被访问过了（是否全部connected）
 
-Time：`O(N)`；  
-解释：DFS所耗时间为：顶点vertex总数N，加上edge总数E的总和，即`O(N + E)`；  
-根据树的特性：如果一个tree有n个节点，那么它必然有n - 1条edges；  
+Time：`O(N)`；\
+解释：DFS所耗时间为：顶点vertex总数N，加上edge总数E的总和，即`O(N + E)`；\
+根据树的特性：如果一个tree有n个节点，那么它必然有n - 1条edges；\
 所以，时间就是`O(N + N - 1)`；最终结果就是`O(N)`；
 
-Space：`O(N)`  
+Space：`O(N)`\
 Adjacency List的size；
 
 **要记住的东西：**
@@ -130,8 +132,8 @@ Adjacency List的size；
 
 方法一复杂度还是略高，我们可以结合tree的特点来思考一下更简便的方法；
 
-要使图成为有效树valid tree，则它必须正好有`n - 1`条边edge；（这句话当定律来记住）  
-如果edge比`n - 1`少，那么图里节点不可能全部相连；  
+要使图成为有效树valid tree，则它必须正好有`n - 1`条边edge；（这句话当定律来记住）\
+如果edge比`n - 1`少，那么图里节点不可能全部相连；\
 如果edge比`n - 1`多，那么图就必然有cylcle/loop；
 
 ⇒ 所以：
@@ -147,13 +149,13 @@ Adjacency List的size；
 1. 检查graph是否有 `n - 1` 条边edge，如果没有则返回`false`；
 2. 检查graph是否fully connected，如果是，返回true，否则false；
 
-对于第一点检查edge在代码开头一句话就可以解决；  
+对于第一点检查edge在代码开头一句话就可以解决；\
 对于第二点，我们可以用BFS，新建一个queue检查graph所有的点是否fully connected即可；
 
-方法：  
+方法：\
 用一个`HashSet<> seen`来记录已经访问过的节点，也就是queue里poll一个，seen里加一个；最后检查seen的size是否等于n，等于n表明所有的node都访问过了，表明graph是fully connected，返回true；
 
-```text
+```
 public boolean validTree(int n, int[][] edges) {
     
     if (edges.length != n - 1) return false;
@@ -188,18 +190,18 @@ public boolean validTree(int n, int[][] edges) {
 }
 ```
 
-代码结构总结：  
-1. 构建Adjacency List；  
-2. Add edges；  
-3. 构建queue，构建HashSet；  
-4. BFS检查所有点是否相连
+代码结构总结：\
+1\. 构建Adjacency List；\
+2\. Add edges；\
+3\. 构建queue，构建HashSet；\
+4\. BFS检查所有点是否相连
 
-Time：`O(N)`；  
-解释：BFS所耗时间为：顶点vertex总数N，加上edge总数E的总和，即`O(N + E)`；  
-根据树的特性：如果一个tree有n个节点，那么它必然有n - 1条edges；  
+Time：`O(N)`；\
+解释：BFS所耗时间为：顶点vertex总数N，加上edge总数E的总和，即`O(N + E)`；\
+根据树的特性：如果一个tree有n个节点，那么它必然有n - 1条edges；\
 所以，时间就是`O(N + N - 1)`；最终结果就是`O(N)`；
 
-Space：`O(N)`  
+Space：`O(N)`\
 我们只是遍历了一遍所有node加进seen里，所以是`O(N)`；
 
 
@@ -208,10 +210,10 @@ Space：`O(N)`
 
 与方法二的思路基本一样，区别在于后面判断节点是否fully connected的方法；
 
-方法二的思路是：  
+方法二的思路是：\
 **如果图正好有`n - 1`条边，且所有节点全部相连  ⇒  那么不可能拥有环，一定是tree！**
 
-方法三的思路是：  
+方法三的思路是：\
 **★如果图正好有`n - 1`条边，且没有环  ⇒  那么所有节点必然全部相连，一定是tree！**
 
 
@@ -221,13 +223,13 @@ Space：`O(N)`
 1. 检查graph是否有 `n - 1` 条边edge，如果没有则返回`false`；
 2. 检查graph是否是否含有cycle/loop，如果有环，返回false；没有环，返回true；
 
-对于第一点检查edge在代码开头一句话就可以解决；  
-对于第二点，我们使用Union find；\([点击查看Union find详细讲解](https://bhnigw.gitbook.io/-1/shu-ju-jie-gou-union-find)\)
+对于第一点检查edge在代码开头一句话就可以解决；\
+对于第二点，我们使用Union find；([点击查看Union find详细讲解](https://bhnigw.gitbook.io/-1/shu-ju-jie-gou-union-find))
 
-方法：  
+方法：\
 如果在union的途中find到两个node有相同的root，则说明有cycle/loop；
 
-```text
+```
 class UnionFind {
     int[] parent;
     
@@ -275,11 +277,9 @@ class Solution {
 }
 ```
 
-Time：`O(N)`  
-`union()`和`find()`的过程都是O\(n\)；
+Time：`O(N)`\
+`union()`和`find()`的过程都是O(n)；
 
-Space：`O(N)`  
+Space：`O(N)`\
 Union Find需要`O(N)`的空间来存储array；
-
-
 

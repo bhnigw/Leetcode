@@ -2,29 +2,29 @@
 description: HashMap，罗马数字
 ---
 
-# \[Leetcode\]13. Roman to Integer
+# \[Leetcode]13. Roman to Integer
 
 原题地址：[https://leetcode.com/problems/roman-to-integer/](https://leetcode.com/problems/roman-to-integer/) 关键词：HashMap，罗马数字
 
 题意：将罗马数字转换为阿拉伯数字。
 
-例：  
-`Input: s = "III"；  
-Output: 3`
+例：\
+`Input: s = "III"；`\
+`Output: 3`
 
-`Input: s = "IV"；  
-Output: 4`
+`Input: s = "IV"；`\
+`Output: 4`
 
 
 
 古罗马数字基本符号：
 
-![](../.gitbook/assets/screen-shot-2021-06-14-at-11.49.28-pm.png)
+![](<../.gitbook/assets/Screen Shot 2021-06-14 at 11.49.28 PM.png>)
 
-**记数方法：**  
-1. 相同的字母连写，表示的数是：这些字母连续相加得到的数，如：`III = 3；`  
-2. 左大右小，表示的数是：这些字母直接相加得到的数， 如：`VIII = 8，XII = 12；`   
-3. 左小右大，表示的数是：右边大的数减去左边小的数，如：`IV = 4，IX = 9；`
+**记数方法：**\
+1\. 相同的字母连写，表示的数是：这些字母连续相加得到的数，如：`III = 3；`\
+2\. 左大右小，表示的数是：这些字母直接相加得到的数， 如：`VIII = 8，XII = 12；` \
+3\. 左小右大，表示的数是：右边大的数减去左边小的数，如：`IV = 4，IX = 9；`
 
 
 
@@ -32,11 +32,11 @@ Output: 4`
 
 **第一种情况**：记数方法1、2，这种情况很好处理，直接把所有字母代表的数字相加即可；
 
-**第二种情况**：记数方法3，这种情况较为特殊，需要用右边大的数减去左边小的数；如下：  
-****Symbol：  `IV  IX  XL   XC   CD   CM`  
-Value：     `4   9   40   90   400  900` 
+**第二种情况**：记数方法3，这种情况较为特殊，需要用右边大的数减去左边小的数；如下：\
+****Symbol：  `IV  IX  XL   XC   CD   CM`\
+Value：     `4   9   40   90   400  900 `
 
-\*\*\*\*
+****
 
 ### **算法：**
 
@@ -52,7 +52,7 @@ Value：     `4   9   40   90   400  900`
 
 6.记得每一轮for loop都要更新prev的值，进入下一轮之前，把当前值赋给它；
 
-```text
+```
 class Solution {
     public int romanToInt(String s) {
         if (s == null || s.length() == 0) return 0;
@@ -86,9 +86,9 @@ class Solution {
 }
 ```
 
-Time & Space：  
-如果给定的input string有长度限制，那Time和Space都是O\(1\)；  
-如果input string长度不限制，那Time和Space都是O\(n\)；
+Time & Space：\
+如果给定的input string有长度限制，那Time和Space都是O(1)；\
+如果input string长度不限制，那Time和Space都是O(n)；
 
 
 
@@ -97,8 +97,6 @@ Time & Space：
 ### 本题要记住的地方：
 
 1. 用HashMap记录对应关系；
-2. for loop，从i = 1开始（初始化一个prev值charAt\(0\)）；
+2. for loop，从i = 1开始（初始化一个prev值charAt(0)）；
 3. 特殊情况把prev值减两次；
-
-
 

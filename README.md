@@ -12,7 +12,7 @@ description: Binary Search
 
 记住，if中等号判断交给right，下面返回right
 
-```text
+```
 class Solution {
     public int search(int[] nums, int target) {
         
@@ -37,7 +37,7 @@ class Solution {
 }
 ```
 
-**Time: O\(logn\);** Space: O\(1\);
+**Time: O(logn); **Space: O(1);
 
 
 
@@ -45,7 +45,7 @@ class Solution {
 
 if条件中，=等于的判断，只能交给right！为什么呢？（或者说`mid + 1`这个东西，只能赋给left，不能把right赋成`mid - 1`）
 
-```text
+```
  // 错误代码 Time Limit Exceeded
  private int binarySearch(int left, int right, int[] nums, int target) {
     while (left < right) {
@@ -66,7 +66,7 @@ if条件中，=等于的判断，只能交给right！为什么呢？（或者说
 
 修正后的代码：
 
-```text
+```
 private int binarySearch(int left, int right, int[] nums, int target) {
     while (left < right) {
         int mid = left + (right - left) / 2;
@@ -87,8 +87,8 @@ private int binarySearch(int left, int right, int[] nums, int target) {
 
 ### 要记住的重点：
 
-1. 上面`left < right` 无等号，下面if判断中，=等号只能交给`right`；  
-2. mid注意防止溢出；  
+1\. 上面`left < right` 无等号，下面if判断中，=等号只能交给`right`；\
+2\. mid注意防止溢出；\
 **3. return的时候，只能返回`right`。**
 
 简便记忆：if中等号判断交给right，下面返回right，**什么都是right，统统都是right！**
@@ -97,11 +97,13 @@ private int binarySearch(int left, int right, int[] nums, int target) {
 
 其他例题：
 
-{% page-ref page="leetcode/leetcode-162.-find-peak-element.md" %}
+{% content-ref url="leetcode/leetcode-162.-find-peak-element.md" %}
+[leetcode-162.-find-peak-element.md](leetcode/leetcode-162.-find-peak-element.md)
+{% endcontent-ref %}
 
-{% page-ref page="leetcode/leetcode-33.-search-in-rotated-sorted-array.md" %}
-
-
+{% content-ref url="leetcode/leetcode-33.-search-in-rotated-sorted-array.md" %}
+[leetcode-33.-search-in-rotated-sorted-array.md](leetcode/leetcode-33.-search-in-rotated-sorted-array.md)
+{% endcontent-ref %}
 
 
 

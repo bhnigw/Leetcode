@@ -1,11 +1,11 @@
-# \[Leetcode\]214. Shortest Palindrome
+# \[Leetcode]214. Shortest Palindrome
 
 原题地址：[https://leetcode.com/problems/shortest-palindrome/](https://leetcode.com/problems/shortest-palindrome/) 关键词：Palindrome
 
 题意：给一个string，你可以通过在string前面添加字符，将其转换为一个Palindrome的string。找到并返回可以用这种方式转换的**最短**Palindrome。
 
-例：  
-Input: `s = "acecaaa"`  
+例：\
+Input: `s = "acecaaa"`\
 Output: `"aaacecaaa"`
 
 
@@ -14,9 +14,9 @@ Output: `"aaacecaaa"`
 
 核心思想：从最右边right开始，找到第一个到index 0为Palindrome的地方，记下这个index，然后把这个index后面部分翻转后加到最前面。
 
-![](../.gitbook/assets/img_6486.jpg)
+![](../.gitbook/assets/IMG\_6486.jpg)
 
-```text
+```
 class Solution {
     public String shortestPalindrome(String s) {
         if (s.length() <= 1) return s;
@@ -53,11 +53,9 @@ class Solution {
 }
 ```
 
-Time: O\(n ^ 2\)
+Time: O(n ^ 2)
 
-Space: O\(n\)
-
-
+Space: O(n)
 
 
 

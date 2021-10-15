@@ -1,11 +1,11 @@
-# \[Leetcode\]28. Implement strStr\(\)
+# \[Leetcode]28. Implement strStr()
 
 原题地址：[https://leetcode.com/problems/implement-strstr/](https://leetcode.com/problems/implement-strstr/)
 
 题意：给两个字符串`haystack`和`needle`，要求在`haystack`中找出`needle`出现的第一个位置（下标从0开始）。如果不存在，则返回 -1。如果`needle`为null，返回 0；
 
-例：  
-Input: `haystack = "hello", needle = "ll"`  
+例：\
+Input: `haystack = "hello", needle = "ll"`\
 Output: 2
 
 
@@ -14,7 +14,7 @@ Output: 2
 
 **核心思想：**遍历`haystack`里的字母，遇到与`needle`第一个字母相同的地方时停下，从这里往后面看，看后面的几个字母是否和`needle`字母完全相同，若相同则返回停下时的index。
 
-```text
+```
 class Solution {
     public int strStr(String haystack, String needle) {       
         int res = -1;
@@ -55,7 +55,7 @@ Space：`O(1)`；
 
 **核心思想：**遍历`haystack`里的字母，遇到与`needle`第一个字母相同的地方时停下，从这里往后面看，看后面substring是否和`needle`完全相同，若相同则返回停下时的index。
 
-```text
+```
 public class Solution {
     public int strStr(String haystack, String needle) {
         int l1 = haystack.length(), l2 = needle.length();
@@ -76,8 +76,6 @@ public class Solution {
     }
 }
 ```
-
-
 
 
 

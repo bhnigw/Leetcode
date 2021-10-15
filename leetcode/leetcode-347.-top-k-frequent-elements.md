@@ -1,16 +1,16 @@
 ---
-description: 'min-Heap, PriorityQueue'
+description: min-Heap, PriorityQueue
 ---
 
-# \[Leetcode\]347. Top K Frequent Elements
+# \[Leetcode]347. Top K Frequent Elements
 
 原题地址：[https://leetcode.com/problems/top-k-frequent-elements/](https://leetcode.com/problems/top-k-frequent-elements/) 关键词：min-Heap, PriorityQueue
 
-题意：返回前K个高频元素。  
+题意：返回前K个高频元素。\
 给一个整数数组`nums[]`和一个整数`k`，请返回其中出现频率前`k`高的元素。可以按任意顺序返回答案。题目数据保证答案唯一。要求：时间复杂度小于`O(nlogn)`；
 
-例：  
-Input: `nums = [1,1,1,2,2,3], k = 2`   
+例：\
+Input: `nums = [1,1,1,2,2,3], k = 2` \
 Output: `[1,2]`
 
 
@@ -30,7 +30,7 @@ Output: `[1,2]`
 
 
 
-```text
+```
 class Solution {
     public int[] topKFrequent(int[] nums, int k) {
         if (nums.length == 1) return nums;
@@ -63,15 +63,15 @@ class Solution {
 }
 ```
 
-Time: `O(Nlogk)`;   
-解释：首先，遍历一遍数组统计元素的频率，这一系列操作的时间复杂度是`O(n)`；PriorityQueue中的元素不会超过k个，所以插入offer\(\)和删除poll\(\)的时间代为`O(logk)`；N是数组所有元素的总个数，可能每一个数都要poll一次，所以最后的时间是相乘:`O(N * logk)`; 
+Time: `O(Nlogk)`; \
+解释：首先，遍历一遍数组统计元素的频率，这一系列操作的时间复杂度是`O(n)`；PriorityQueue中的元素不会超过k个，所以插入offer()和删除poll()的时间代为`O(logk)`；N是数组所有元素的总个数，可能每一个数都要poll一次，所以最后的时间是相乘:`O(N * logk)`; 
 
-Space: `O(N)`;   
+Space: `O(N)`; \
 解释：PriorityQueue最大size是`O(K)`，HashMap的size是`O(N)`；所以空间复杂度为`O(K + N) = O(N)`
 
 在上面第14行加入PriorityQueue的方法中，我原来写的笨办法是：
 
-```text
+```
 for (int key : map.keySet()) {
     if (pq.size() >= k) { //如果Heap的size满了，达到k了
         if (map.get(key) > map.get(pq.peek())) { // 那就看新元素的频率有没有比堆顶大
@@ -92,13 +92,13 @@ for (int key : map.keySet()) {
 
 核心思想：使用HashMap统计频率，统计完成后，创建一个数组，**将频率作为数组index**，对于出现频率不同的数字集合，存入对应的数组下标index即可。
 
-![](../.gitbook/assets/img_6474.jpg)
+![](../.gitbook/assets/IMG\_6474.jpg)
 
 由图可知，最后只要倒序遍历`bucket[]`数组，记录前k个不为空的元素，即为最后结果。
 
 注意：`bucket[]`是数组，但是它里面的每一个元素是ArrayList❗️ 初始化方法：**`List<Integer>[] bucket = new ArrayList[nums.length+1];`**
 
-```text
+```
 class Solution {
     public int[] topKFrequent(int[] nums, int k) {
         
@@ -145,8 +145,6 @@ Space: `O(N)`;  HashMap的size
 ### 本题要记住的重点：
 
 1. PriorityQueue构建的是最小堆min-Heap，并且size不超过k
-
-
 
 
 

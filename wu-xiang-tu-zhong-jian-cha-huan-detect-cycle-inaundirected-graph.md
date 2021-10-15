@@ -18,24 +18,24 @@ description: undirected graph，bidirectional
 
 ### 第一个问题：怎样记录和表示一个无向图？
 
-要注意的是，无向图中所有的边都是双向的\(**All edges are bidirectional！**\)，所以我们需要一个数据结构能记录每个点，以及和每个点所有相连接的点。
+要注意的是，无向图中所有的边都是双向的(**All edges are bidirectional！**)，所以我们需要一个数据结构能记录每个点，以及和每个点所有相连接的点。
 
-我们可以用一个**Adjacency List**来记录（也就是一个二维的ArrayList）：  
+我们可以用一个**Adjacency List**来记录（也就是一个二维的ArrayList）：\
 ★`List<List<Integer>> adjList = new ArrayList<>();`
 
-其中，Adjacency List的指数index为图的n个节点；  
+其中，Adjacency List的指数index为图的n个节点；\
             Adjacency List的子List记录**与当前节点所有所有相连接的点；**
 
-那么上面的无向图就可以表示为：  
-`0 : [1],   
-1 : [0, 2, 3, 4],   
-2 : [1, 3],   
-3 : [1, 2],   
-4 : [1]`
+那么上面的无向图就可以表示为：\
+`0 : [1], `\
+`1 : [0, 2, 3, 4], `\
+`2 : [1, 3], `\
+`3 : [1, 2], `\
+`4 : [1]`
 
-![](.gitbook/assets/img_6362.jpg)
+![](.gitbook/assets/IMG\_6362.jpg)
 
-```text
+```
        // 1. initialize adjacency list
        
         List<List<Integer>> adjList = new ArrayList<>();
@@ -58,7 +58,7 @@ description: undirected graph，bidirectional
 1. 构建Adjacency List的时候，要事先给每个节点new一个ArrayList，不然会报错；
 2. 在Add edges的时候，因为是无向图是**bidirectional**的，所以两头都要加；比如`edge[1,2]`，1与2相连的同时意味着2也与1相连，所以把2加入1的Adjacency List的同时也要把1加入2的Adjacency List；
 
-#### 
+####
 
 ### 第二个问题，怎样Detect loop/cycle？
 
@@ -75,7 +75,7 @@ description: undirected graph，bidirectional
 
 ★注意上面第四点，是与[有向图directed graph检查环](https://bhnigw.gitbook.io/leetcode/ji-chu-bi-hui/detect-cycle-in-a-directed-graph)最大的区别：directed graph的子节点中不包含parent node（因为是有方向的），所以不用检查。而undirected graph子节点里包含parent node所以必须检查；
 
-```text
+```
 class Solution {
     public boolean detectCycle(int n, int[][] edges) {
         
@@ -125,32 +125,32 @@ class Solution {
 }
 ```
 
-代码结构总结：  
-1. 构建Adjacency List；  
-2. Add edges；  
-3. DFS；  
-4. 检查所有点是否相连（是否构成图）
+代码结构总结：\
+1\. 构建Adjacency List；\
+2\. Add edges；\
+3\. DFS；\
+4\. 检查所有点是否相连（是否构成图）
 
-Time：`O(N + E)`；  
-DFS的时间就是node总数加上edges的总数  
-N是顶点总数，也是构造Adjacency List所花时间；  
+Time：`O(N + E)`；\
+DFS的时间就是node总数加上edges的总数\
+N是顶点总数，也是构造Adjacency List所花时间；\
 E是edges的总数；
 
-Space：`O(N + E)`  
-N是Adjacency List的长度；  
+Space：`O(N + E)`\
+N是Adjacency List的长度；\
 E是Adjacency List的子List的总长度；
 
 
 
 ## 方法二：Union find
 
-\([点击查看Union find详细讲解](https://bhnigw.gitbook.io/-1/shu-ju-jie-gou-union-find)\)
+([点击查看Union find详细讲解](https://bhnigw.gitbook.io/-1/shu-ju-jie-gou-union-find))
 
 算法：
 
 如果在union的途中find到两个node有相同的root，则说明有cycle/loop；
 
-```text
+```
 class UnionFind {
     int[] parent;
     
@@ -197,24 +197,24 @@ class Solution {
 }
 ```
 
-Time：`O(N)`  
-union\(\)和find\(\)的过程都是O\(n\)；
+Time：`O(N)`\
+union()和find()的过程都是O(n)；
 
-Space：`O(N)`  
+Space：`O(N)`\
 Union Find需要`O(N)`的空间来存储array；
 
 
 
-时间复杂度相关知识：[https://bhnigw.gitbook.io/-1/shi-jian-fu-za-du-time-complexity](https://bhnigw.gitbook.io/-1/shi-jian-fu-za-du-time-complexity)  
+时间复杂度相关知识：[https://bhnigw.gitbook.io/-1/shi-jian-fu-za-du-time-complexity](https://bhnigw.gitbook.io/-1/shi-jian-fu-za-du-time-complexity)\
 空间复杂度相关知识：[https://bhnigw.gitbook.io/-1/kong-jian-fu-za-du-space-complexity](https://bhnigw.gitbook.io/-1/kong-jian-fu-za-du-space-complexity)
 
 
 
 例题：
 
-{% page-ref page="leetcode/leetcode-261.-graph-valid-tree.md" %}
-
-
+{% content-ref url="leetcode/leetcode-261.-graph-valid-tree.md" %}
+[leetcode-261.-graph-valid-tree.md](leetcode/leetcode-261.-graph-valid-tree.md)
+{% endcontent-ref %}
 
 
 

@@ -2,27 +2,27 @@
 description: Backtrack
 ---
 
-# \[Leetcode\]90. Subsets II
+# \[Leetcode]90. Subsets II
 
 原题地址：[https://leetcode.com/problems/subsets-ii/](https://leetcode.com/problems/subsets-ii/) 关键词：Backtrack
 
 题意：给一个含有duplicate的数组，输出所有的子集（包括空集和它本身）；要求输出结果中不含重复子集；
 
-例：  
-Input: `nums = [1, 2, 3, 2]`   
+例：\
+Input: `nums = [1, 2, 3, 2] `\
 Output: `[[],[1],[1,2],[1,2,2],[1,2,2,3],[1,2,3],[1,3],[2],[2,2],[2,2,3],[2,3],[3]]`
 
 
 
 #### 详细图解：
 
-![](../../.gitbook/assets/90_approach3_1.png)
+![](../../.gitbook/assets/90\_approach3\_1.png)
 
 
 
 #### 算法:
 
-使用[backtrack](%20https://bhnigw.gitbook.io/-1/backtrack-mo-ban)，如何去重复呢？
+使用[backtrack](https://bhnigw.gitbook.io/-1/backtrack-mo-ban)，如何去重复呢？
 
 首先哪里会出现重复呢？答：比如从`[1]`开始加，加了2后变为`[1, 2]`，backtrack后，第一个2后面的元素依然是2，如果`[1]`再加就再一次变成了`[1, 2]`，出现重复；所以，我们要**先把数组sort一下**，然后在backtrack的时候，如果遇到相同的元素，需要skip掉。
 
@@ -39,7 +39,7 @@ Output: `[[],[1],[1,2],[1,2,2],[1,2,2,3],[1,2,3],[1,3],[2],[2,2],[2,2,3],[2,3],[
       3. 开始递归找此刻i + 1的subset；（对应下面第3步）
       4. ★每一轮for循环结束前，都要去掉curren subset里最后一个元素（因为要backtrack到上一轮给末尾加入新的元素，详细看上图和[backtrack讲解](https://bhnigw.gitbook.io/-1/backtrack-mo-ban)）（对应下面第4步）
 
-```text
+```
 class Solution {
     public List<List<Integer>> subsetsWithDup(int[] nums) {
         List<List<Integer>> res = new ArrayList<>();
@@ -65,11 +65,11 @@ class Solution {
 }
 ```
 
-Time：O\(n × 2 ^ n\)；  
-sort的时间O\(nlogn\)忽略不计； 
+Time：O(n × 2 ^ n)；\
+sort的时间O(nlogn)忽略不计； 
 
-Space：O\(n\)；  
-sort的空间O\(logn\)忽略不计； 
+Space：O(n)；\
+sort的空间O(logn)忽略不计； 
 
 ★复杂度的详细讲解查看[78.Subsets](https://bhnigw.gitbook.io/leetcode/leetcode-78.-subsets)
 
@@ -80,4 +80,3 @@ sort的空间O\(logn\)忽略不计；
 3. 不用任何return；
 4. 注意如何skip重复：`if(i > index && nums[i] == nums[i - 1]) continue;`
 5. backtrack最后一步一定要去除current subset里最后一个元素；
-
