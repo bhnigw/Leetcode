@@ -39,17 +39,17 @@ BFS和DFS都有用到，但核心是BFS。
 
 我们先用DFS遍历整棵树，把每一个node作为key，它的parent作为value。（具体实现见代码46行）
 
- 此番操作后，我们就可以通过`map.get(curNode)`来得到当前node的parent node。（[一个小知识点](https://bhnigw.gitbook.io/-1/shu-ju-jie-gou-map#ru-guo-ba-treenode-jia-ru-hashmap)）
+&#x20;此番操作后，我们就可以通过`map.get(curNode)`来得到当前node的parent node。（[一个小知识点](https://bhnigw.gitbook.io/1/shu-ju-jie-gou-map#ru-guo-ba-treenode-jia-ru-hashmap)）
 
 因此，对于每一个node，我们就可以得到与这个node所有相邻的node。因此我们就相当于得到了这个无向图的adjacency list！
 
 \
 对于Binary tree来说，每一个node，至多有三个与之相邻的node：\
-    **1. 左child；**得到它的方法：`root.left;`\
-    **2. 右child；**得到它的方法：`root.right;`\
-   ** 3. parent； **得到它的方法：`map.get(root);`
+&#x20;   **1. 左child；**得到它的方法：`root.left;`\
+&#x20;   **2. 右child；**得到它的方法：`root.right;`\
+&#x20;  ** 3. parent； **得到它的方法：`map.get(root);`
 
-###  有了这些铺垫，接下来就可以对这个“无向图“来进行BFS：
+### &#x20;有了这些铺垫，接下来就可以对这个“无向图“来进行BFS：
 
 初始化level为0记录层数，把target加入queue作为BFS起点。然后把所有与该层相邻的node加入queue。
 

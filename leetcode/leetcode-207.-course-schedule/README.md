@@ -13,11 +13,11 @@ description: Topological，Directed graph，HashMap，BFS
 
 Example 1:\
 Input: `numCourses = 2`, `prerequisites = [[1,0]]`; \
-Output: `true` 
+Output: `true`&#x20;
 
 Example 2:\
 Input: `numCourses = 2`, `prerequisites = [[1,0],[0,1]]`;\
- Output: `false`
+&#x20;Output: `false`
 
 
 
@@ -38,7 +38,7 @@ Input: `numCourses = 2`, `prerequisites = [[1,0],[0,1]]`;\
 我们可以用一个HashMap和ArrayList来记录这个有向图：`HashMap<Integer, ArrayList<Integer>()> map = new HashMap<>();`
 
 其中，map的key记录当前节点；\
-            map的value记录**由当前点出发，指向的别的点的值；**
+&#x20;           map的value记录**由当前点出发，指向的别的点的值；**
 
 那么上面的有向图就可以用HashMap表示为：\
 `{0 = [2], `\
@@ -125,8 +125,8 @@ Space：`O(M + N)`\
 M是build graph所需要使用的HashMap的空间，也就是`prerequisites[][]`的size；\
 N是number of courses，我们需要用一个`visited[]`的数组来记录已经访问过的node，这个数组的长度是N，所以空间复杂度为`O(M + N)`
 
-时间复杂度相关知识：[https://bhnigw.gitbook.io/-1/shi-jian-fu-za-du-time-complexity](https://bhnigw.gitbook.io/-1/shi-jian-fu-za-du-time-complexity)\
-空间复杂度相关知识：[https://bhnigw.gitbook.io/-1/kong-jian-fu-za-du-space-complexity](https://bhnigw.gitbook.io/-1/kong-jian-fu-za-du-space-complexity)
+时间复杂度相关知识：[https://bhnigw.gitbook.io/1/shi-jian-fu-za-du-time-complexity](https://bhnigw.gitbook.io/1/shi-jian-fu-za-du-time-complexity)\
+空间复杂度相关知识：[https://bhnigw.gitbook.io/1/kong-jian-fu-za-du-space-complexity](https://bhnigw.gitbook.io/1/kong-jian-fu-za-du-space-complexity)
 
 
 
@@ -295,8 +295,8 @@ Space：`O(M + N)`\
 M是build graph所需要使用的HashMap的空间，也就是`prerequisites[][]`的size；\
 N是number of courses，我们需要用一个`inDegree[]`的数组来记录入度，这个数组的长度是N，所以空间复杂度为`O(M + N)`
 
-时间复杂度相关知识：[https://bhnigw.gitbook.io/-1/shi-jian-fu-za-du-time-complexity](https://bhnigw.gitbook.io/-1/shi-jian-fu-za-du-time-complexity)\
-空间复杂度相关知识：[https://bhnigw.gitbook.io/-1/kong-jian-fu-za-du-space-complexity](https://bhnigw.gitbook.io/-1/kong-jian-fu-za-du-space-complexity)
+时间复杂度相关知识：[https://bhnigw.gitbook.io/1/shi-jian-fu-za-du-time-complexity](https://bhnigw.gitbook.io/1/shi-jian-fu-za-du-time-complexity)\
+空间复杂度相关知识：[https://bhnigw.gitbook.io/1/kong-jian-fu-za-du-space-complexity](https://bhnigw.gitbook.io/1/kong-jian-fu-za-du-space-complexity)
 
 
 

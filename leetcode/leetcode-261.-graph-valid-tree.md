@@ -224,7 +224,7 @@ Space：`O(N)`\
 2. 检查graph是否是否含有cycle/loop，如果有环，返回false；没有环，返回true；
 
 对于第一点检查edge在代码开头一句话就可以解决；\
-对于第二点，我们使用Union find；([点击查看Union find详细讲解](https://bhnigw.gitbook.io/-1/shu-ju-jie-gou-union-find))
+对于第二点，我们使用Union find；([点击查看Union find详细讲解](https://bhnigw.gitbook.io/1/shu-ju-jie-gou-union-find))
 
 方法：\
 如果在union的途中find到两个node有相同的root，则说明有cycle/loop；

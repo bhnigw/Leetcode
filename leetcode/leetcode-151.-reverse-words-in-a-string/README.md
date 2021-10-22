@@ -8,7 +8,7 @@ description: char array，substring
 
 题意：把一句话里所有的单词顺序reverse；给的input首尾&单词之间可能会含有多余空格；\
 例如：Input: `str = " the sky is    blue   " `\
-         Output: `str = "blue is sky the"`
+&#x20;        Output: `str = "blue is sky the"`
 
 
 
@@ -285,10 +285,10 @@ Time：O(N)；where N is a number of characters in the input string.\
 
 因为input是string，所以可以从以下角度考虑：
 
-1. Empty or null 
-2. Special character 
+1. Empty or null&#x20;
+2. Special character&#x20;
 3. With or without punctuation in the end （标点符号）
-4. Multiple while spaces in between  
+4. Multiple while spaces in between &#x20;
 5. Very long string
 
 最后一点，关于怎样算是very long string：\
@@ -300,7 +300,11 @@ Time：O(N)；where N is a number of characters in the input string.\
 
 
 
-算法思想与之相同：[186. Reverse Words in a String II](https://app.gitbook.com/@bhnigw/s/leetcode/\~/drafts/-Mageog48nBYM2p3FGfN/leetcode-151.-reverse-words-in-a-string/leetcode-186.-reverse-words-in-a-string-ii)
+算法思想与之相同：
+
+{% content-ref url="leetcode-186.-reverse-words-in-a-string-ii.md" %}
+[leetcode-186.-reverse-words-in-a-string-ii.md](leetcode-186.-reverse-words-in-a-string-ii.md)
+{% endcontent-ref %}
 
 
 

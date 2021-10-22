@@ -4,7 +4,7 @@ description: 数学, char, String
 
 # \[Leetcode]171. Excel Sheet Column Number
 
-原题地址：[https://leetcode.com/problems/excel-sheet-column-number/](https://leetcode.com/problems/excel-sheet-column-number/)  
+原题地址：[https://leetcode.com/problems/excel-sheet-column-number/](https://leetcode.com/problems/excel-sheet-column-number/) &#x20;
 
 题意：字母转化为数字；规则如下：\
 A -> 1 \
@@ -32,7 +32,7 @@ AB -> 28 \
 所以，从右向左，遍历input string，每一位的基数乘以26的次方，幂数从0开始依次加一，最后加起来即可
 
 我们要做的就是确定每一位的基数即可。怎么确定每一位字母代表的数字呢？\
-可以使用ASCII码里指数的位置差：`ch - 'A' + 1` （[详情点击查看ASCII讲解](https://bhnigw.gitbook.io/-1/shu-ju-jie-gou-string/ascii-ma)）
+可以使用ASCII码里指数的位置差：`ch - 'A' + 1` （[详情点击查看ASCII讲解](https://bhnigw.gitbook.io/1/shu-ju-jie-gou-string/ascii-ma)）
 
 怎样运算次方呢？\
 用`Math.pow(x, y)`，x代表底数，y代表次幂，也就是相当于`x ^ y`

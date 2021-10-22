@@ -22,7 +22,7 @@ Output: `[[],[1],[1,2],[1,2,2],[1,2,2,3],[1,2,3],[1,3],[2],[2,2],[2,2,3],[2,3],[
 
 #### 算法:
 
-使用[backtrack](https://bhnigw.gitbook.io/-1/backtrack-mo-ban)，如何去重复呢？
+使用[backtrack](https://bhnigw.gitbook.io/1/backtrack-mo-ban)，如何去重复呢？
 
 首先哪里会出现重复呢？答：比如从`[1]`开始加，加了2后变为`[1, 2]`，backtrack后，第一个2后面的元素依然是2，如果`[1]`再加就再一次变成了`[1, 2]`，出现重复；所以，我们要**先把数组sort一下**，然后在backtrack的时候，如果遇到相同的元素，需要skip掉。
 
@@ -37,7 +37,7 @@ Output: `[[],[1],[1,2],[1,2,2],[1,2,2,3],[1,2,3],[1,3],[2],[2,2],[2,2,3],[2,3],[
       1. 去重复。第一轮for循环的时候不用比较，因为是从i == index开始的；进入第二轮for循环的时候，i大于了index，所以比较第二轮for循环的`nums[i]`和上一个的`nums[i - 1]`是否相等，相等的话就skip；（对应下面第1步）
       2. 把当前数字`nums[i]`加入curren subset；（对应下面第2步）
       3. 开始递归找此刻i + 1的subset；（对应下面第3步）
-      4. ★每一轮for循环结束前，都要去掉curren subset里最后一个元素（因为要backtrack到上一轮给末尾加入新的元素，详细看上图和[backtrack讲解](https://bhnigw.gitbook.io/-1/backtrack-mo-ban)）（对应下面第4步）
+      4. ★每一轮for循环结束前，都要去掉curren subset里最后一个元素（因为要backtrack到上一轮给末尾加入新的元素，详细看上图和[backtrack讲解](https://bhnigw.gitbook.io/1/backtrack-mo-ban)）（对应下面第4步）
 
 ```
 class Solution {
@@ -66,10 +66,10 @@ class Solution {
 ```
 
 Time：O(n × 2 ^ n)；\
-sort的时间O(nlogn)忽略不计； 
+sort的时间O(nlogn)忽略不计；&#x20;
 
 Space：O(n)；\
-sort的空间O(logn)忽略不计； 
+sort的空间O(logn)忽略不计；&#x20;
 
 ★复杂度的详细讲解查看[78.Subsets](https://bhnigw.gitbook.io/leetcode/leetcode-78.-subsets)
 

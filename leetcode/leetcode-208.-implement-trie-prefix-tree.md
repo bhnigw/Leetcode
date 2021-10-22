@@ -20,7 +20,7 @@ Explanation:\
 `trie.insert("app"); `\
 `trie.search("app"); // return True`
 
-关于Trie的基础知识：[https://bhnigw.gitbook.io/-1/trie-prefix-tree](https://bhnigw.gitbook.io/-1/trie-prefix-tree)
+关于Trie的基础知识：[https://bhnigw.gitbook.io/1/trie-prefix-tree](https://bhnigw.gitbook.io/1/trie-prefix-tree)
 
 
 
@@ -47,8 +47,8 @@ class TrieNode {
 遍历这个char array；\
 因为child的范围是26个英文字母，所以接下来找char array第一个字符ch，是不是current node的child；\
 方法是判断`cur.children[ch - 'a']`（注意这个children\[ ]数组的元素的类型是TrieNode）\
-    1\. 如果它不为空，说明cur node含有字母为ch的child node；\
-    2\. 如果为空，则说明cur不含有该字母的child node，那么我们就在字符ch所对应的children\[ ]的位置new一个val为ch的TrieNode，方法：`cur.children[ch - 'a'] = new TrieNode(ch);`
+&#x20;   1\. 如果它不为空，说明cur node含有字母为ch的child node；\
+&#x20;   2\. 如果为空，则说明cur不含有该字母的child node，那么我们就在字符ch所对应的children\[ ]的位置new一个val为ch的TrieNode，方法：`cur.children[ch - 'a'] = new TrieNode(ch);`
 
 遍历结束后，给最后一个node的内部值isWord赋值true，表明这个关键词的insert过程完成。方法：`cur.isWord = true;`
 

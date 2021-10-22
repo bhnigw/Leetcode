@@ -18,7 +18,7 @@ description: Recursion
 
 
 
-（[一个小知识点](https://bhnigw.gitbook.io/-1/shu-ju-jie-gou-map#ru-guo-ba-treenode-jia-ru-hashmap)）
+（[一个小知识点](https://bhnigw.gitbook.io/1/shu-ju-jie-gou-map#ru-guo-ba-treenode-jia-ru-hashmap)）
 
 ```
 class Solution {

@@ -11,7 +11,7 @@ description: DFS，Trie
 
 ![char board\[ \]\[ \]](<../.gitbook/assets/Screen Shot 2021-06-02 at 1.59.29 AM.png>)
 
- Input: `board = [['o','a','a','n'],['e','t','a','e'],['i','h','k','r'],['i','f','l','v']]`，`words = ["oath", "pea", "eat", "rain"] `\
+&#x20;Input: `board = [['o','a','a','n'],['e','t','a','e'],['i','h','k','r'],['i','f','l','v']]`，`words = ["oath", "pea", "eat", "rain"] `\
 Output: `["eat", "oath"]`
 
 ####
@@ -24,7 +24,7 @@ Output: `["eat", "oath"]`
 
 这时就要想到，单词数量越多，就越容易出现common prefix；如果能够预先处理这些单词，那么搜索将会大幅提速。
 
-★这时就要引入[Trie tree](https://bhnigw.gitbook.io/-1/trie-prefix-tree)：**1.我们可以把words全部转换到Trie tree上，2.然后再结合Trie tree对这个二位矩阵进行DFS**，就要方便很多：
+★这时就要引入[Trie tree](https://bhnigw.gitbook.io/1/trie-prefix-tree)：**1.我们可以把words全部转换到Trie tree上，2.然后再结合Trie tree对这个二位矩阵进行DFS**，就要方便很多：
 
 **1.把words全部转换到Trie tree上：**
 
@@ -182,7 +182,7 @@ Space: `O(W)`；W是words中所有字母的数量，也就是Trie tree中所有n
 
 #### 相关知识：
 
-[Trie](https://bhnigw.gitbook.io/-1/trie-prefix-tree)，[DFS](https://bhnigw.gitbook.io/-1/dfs-mo-ban)
+[Trie](https://bhnigw.gitbook.io/1/trie-prefix-tree)，[DFS](https://bhnigw.gitbook.io/1/dfs-mo-ban)
 
 
 
