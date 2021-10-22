@@ -29,7 +29,7 @@ Follow up：是否可以在 O(1) 时间复杂度内完成这两种操作？
 
 
 
-## 方法2：[Doubly LinkedList ](https://bhnigw.gitbook.io/-1/doubly-linkedlist)+ [HashMap](https://bhnigw.gitbook.io/-1/shu-ju-jie-gou-map)（时间`O(1)`，最优）
+## 方法2：[Doubly LinkedList](https://bhnigw.gitbook.io/1/doubly-linkedlist) + [HashMap](https://bhnigw.gitbook.io/1/shu-ju-jie-gou-map)（时间`O(1)`，最优）
 
 这个LRU cache由`Doubly LinkedList`和`HashMap`一起构成。
 

@@ -117,7 +117,7 @@ Space: O(1)
 
 
 
-关于Character的复习：[https://bhnigw.gitbook.io/-1/shu-ju-jie-gou-string](https://bhnigw.gitbook.io/-1/shu-ju-jie-gou-string)
+关于Character的复习：
 
 
 

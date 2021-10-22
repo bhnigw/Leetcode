@@ -40,4 +40,4 @@ public String ReverseString(String str) {
 2\. 怎样把char array转化为string\
 3\. 最后return也可以用 String.valueOf(arr);
 
-复习string和char array的转换：[https://bhnigw.gitbook.io/-1/](https://bhnigw.gitbook.io/-1/)
+复习string和char array的转换：[https://bhnigw.gitbook.io/1/](https://bhnigw.gitbook.io/1/)
