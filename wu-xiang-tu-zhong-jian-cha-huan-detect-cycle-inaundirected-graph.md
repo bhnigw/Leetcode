@@ -24,7 +24,7 @@ description: undirected graph，bidirectional
 ★`List<List<Integer>> adjList = new ArrayList<>();`
 
 其中，Adjacency List的指数index为图的n个节点；\
-            Adjacency List的子List记录**与当前节点所有所有相连接的点；**
+&#x20;           Adjacency List的子List记录**与当前节点所有所有相连接的点；**
 
 那么上面的无向图就可以表示为：\
 `0 : [1], `\
@@ -144,7 +144,7 @@ E是Adjacency List的子List的总长度；
 
 ## 方法二：Union find
 
-([点击查看Union find详细讲解](https://bhnigw.gitbook.io/-1/shu-ju-jie-gou-union-find))
+([点击查看Union find详细讲解](https://bhnigw.gitbook.io/1/shu-ju-jie-gou-union-find))
 
 算法：
 
@@ -205,8 +205,8 @@ Union Find需要`O(N)`的空间来存储array；
 
 
 
-时间复杂度相关知识：[https://bhnigw.gitbook.io/-1/shi-jian-fu-za-du-time-complexity](https://bhnigw.gitbook.io/-1/shi-jian-fu-za-du-time-complexity)\
-空间复杂度相关知识：[https://bhnigw.gitbook.io/-1/kong-jian-fu-za-du-space-complexity](https://bhnigw.gitbook.io/-1/kong-jian-fu-za-du-space-complexity)
+时间复杂度相关知识：[https://bhnigw.gitbook.io/1/shi-jian-fu-za-du-time-complexity](https://bhnigw.gitbook.io/1/shi-jian-fu-za-du-time-complexity)\
+空间复杂度相关知识：[https://bhnigw.gitbook.io/1/kong-jian-fu-za-du-space-complexity](https://bhnigw.gitbook.io/1/kong-jian-fu-za-du-space-complexity)
 
 
 
