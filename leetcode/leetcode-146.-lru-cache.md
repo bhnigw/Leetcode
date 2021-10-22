@@ -38,8 +38,6 @@ Follow up：是否可以在 O(1) 时间复杂度内完成这两种操作？
 
 
 
-![](../.gitbook/assets/IMG\_6467.jpg)
-
 
 
 ### ●** **构建Doubly LinkedList：
