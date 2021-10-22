@@ -19,7 +19,7 @@ Follow up：是否可以在 O(1) 时间复杂度内完成这两种操作？
 
 
 
-## 方法1：两个[Stack](https://bhnigw.gitbook.io/-1/shu-ju-jie-gou-stack)（时间`O(n)`，不推荐）
+## 方法1：两个[Stack](https://bhnigw.gitbook.io/1/shu-ju-jie-gou-stack)（时间`O(n)`，不推荐）
 
 初始化两个栈stack1和stack2。可以理解为stack1就是用来存数据的缓存cache。\
 ●`get(int key)`方法：把stack1的元素挨个pop到stack2里，若遇到key则把它单个拎出来，然后把stack2里挨个pop到stack1中，最后把key放到stack1的栈顶。\
