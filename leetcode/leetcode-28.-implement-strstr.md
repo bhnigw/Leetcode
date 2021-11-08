@@ -26,7 +26,7 @@ class Solution {
             if (haystack.charAt(i) == needle.charAt(0)) { // 遇到相同字母
                 int index = 0;
                 for (int j = i; j < haystack.length() && index < needle.length(); j++) {
-                    if (haystack.charAt(j) != needle.charAt(index)) break; //注意这里已经判断了不想等
+                    if (haystack.charAt(j) != needle.charAt(index)) break; //注意这里已经判断了不相等
                     
                     if (index == needle.length() - 1) { // Index到达末尾且char相等
                         res = i;
