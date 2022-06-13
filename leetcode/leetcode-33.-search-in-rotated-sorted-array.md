@@ -10,7 +10,7 @@ description: Binary Search
 一个sorted数组`nums[]`，没有duplicates。数组前面某一段被截取放到了数组末尾，形成了新的数组。给一个整数`target`，求它在数组中的位置index，如果不存在则返回-1。
 
 例1：\
-Input: `nums = [4,5,6,7,0,1,2]`, `target = 1 `\
+Input: `nums = [4,5,6,7,0,1,2]`, `target = 1` \
 Output: 5\
 例2：\
 Input: `nums = [1]`, `target = 0`\
@@ -100,9 +100,9 @@ Space: `O(1)`；
 
 如果数组的mid大于start，说明start到mid是单调递增；在这种情况下，判断target在不在start到mid区间，如果在，就在左边进行binary search。如果target在mid右边，那么继续对右边进行类似recursive，把start更新为mid右边第一个数，然后更新mid继续求...
 
-![](../.gitbook/assets/33\_small_mid.png)
+![](../.gitbook/assets/33\_small\_mid.png)
 
-```
+```java
 class Solution {
     public int search(int[] nums, int target) {
         int left = 0, right = nums.length - 1;
