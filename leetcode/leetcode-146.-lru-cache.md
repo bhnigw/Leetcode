@@ -42,7 +42,7 @@ Follow up：是否可以在 O(1) 时间复杂度内完成这两种操作？
 
 
 
-### ●** **构建Doubly LinkedList：
+### ● **** 构建Doubly LinkedList：
 
 因为题目要求能够存储key和value两个数据，所以构建时稍作修改，加一个key的值；
 
@@ -221,7 +221,7 @@ private void moveToHead(ListNode node) {
 
 ### 完整代码：
 
-```
+```java
 class LRUCache {
 
     // Construct the Doubly LinkedList
