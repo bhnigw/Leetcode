@@ -16,7 +16,7 @@ description: Backtracking, ArrayList
 
 
 
-#### 算法/代码结构：使用[backtrack](https://bhnigw.gitbook.io/-1/backtrack-mo-ban)
+#### 算法/代码结构：使用[backtrack](https://bhnigw.gitbook.io/1/backtrack-mo-ban)
 
 1. 无需null check；初始化二维List作为res，初始化一维List作为backtrack时候的current Subset；
 2. 无需for循环遍历数组，直接用0作为初始index进入helper方法；
@@ -25,7 +25,7 @@ description: Backtracking, ArrayList
    2. 从当前输入的index开始for循环，每一轮的for 循环都有3个操作：
       1. 把当前数字`nums[i]`加入curren subset；（对应下面第1步）
       2. 开始递归找此刻i + 1的subset；（对应下面第2步）
-      3. ★每一轮for循环结束前，都要去掉curren subset里最后一个元素（因为要backtrack到上一轮给末尾加入新的元素，详细看上图和[backtrack讲解](https://bhnigw.gitbook.io/-1/backtrack-mo-ban)）（对应下面第3步）
+      3. ★每一轮for循环结束前，都要去掉curren subset里最后一个元素（因为要backtrack到上一轮给末尾加入新的元素，详细看上图和[backtrack讲解](https://bhnigw.gitbook.io/1/backtrack-mo-ban)）（对应下面第3步）
 
 ```
 class Solution {
@@ -70,7 +70,7 @@ Space：O(n)；
 ****
 
 **注意事先确认**：\
-1\. 给的input数组是否有duplicates，如果有，那么需要**先sort**，然后在for循环里skip掉相同元素` if(i > startIndex && input[i] == input[i-1]) continue`;\
+1\. 给的input数组是否有duplicates，如果有，那么需要**先sort**，然后在for循环里skip掉相同元素 `if(i > startIndex && input[i] == input[i-1]) continue`;\
 2\. 给的input数组里装的是char还是String还是integer
 
 
